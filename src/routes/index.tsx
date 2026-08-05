@@ -4,6 +4,7 @@ import { Stats } from "@/components/home/Stats";
 import { Capabilities } from "@/components/home/Capabilities";
 import { AiHighlight } from "@/components/home/AiHighlight";
 import { Approach } from "@/components/home/Approach";
+import { TrackRecord } from "@/components/home/TrackRecord";
 import { Faq } from "@/components/home/Faq";
 import { Contact } from "@/components/home/Contact";
 
