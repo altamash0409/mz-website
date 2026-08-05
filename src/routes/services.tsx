@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
+import { IndustryExpertise } from "@/components/home/IndustryExpertise";
 import {
   HiOutlineRocketLaunch,
   HiOutlineCodeBracketSquare,
@@ -196,26 +197,7 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-secondary/50">
-        <div className="shell">
-          <SectionHeading
-            eyebrow="Industry expertise"
-            title="Sector-specific NetSuite solutions"
-            subtitle="We bring pre-built accelerators and hard-won domain knowledge to every vertical we serve."
-          />
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {INDUSTRIES.map((ind, i) => (
-              <Reveal key={ind.name} delay={i * 0.05}>
-                <article className="glass h-full rounded-2xl p-7">
-                  <ind.icon size={26} className="text-cherry" />
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{ind.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ind.body}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <IndustryExpertise />
 
       <section className="section-pad">
         <div className="shell">

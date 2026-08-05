@@ -1,4 +1,86 @@
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import { Reveal } from "@/components/site/Reveal";
+
+function CounterNumber({
+  value,
+  suffix = "",
+  duration = 1.6,
+}: {
+  value: number;
+  suffix?: string;
+  duration?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      setCurrent(Math.floor(easeProgress * value));
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setCurrent(value);
+      }
+    };
+    requestAnimationFrame(step);
+  }, [isInView, value, duration]);
+
+  return (
+    <span ref={ref}>
+      {current}
+      {suffix ? <span className="text-cherry">{suffix}</span> : null}
+    </span>
+  );
+}
+
+function CounterStaticText({
+  val1,
+  val2,
+  separator = "x",
+}: {
+  val1: number;
+  val2: number;
+  separator?: string;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const [c1, setC1] = useState(0);
+  const [c2, setC2] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / 1600, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      setC1(Math.floor(easeProgress * val1));
+      setC2(Math.floor(easeProgress * val2));
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setC1(val1);
+        setC2(val2);
+      }
+    };
+    requestAnimationFrame(step);
+  }, [isInView, val1, val2]);
+
+  return (
+    <span ref={ref}>
+      {c1}
+      <span className="text-cherry">{separator}</span>
+      {c2}
+    </span>
+  );
+}
 
 export function TrackRecord() {
   return (
@@ -23,7 +105,7 @@ export function TrackRecord() {
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:gap-12 max-w-4xl mx-auto">
                 <div className="flex items-center justify-center gap-3">
                   <span className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#1E3B33]">
-                    15<span className="text-cherry">+</span>
+                    <CounterNumber value={15} suffix="+" />
                   </span>
                   <span className="text-left text-xs sm:text-sm font-semibold leading-tight text-[#3A524A] max-w-[90px]">
                     Projects<br />Delivered
@@ -32,7 +114,7 @@ export function TrackRecord() {
 
                 <div className="flex items-center justify-center gap-3">
                   <span className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#1E3B33]">
-                    10<span className="text-cherry">+</span>
+                    <CounterNumber value={10} suffix="+" />
                   </span>
                   <span className="text-left text-xs sm:text-sm font-semibold leading-tight text-[#3A524A] max-w-[90px]">
                     Happy<br />Clients
@@ -41,7 +123,7 @@ export function TrackRecord() {
 
                 <div className="flex items-center justify-center gap-3">
                   <span className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#1E3B33]">
-                    25<span className="text-cherry">+</span>
+                    <CounterNumber value={25} suffix="+" />
                   </span>
                   <span className="text-left text-xs sm:text-sm font-semibold leading-tight text-[#3A524A] max-w-[100px]">
                     Automations<br />Created
@@ -53,7 +135,7 @@ export function TrackRecord() {
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-16 max-w-2xl mx-auto">
                 <div className="flex items-center justify-center gap-3">
                   <span className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#1E3B33]">
-                    24x7
+                    <CounterStaticText val1={24} val2={7} separator="x" />
                   </span>
                   <span className="text-left text-xs sm:text-sm font-semibold leading-tight text-[#3A524A] max-w-[90px]">
                     Customer<br />Support
@@ -62,7 +144,7 @@ export function TrackRecord() {
 
                 <div className="flex items-center justify-center gap-3">
                   <span className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#1E3B33]">
-                    98<span className="text-cherry">%</span>
+                    <CounterNumber value={98} suffix="%" />
                   </span>
                   <span className="text-left text-xs sm:text-sm font-semibold leading-tight text-[#3A524A] max-w-[90px]">
                     Client<br />Satisfaction

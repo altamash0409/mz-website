@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/home/Hero";
 import { Stats } from "@/components/home/Stats";
 import { Capabilities } from "@/components/home/Capabilities";
+import { IndustryExpertise } from "@/components/home/IndustryExpertise";
 import { AiHighlight } from "@/components/home/AiHighlight";
 import { Approach } from "@/components/home/Approach";
 import { TrackRecord } from "@/components/home/TrackRecord";
