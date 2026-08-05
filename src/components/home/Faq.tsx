@@ -35,41 +35,26 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 bg-[#EEF6F2]" id="faq">
-      {/* Organic Wavy Background Shapes matching screenshot */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-        <svg
-          viewBox="0 0 1440 900"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-0 w-full h-full text-[#D4E8DE]/70 fill-current"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,160 C320,340 540,60 840,240 C1140,420 1320,120 1440,260 L1440,900 L0,900 Z" />
-        </svg>
-      </div>
-
-      <div className="shell relative z-10">
+    <section className="section-pad" id="faq">
+      <div className="shell">
         <SectionHeading
           eyebrow="FAQ"
           title="Questions enterprise teams ask us"
           subtitle="Straight answers on timelines, cost, support and customisation."
         />
-        <div className="mx-auto mt-14 max-w-3xl">
-          <div className="rounded-[28px] md:rounded-[36px] border border-[#D5E6DC] bg-card p-6 sm:p-10 md:p-12 shadow-xl shadow-black/4">
-            <Accordion type="single" collapsible className="divide-y divide-border">
-              {FAQS.map((f, i) => (
-                <AccordionItem key={f.q} value={`item-${i}`} className="border-b-0 py-1">
-                  <AccordionTrigger className="py-4 text-left font-display text-base sm:text-lg font-semibold text-foreground transition-colors hover:text-brand hover:no-underline">
-                    {f.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-5 text-xs sm:text-sm leading-relaxed text-muted-foreground">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+        <div className="mx-auto mt-12 max-w-3xl">
+          <Accordion type="single" collapsible className="divide-y divide-border border-y border-border">
+            {FAQS.map((f, i) => (
+              <AccordionItem key={f.q} value={`item-${i}`} className="border-b-0">
+                <AccordionTrigger className="py-5 text-left text-base font-semibold text-foreground hover:no-underline">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-sm leading-relaxed text-muted-foreground">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
