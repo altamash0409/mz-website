@@ -7,34 +7,34 @@ const EMAIL_ADDRESS = "nssupport.in@gmail.com";
 
 export function Contact() {
   return (
-    <section className="relative overflow-hidden section-pad bg-gradient-to-br from-[#EBF3FA] via-[#F4F9F7] to-[#E5F0FA]" id="contact">
-      {/* Soft Flowing Background Shapes */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-        {/* Top Left Organic Flowing Wave */}
+    <section className="relative overflow-hidden section-pad bg-secondary/30" id="contact">
+      {/* Left Side Only Flowing Theme Background */}
+      <div className="pointer-events-none absolute top-0 bottom-0 left-0 w-full lg:w-1/2 overflow-hidden z-0">
+        {/* Soft Sage Organic Wave Shape */}
         <svg
-          viewBox="0 0 1440 400"
+          viewBox="0 0 720 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-0 w-full h-[320px] text-[#DCEAF8]/70 fill-current"
+          className="absolute top-0 left-0 w-full h-full text-sage/20 fill-current opacity-80"
           preserveAspectRatio="none"
         >
-          <path d="M0,0 L1440,0 L1440,120 C1100,240 750,80 400,220 C200,290 80,180 0,220 Z" />
+          <path d="M0,0 L720,0 C550,150 700,320 480,450 C320,540 180,480 0,600 Z" />
         </svg>
 
-        {/* Bottom Soft Curved Organic Layer */}
+        {/* Secondary Soft Mint Flowing Curve */}
         <svg
-          viewBox="0 0 1440 400"
+          viewBox="0 0 720 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 right-0 w-full h-[350px] text-[#D8E6F5]/60 fill-current"
+          className="absolute bottom-0 left-0 w-full h-3/4 text-brand/10 fill-current opacity-60"
           preserveAspectRatio="none"
         >
-          <path d="M0,400 L1440,400 L1440,180 C1180,320 850,140 500,260 C250,340 100,220 0,300 Z" />
+          <path d="M0,600 L720,600 C600,480 420,520 300,380 C150,220 80,300 0,180 Z" />
         </svg>
 
-        {/* Soft Ambient Glow Orbs */}
-        <div className="absolute top-1/4 left-10 h-96 w-96 rounded-full bg-sage/15 blur-3xl" />
-        <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-[#DCEAF8]/40 blur-3xl" />
+        {/* Left Soft Ambient Glow Orbs */}
+        <div className="absolute top-1/3 -left-20 h-96 w-96 rounded-full bg-sage/30 blur-3xl" />
+        <div className="absolute bottom-0 left-10 h-72 w-72 rounded-full bg-cherry/10 blur-3xl" />
       </div>
 
       <div className="shell relative z-10">
