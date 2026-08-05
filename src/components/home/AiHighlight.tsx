@@ -43,77 +43,41 @@ const HIGHLIGHT_STATS = [
 
 export function AiHighlight() {
   return (
-    <section className="relative overflow-hidden bg-brand-deep py-28 text-background">
-      {/* Glow Effects */}
+    <section className="relative overflow-hidden bg-brand-deep text-background">
+      {/* Top SVG Wave Divider */}
+      <div className="w-full overflow-hidden leading-none pointer-events-none -mt-1">
+        <svg
+          viewBox="0 0 1440 90"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-12 md:h-20 text-background fill-current"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,0 C250,85 450,95 720,50 C980,5 1200,35 1440,15 L1440,0 L0,0 Z"></path>
+        </svg>
+      </div>
+
+      {/* Ambient Glow Effects */}
       <div className="pointer-events-none absolute top-1/2 left-1/4 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-sage/20 blur-[150px]" />
       <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cherry/15 blur-[140px]" />
 
-      <div className="shell relative grid gap-16 lg:grid-cols-[1fr_1.1fr]">
-        {/* Left Column: Heading & Live Copilot Demo Card */}
-        <Reveal className="flex flex-col justify-between">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-cherry animate-pulse" /> AI & Automation
-            </span>
+      <div className="shell section-pad relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+        {/* Left Column */}
+        <Reveal className="flex flex-col justify-center">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-cherry" /> AI & Automation
+          </span>
 
-            <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-              Next-Gen Intelligence Layered on Your{" "}
-              <span className="text-gradient-cherry">NetSuite Core</span>
-            </h2>
+          <h2 className="mt-6 text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            Intelligence Layered on Top of Your{" "}
+            <span className="text-gradient-cherry">ERP Core</span>
+          </h2>
 
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-background/75 sm:text-lg">
-              NetSuite holds the single source of truth for your business. We supercharge it —
-              combining generative AI and machine learning with production-grade SuiteScript 2.1
-              so insights automatically trigger executed transactions.
-            </p>
-          </div>
-
-          {/* Interactive AI Copilot Mockup Window */}
-          <div className="mt-10 overflow-hidden rounded-2xl border border-background/15 bg-background/6 p-6 backdrop-blur-xl shadow-2xl">
-            {/* Top Bar */}
-            <div className="flex items-center justify-between border-b border-background/10 pb-4">
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-rose-500/80" />
-                <span className="h-3 w-3 rounded-full bg-amber-500/80" />
-                <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 flex items-center gap-1.5 text-xs font-medium text-background/60">
-                  <HiOutlineCommandLine size={14} className="text-cherry" /> cpie AI Automation Terminal
-                </span>
-              </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300 border border-emerald-500/30">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> LIVE
-              </span>
-            </div>
-
-            {/* Terminal Output Content */}
-            <div className="mt-4 space-y-3 font-mono text-xs leading-relaxed text-background/85">
-              <div className="flex items-start gap-2 text-cherry font-semibold">
-                <span>&gt;</span>
-                <span>exec suiteScript.aiForecasting({`{ period: "Q3", autoApprove: true }`})</span>
-              </div>
-              <div className="flex items-center gap-2 text-emerald-400">
-                <HiOutlineCheckCircle size={15} />
-                <span>14 Purchase orders validated against budget thresholds.</span>
-              </div>
-              <div className="flex items-center gap-2 text-emerald-400">
-                <HiOutlineCheckCircle size={15} />
-                <span>2 Anomaly alerts flagged &amp; routed for CFO review.</span>
-              </div>
-              <div className="rounded-lg bg-background/10 p-3 text-background/70 border border-background/10">
-                <span className="font-semibold text-background">Result:</span> Executed Map/Reduce batch in 1.4s. 0 governance limits breached.
-              </div>
-            </div>
-
-            {/* Quick Metrics Bar */}
-            <div className="mt-5 grid grid-cols-3 gap-2 border-t border-background/10 pt-4 text-center">
-              {HIGHLIGHT_STATS.map((s) => (
-                <div key={s.label}>
-                  <p className="text-sm font-bold text-background">{s.val}</p>
-                  <p className="text-[10px] tracking-wider text-background/50 uppercase">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-background/75 sm:text-lg">
+            NetSuite holds the cleanest data in your business. We put it to work — pairing
+            generative AI and predictive models with production-grade SuiteScript so insights turn
+            into posted transactions, not slide decks.
+          </p>
         </Reveal>
 
         {/* Right Column: Feature Cards Grid */}
@@ -137,6 +101,19 @@ export function AiHighlight() {
             </Reveal>
           ))}
         </div>
+      </div>
+
+      {/* Bottom SVG Wave Divider */}
+      <div className="w-full overflow-hidden leading-none pointer-events-none -mb-1">
+        <svg
+          viewBox="0 0 1440 90"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-12 md:h-20 text-background fill-current"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,40 C240,80 460,0 720,40 C980,80 1200,15 1440,50 L1440,90 L0,90 Z"></path>
+        </svg>
       </div>
     </section>
   );
