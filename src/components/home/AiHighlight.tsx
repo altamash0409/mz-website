@@ -43,25 +43,12 @@ const HIGHLIGHT_STATS = [
 
 export function AiHighlight() {
   return (
-    <section className="relative overflow-hidden bg-brand-deep text-background">
-      {/* Top SVG Wave Divider */}
-      <div className="w-full overflow-hidden leading-none pointer-events-none -mt-1">
-        <svg
-          viewBox="0 0 1440 90"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-12 md:h-20 text-background fill-current"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 C250,85 450,95 720,50 C980,5 1200,35 1440,15 L1440,0 L0,0 Z"></path>
-        </svg>
-      </div>
-
+    <section className="relative overflow-hidden bg-brand-deep py-28 text-background">
       {/* Ambient Glow Effects */}
       <div className="pointer-events-none absolute top-1/2 left-1/4 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-sage/20 blur-[150px]" />
       <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cherry/15 blur-[140px]" />
 
-      <div className="shell section-pad relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="shell relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         {/* Left Column */}
         <Reveal className="flex flex-col justify-center">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
@@ -101,19 +88,6 @@ export function AiHighlight() {
             </Reveal>
           ))}
         </div>
-      </div>
-
-      {/* Bottom SVG Wave Divider */}
-      <div className="w-full overflow-hidden leading-none pointer-events-none -mb-1">
-        <svg
-          viewBox="0 0 1440 90"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-12 md:h-20 text-background fill-current"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,40 C240,80 460,0 720,40 C980,80 1200,15 1440,50 L1440,90 L0,90 Z"></path>
-        </svg>
       </div>
     </section>
   );

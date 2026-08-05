@@ -1,153 +1,158 @@
-import { useState } from "react";
-import { z } from "zod";
-import { toast } from "sonner";
 import { Reveal } from "@/components/site/Reveal";
-import { HiOutlineEnvelope, HiOutlinePhone, HiOutlineMapPin } from "react-icons/hi2";
-import { FaWhatsapp } from "react-icons/fa6";
+import { HiOutlineEnvelope, HiOutlineArrowRight } from "react-icons/hi2";
+import { FaLinkedinIn } from "react-icons/fa6";
 
-const schema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(100),
-  email: z.string().trim().email("Enter a valid email address").max(255),
-  phone: z.string().trim().max(30).optional().or(z.literal("")),
-  company: z.string().trim().max(120).optional().or(z.literal("")),
-  message: z.string().trim().min(10, "Tell us a little more about your project").max(1000),
-});
-
-const EMPTY = { name: "", email: "", phone: "", company: "", message: "" };
+const LINKEDIN_URL = "https://www.linkedin.com/in/considerpie-%CF%80-836384421/";
+const EMAIL_ADDRESS = "nssupport.in@gmail.com";
 
 export function Contact() {
-  const [values, setValues] = useState(EMPTY);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const parsed = schema.safeParse(values);
-    if (!parsed.success) {
-      const next: Record<string, string> = {};
-      for (const issue of parsed.error.issues) next[String(issue.path[0])] = issue.message;
-      setErrors(next);
-      return;
-    }
-    setErrors({});
-    setValues(EMPTY);
-    toast.success("Thanks — we'll be in touch within one business day.");
-  };
-
-  const field = (
-    name: keyof typeof EMPTY,
-    label: string,
-    type = "text",
-    placeholder = "",
-  ) => (
-    <div>
-      <label htmlFor={name} className="text-xs font-semibold tracking-wide text-foreground">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        value={values[name]}
-        onChange={(e) => setValues((v) => ({ ...v, [name]: e.target.value }))}
-        className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-sage focus:ring-2 focus:ring-sage/25"
-      />
-      {errors[name] ? <p className="mt-1.5 text-xs text-destructive">{errors[name]}</p> : null}
-    </div>
-  );
-
   return (
-    <section className="section-pad bg-secondary/50" id="contact">
-      <div className="shell grid gap-12 lg:grid-cols-[1fr_1.15fr]">
-        <Reveal>
-          <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold tracking-widest text-brand uppercase">
-            Book a consultation
-          </span>
-          <h2 className="mt-5 text-3xl font-bold text-foreground sm:text-4xl">
-            Let&apos;s scope your NetSuite project
+    <section className="section-pad bg-secondary/30" id="contact">
+      <div className="shell">
+        {/* Section Heading */}
+        <Reveal className="text-center max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+            Let&apos;s Transform Your Business with{" "}
+            <span className="text-brand">NetSuite</span>
           </h2>
-          <p className="mt-4 max-w-md text-base text-muted-foreground">
-            Share a few details and a senior consultant — not a sales rep — will reply within one
-            business day with an honest read on scope, effort and timeline.
-          </p>
+        </Reveal>
 
-          <ul className="mt-10 space-y-5">
-            <li className="flex items-center gap-4">
-              <span className="rounded-xl bg-card p-3 text-brand shadow-sm">
-                <HiOutlineEnvelope size={20} />
-              </span>
-              <a href="mailto:hello@cpie.com" className="text-sm font-medium text-foreground hover:text-brand">
-                hello@cpie.com
-              </a>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-xl bg-card p-3 text-brand shadow-sm">
-                <HiOutlinePhone size={20} />
-              </span>
-              <a href="tel:+919000000000" className="text-sm font-medium text-foreground hover:text-brand">
-                +91 90000 00000
-              </a>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-xl bg-card p-3 text-brand shadow-sm">
-                <FaWhatsapp size={20} />
-              </span>
+        {/* Content Layout */}
+        <div className="mt-14 grid gap-12 lg:grid-cols-2 items-center">
+          {/* Left Column */}
+          <Reveal>
+            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-md">
+              Book a free strategy call with our certified NetSuite consultants. We&apos;ll map your
+              ERP roadmap and share a transparent proposal within 48 hours.
+            </p>
+
+            <div className="mt-8 space-y-4 max-w-md">
+              {/* Email Link Card */}
               <a
-                href="https://wa.me/919000000000"
+                href={`mailto:${EMAIL_ADDRESS}`}
+                className="group flex items-center justify-between rounded-2xl border border-border/80 bg-card p-4 shadow-xs transition-all duration-300 hover:border-brand hover:shadow-md"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cherry/10 text-cherry transition-colors group-hover:bg-cherry group-hover:text-accent-foreground">
+                    <HiOutlineEnvelope size={22} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
+                      EMAIL
+                    </span>
+                    <p className="text-sm font-semibold text-foreground group-hover:text-brand transition-colors">
+                      {EMAIL_ADDRESS}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-all group-hover:bg-brand group-hover:text-primary-foreground">
+                  <HiOutlineArrowRight size={16} />
+                </div>
+              </a>
+
+              {/* LinkedIn Link Card */}
+              <a
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-medium text-foreground hover:text-brand"
+                className="group flex items-center justify-between rounded-2xl border border-border/80 bg-card p-4 shadow-xs transition-all duration-300 hover:border-brand hover:shadow-md"
               >
-                Chat on WhatsApp
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cherry/10 text-cherry transition-colors group-hover:bg-cherry group-hover:text-accent-foreground">
+                    <FaLinkedinIn size={20} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
+                      LINKEDIN
+                    </span>
+                    <p className="text-sm font-semibold text-foreground group-hover:text-brand transition-colors">
+                      linkedin.com
+                    </p>
+                  </div>
+                </div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-muted-foreground transition-all group-hover:bg-brand group-hover:text-primary-foreground">
+                  <HiOutlineArrowRight size={16} />
+                </div>
               </a>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="rounded-xl bg-card p-3 text-brand shadow-sm">
-                <HiOutlineMapPin size={20} />
-              </span>
-              <span className="text-sm font-medium text-foreground">
-                Global delivery · IST, EST & GMT coverage
-              </span>
-            </li>
-          </ul>
-        </Reveal>
+            </div>
+          </Reveal>
 
-        <Reveal delay={0.1}>
-          <form
-            onSubmit={onSubmit}
-            noValidate
-            className="rounded-3xl border border-border bg-card p-7 shadow-sm sm:p-9"
-          >
-            <div className="grid gap-5 sm:grid-cols-2">
-              {field("name", "Full name", "text", "Jane Doe")}
-              {field("email", "Work email", "email", "jane@company.com")}
-              {field("phone", "Phone", "tel", "+1 555 000 0000")}
-              {field("company", "Company", "text", "Acme Inc.")}
+          {/* Right Column: Featured Consultation Card */}
+          <Reveal delay={0.1}>
+            <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-card p-8 sm:p-10 md:p-12 shadow-xl">
+              {/* Subtle top right ambient background gradient */}
+              <div className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-sage/15 blur-3xl" />
+
+              {/* Pill Badge */}
+              <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background px-3.5 py-1 text-[10px] font-bold tracking-widest text-muted-foreground uppercase shadow-2xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-cherry animate-pulse" />
+                READY WHEN YOU ARE
+              </span>
+
+              {/* Headline */}
+              <h3 className="mt-6 font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+                Book a free <span className="text-brand">NetSuite</span>
+                <br />
+                consultation
+              </h3>
+
+              {/* Description */}
+              <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+                No forms. Reach us directly via email, phone, or WhatsApp and a certified NetSuite
+                expert will respond within one business day.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="mt-8 space-y-3">
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  className="group flex w-full items-center justify-between rounded-full bg-[#1E3B33] px-7 py-4 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-brand"
+                >
+                  <span className="inline-flex items-center gap-2.5">
+                    <HiOutlineEnvelope size={18} /> Email Our Team
+                  </span>
+                  <HiOutlineArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                </a>
+
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex w-full items-center justify-between rounded-full border border-border/80 bg-card px-7 py-3.5 text-sm font-semibold text-foreground shadow-2xs transition-all duration-300 hover:bg-secondary/60"
+                >
+                  <span className="inline-flex items-center gap-2.5">
+                    <FaLinkedinIn size={18} className="text-cherry" /> Connect on LinkedIn
+                  </span>
+                  <HiOutlineArrowRight size={18} className="text-muted-foreground transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+
+              {/* Divider & Metrics */}
+              <div className="my-8 border-t border-border/60" />
+
+              <div className="grid grid-cols-3 gap-2 text-center">
+                <div>
+                  <p className="font-display text-lg font-bold text-brand">48h</p>
+                  <p className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
+                    RESPONSE
+                  </p>
+                </div>
+                <div>
+                  <p className="font-display text-lg font-bold text-brand">Free</p>
+                  <p className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
+                    CONSULTATION
+                  </p>
+                </div>
+                <div>
+                  <p className="font-display text-lg font-bold text-brand">NDA</p>
+                  <p className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
+                    ON REQUEST
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="mt-5">
-              <label htmlFor="message" className="text-xs font-semibold tracking-wide text-foreground">
-                How can we help?
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                value={values.message}
-                onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
-                placeholder="Tell us about your current ERP setup and what you're trying to achieve."
-                className="mt-1.5 w-full resize-none rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-sage focus:ring-2 focus:ring-sage/25"
-              />
-              {errors["message"] ? (
-                <p className="mt-1.5 text-xs text-destructive">{errors["message"]}</p>
-              ) : null}
-            </div>
-            <button
-              type="submit"
-              className="mt-7 w-full rounded-full bg-cherry px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-cherry/20 transition-transform hover:scale-[1.01]"
-            >
-              Request my consultation
-            </button>
-          </form>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

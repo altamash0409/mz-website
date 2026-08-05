@@ -16,7 +16,7 @@ const LEGAL = {
       "cpie collects only the information you voluntarily provide through our consultation forms — name, email, phone, company and message content.",
       "We use this data solely to respond to your enquiry and scope potential NetSuite engagements. We never sell or rent personal data to third parties.",
       "Client ERP data accessed during implementation engagements is governed by a signed NDA and handled under least-privilege access controls inside your own NetSuite account.",
-      "You may request deletion of your enquiry data at any time by writing to hello@cpie.com.",
+      "You may request deletion of your enquiry data at any time by writing to nssupport.in@gmail.com.",
     ],
   },
   terms: {
@@ -45,16 +45,29 @@ export function Footer() {
             systems that scale — from SuiteScript 2.1 automation to enterprise-grade integrations.
           </p>
           <div className="mt-6 flex gap-3">
-            {[FaLinkedinIn, FaXTwitter, FaGithub].map((Icon, i) => (
-              <a
-                key={i}
-                href="#contact"
-                aria-label="cpie social profile"
-                className="rounded-full border border-background/20 p-2.5 text-background/80 transition-colors hover:border-cherry hover:text-cherry"
-              >
-                <Icon size={15} />
-              </a>
-            ))}
+            <a
+              href="https://www.linkedin.com/in/considerpie-%CF%80-836384421/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="cpie LinkedIn profile"
+              className="rounded-full border border-background/20 p-2.5 text-background/80 transition-colors hover:border-cherry hover:text-cherry"
+            >
+              <FaLinkedinIn size={15} />
+            </a>
+            <a
+              href="#contact"
+              aria-label="cpie Twitter profile"
+              className="rounded-full border border-background/20 p-2.5 text-background/80 transition-colors hover:border-cherry hover:text-cherry"
+            >
+              <FaXTwitter size={15} />
+            </a>
+            <a
+              href="#contact"
+              aria-label="cpie GitHub profile"
+              className="rounded-full border border-background/20 p-2.5 text-background/80 transition-colors hover:border-cherry hover:text-cherry"
+            >
+              <FaGithub size={15} />
+            </a>
           </div>
         </div>
 
@@ -97,8 +110,8 @@ export function Footer() {
               </button>
             </li>
             <li>
-              <a href="mailto:hello@cpie.com" className="hover:text-cherry">
-                hello@cpie.com
+              <a href="mailto:nssupport.in@gmail.com" className="hover:text-cherry">
+                nssupport.in@gmail.com
               </a>
             </li>
           </ul>

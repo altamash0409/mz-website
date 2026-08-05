@@ -34,8 +34,8 @@ export const Route = createFileRoute("/")({
           name: "cpie",
           description: DESC,
           areaServed: "Worldwide",
-          email: "hello@cpie.com",
-          telephone: "+91-90000-00000",
+          email: "nssupport.in@gmail.com",
+          telephone: "+91-91678-43480",
           knowsAbout: [
             "Oracle NetSuite",
             "SuiteScript 2.1",

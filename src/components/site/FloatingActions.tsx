@@ -16,7 +16,7 @@ export function FloatingActions() {
   return (
     <>
       <a
-        href="https://wa.me/919000000000?text=Hi%20cpie%2C%20I%27d%20like%20to%20discuss%20a%20NetSuite%20project."
+        href="https://wa.me/919167843480?text=Hi%20cpie%2C%20I%27d%20like%20to%20discuss%20a%20NetSuite%20project."
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with cpie on WhatsApp"
