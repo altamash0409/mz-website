@@ -40,7 +40,7 @@ const TRUST = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-deep pt-32 pb-24 text-background lg:pt-40 lg:pb-32">
+    <section className="relative overflow-hidden bg-brand-deep pt-32 pb-32 text-background lg:pt-40 lg:pb-40">
       <div className="pointer-events-none absolute -top-32 -left-20 h-[28rem] w-[28rem] rounded-full bg-sage/20 blur-[140px]" />
       <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cherry/15 blur-[140px]" />
       <div className="pointer-events-none absolute top-1/3 left-1/2 h-72 w-72 rounded-full bg-brand/40 blur-[120px]" />
