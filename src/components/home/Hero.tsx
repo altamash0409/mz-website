@@ -122,13 +122,17 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 + i * 0.1 }}
-              className={`rounded-2xl border border-background/15 bg-background/8 p-6 backdrop-blur-md transition-transform hover:-translate-y-1.5 ${
-                i % 2 === 1 ? "sm:translate-y-8" : ""
-              }`}
+              className="flex h-full min-h-[160px] flex-col justify-between rounded-2xl border border-background/15 bg-background/8 p-6 backdrop-blur-md transition-transform hover:-translate-y-1.5"
             >
-              <c.icon size={24} className="text-cherry" />
-              <h3 className="mt-4 text-sm font-semibold text-background">{c.title}</h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-background/60">{c.body}</p>
+              <div>
+                <span className="inline-block h-2 w-2 rounded-full bg-cherry" />
+                <h3 className="mt-4 text-sm font-semibold text-background">{c.title}</h3>
+                <p className="mt-1 text-xs leading-relaxed text-background/60">{c.body}</p>
+              </div>
+              <div className="mt-4 flex items-center justify-between border-t border-background/10 pt-3 text-[10px] font-semibold tracking-wider text-background/50 uppercase">
+                <span>LIVE</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              </div>
             </motion.div>
           ))}
         </div>
