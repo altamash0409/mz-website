@@ -7,33 +7,33 @@ const EMAIL_ADDRESS = "nssupport.in@gmail.com";
 
 export function Contact() {
   return (
-    <section className="relative overflow-hidden section-pad bg-secondary/30" id="contact">
+    <section className="relative overflow-hidden section-pad bg-secondary/50" id="contact">
       {/* Left Side Only Flowing Theme Background */}
       <div className="pointer-events-none absolute top-0 bottom-0 left-0 w-full lg:w-1/2 overflow-hidden z-0">
-        {/* Soft Sage Organic Wave Shape */}
+        {/* Theme Sage Organic Wave Shape */}
         <svg
           viewBox="0 0 720 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-0 w-full h-full text-sage/20 fill-current opacity-80"
+          className="absolute top-0 left-0 w-full h-full text-sage/25 fill-current"
           preserveAspectRatio="none"
         >
           <path d="M0,0 L720,0 C550,150 700,320 480,450 C320,540 180,480 0,600 Z" />
         </svg>
 
-        {/* Secondary Soft Mint Flowing Curve */}
+        {/* Secondary Soft Brand Flowing Curve */}
         <svg
           viewBox="0 0 720 600"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 left-0 w-full h-3/4 text-brand/10 fill-current opacity-60"
+          className="absolute bottom-0 left-0 w-full h-3/4 text-brand/10 fill-current"
           preserveAspectRatio="none"
         >
           <path d="M0,600 L720,600 C600,480 420,520 300,380 C150,220 80,300 0,180 Z" />
         </svg>
 
         {/* Left Soft Ambient Glow Orbs */}
-        <div className="absolute top-1/3 -left-20 h-96 w-96 rounded-full bg-sage/30 blur-3xl" />
+        <div className="absolute top-1/3 -left-20 h-96 w-96 rounded-full bg-sage/20 blur-3xl" />
         <div className="absolute bottom-0 left-10 h-72 w-72 rounded-full bg-cherry/10 blur-3xl" />
       </div>
 
@@ -135,7 +135,7 @@ export function Contact() {
               <div className="mt-8 space-y-3">
                 <a
                   href={`mailto:${EMAIL_ADDRESS}`}
-                  className="group flex w-full items-center justify-between rounded-full bg-[#1E3B33] px-7 py-4 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-brand"
+                  className="group flex w-full items-center justify-between rounded-full bg-brand-deep px-7 py-4 text-sm font-semibold text-background shadow-md transition-all duration-300 hover:bg-brand"
                 >
                   <span className="inline-flex items-center gap-2.5">
                     <HiOutlineEnvelope size={18} /> Email Our Team
