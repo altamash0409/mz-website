@@ -58,6 +58,7 @@ function Index() {
       <Capabilities />
       <AiHighlight />
       <Approach />
+      <TrackRecord />
       <Faq />
       <Contact />
     </main>
