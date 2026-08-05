@@ -23,7 +23,7 @@ const STAT_CARDS = [
 
 export function Stats() {
   return (
-    <section className="relative z-20 -mt-16 sm:-mt-20 lg:-mt-24 pb-8">
+    <section className="relative z-20 -mt-24 sm:-mt-28 lg:-mt-32 pb-8">
       <div className="shell">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
           {STAT_CARDS.map((card, i) => {
