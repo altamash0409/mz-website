@@ -44,19 +44,6 @@ const HIGHLIGHT_STATS = [
 export function AiHighlight() {
   return (
     <section className="relative overflow-hidden bg-brand-deep text-background">
-      {/* Top SVG Wave Divider */}
-      <div className="w-full overflow-hidden leading-none pointer-events-none -mt-1">
-        <svg
-          viewBox="0 0 1440 90"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-12 md:h-20 text-background fill-current"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 C250,85 450,95 720,50 C980,5 1200,35 1440,15 L1440,0 L0,0 Z"></path>
-        </svg>
-      </div>
-
       {/* Ambient Glow Effects */}
       <div className="pointer-events-none absolute top-1/2 left-1/4 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-sage/20 blur-[150px]" />
       <div className="pointer-events-none absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cherry/15 blur-[140px]" />

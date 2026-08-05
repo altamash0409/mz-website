@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { IndustryExpertise } from "@/components/home/IndustryExpertise";
+import { Contact } from "@/components/home/Contact";
 import {
   HiOutlineRocketLaunch,
   HiOutlineCodeBracketSquare,
@@ -221,6 +222,7 @@ function ServicesPage() {
           </div>
         </div>
       </section>
+      <Contact />
     </main>
   );
 }

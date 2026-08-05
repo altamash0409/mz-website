@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { HiOutlineClock, HiOutlineCalendarDays } from "react-icons/hi2";
 import { Reveal } from "@/components/site/Reveal";
+import { Contact } from "@/components/home/Contact";
 import {
   Dialog,
   DialogContent,
@@ -203,7 +204,7 @@ function ThoughtsPage() {
           </div>
         </div>
       </section>
-
+      <Contact />
       <Dialog open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
         <DialogContent className="max-h-[82vh] overflow-y-auto sm:max-w-2xl">
           <DialogHeader>
