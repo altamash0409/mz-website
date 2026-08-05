@@ -7,34 +7,18 @@ const EMAIL_ADDRESS = "nssupport.in@gmail.com";
 
 export function Contact() {
   return (
-    <section className="relative overflow-hidden section-pad bg-secondary/50" id="contact">
-      {/* Left Side Only Flowing Theme Background */}
-      <div className="pointer-events-none absolute top-0 bottom-0 left-0 w-full lg:w-1/2 overflow-hidden z-0">
-        {/* Theme Sage Organic Wave Shape */}
+    <section className="relative overflow-hidden section-pad bg-secondary/40" id="contact">
+      {/* Top Left Corner Only Soft Background Wave */}
+      <div className="pointer-events-none absolute top-0 left-0 w-[420px] sm:w-[540px] h-64 overflow-hidden z-0">
         <svg
-          viewBox="0 0 720 600"
+          viewBox="0 0 540 300"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-0 w-full h-full text-sage/25 fill-current"
+          className="w-full h-full text-sage/30 fill-current"
           preserveAspectRatio="none"
         >
-          <path d="M0,0 L720,0 C550,150 700,320 480,450 C320,540 180,480 0,600 Z" />
+          <path d="M0,0 L540,0 C400,90 280,240 0,300 Z" />
         </svg>
-
-        {/* Secondary Soft Brand Flowing Curve */}
-        <svg
-          viewBox="0 0 720 600"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-0 left-0 w-full h-3/4 text-brand/10 fill-current"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,600 L720,600 C600,480 420,520 300,380 C150,220 80,300 0,180 Z" />
-        </svg>
-
-        {/* Left Soft Ambient Glow Orbs */}
-        <div className="absolute top-1/3 -left-20 h-96 w-96 rounded-full bg-sage/20 blur-3xl" />
-        <div className="absolute bottom-0 left-10 h-72 w-72 rounded-full bg-cherry/10 blur-3xl" />
       </div>
 
       <div className="shell relative z-10">
@@ -62,7 +46,7 @@ export function Contact() {
                 className="group flex items-center justify-between rounded-2xl border border-border/80 bg-card p-4 shadow-xs transition-all duration-300 hover:border-brand hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cherry/10 text-cherry transition-colors group-hover:bg-cherry group-hover:text-accent-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-accent-foreground">
                     <HiOutlineEnvelope size={22} />
                   </div>
                   <div>
@@ -87,7 +71,7 @@ export function Contact() {
                 className="group flex items-center justify-between rounded-2xl border border-border/80 bg-card p-4 shadow-xs transition-all duration-300 hover:border-brand hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cherry/10 text-cherry transition-colors group-hover:bg-cherry group-hover:text-accent-foreground">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-accent-foreground">
                     <FaLinkedinIn size={20} />
                   </div>
                   <div>
@@ -114,7 +98,7 @@ export function Contact() {
 
               {/* Pill Badge */}
               <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background px-3.5 py-1 text-[10px] font-bold tracking-widest text-muted-foreground uppercase shadow-2xs">
-                <span className="h-1.5 w-1.5 rounded-full bg-cherry animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
                 READY WHEN YOU ARE
               </span>
 
@@ -150,7 +134,7 @@ export function Contact() {
                   className="group flex w-full items-center justify-between rounded-full border border-border/80 bg-card px-7 py-3.5 text-sm font-semibold text-foreground shadow-2xs transition-all duration-300 hover:bg-secondary/60"
                 >
                   <span className="inline-flex items-center gap-2.5">
-                    <FaLinkedinIn size={18} className="text-cherry" /> Connect on LinkedIn
+                    <FaLinkedinIn size={18} className="text-brand" /> Connect on LinkedIn
                   </span>
                   <HiOutlineArrowRight size={18} className="text-muted-foreground transition-transform group-hover:translate-x-1" />
                 </a>
