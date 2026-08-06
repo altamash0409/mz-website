@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { FaLinkedinIn, FaXTwitter, FaGithub } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
@@ -54,20 +54,6 @@ export function Footer() {
             >
               <FaLinkedinIn size={15} />
             </a>
-            <a
-              href="#contact"
-              aria-label="cpie Twitter profile"
-              className="rounded-full border border-background/20 p-2.5 text-background/80 transition-colors hover:border-cherry hover:text-cherry"
-            >
-              <FaXTwitter size={15} />
-            </a>
-            <a
-              href="#contact"
-              aria-label="cpie GitHub profile"
-              className="rounded-full border border-background/20 p-2.5 text-background/80 transition-colors hover:border-cherry hover:text-cherry"
-            >
-              <FaGithub size={15} />
-            </a>
           </div>
         </div>
 
@@ -110,7 +96,12 @@ export function Footer() {
               </button>
             </li>
             <li>
-              <a href="mailto:nssupport.in@gmail.com" className="hover:text-cherry">
+              <a
+                href="mailto:nssupport.in@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-cherry"
+              >
                 nssupport.in@gmail.com
               </a>
             </li>

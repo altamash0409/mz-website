@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
-import { HiOutlineClock, HiOutlineCalendarDays } from "react-icons/hi2";
+import { HiOutlineClock } from "react-icons/hi2";
 import { Reveal } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
 import {
@@ -15,7 +14,7 @@ import {
 export const Route = createFileRoute("/thoughts")({
   head: () => ({
     meta: [
-      { title: "Thoughts from the Cloud — NetSuite Insights | cpie" },
+      { title: "Consider Pie" },
       {
         name: "description",
         content:
@@ -173,12 +172,8 @@ function ThoughtsPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((a, i) => (
-              <motion.article
+              <article
                 key={a.title}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="group flex h-full cursor-pointer flex-col rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-sage hover:shadow-xl"
                 onClick={() => setOpen(a)}
               >
@@ -193,20 +188,17 @@ function ThoughtsPage() {
                 </p>
                 <div className="mt-6 flex items-center gap-4 border-t border-border pt-4 text-xs text-muted-foreground">
                   <span className="inline-flex items-center gap-1.5">
-                    <HiOutlineCalendarDays size={14} /> {a.date}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
                     <HiOutlineClock size={14} /> {a.read}
                   </span>
                 </div>
-              </motion.article>
+              </article>
             ))}
           </div>
         </div>
       </section>
       <Contact />
       <Dialog open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
-        <DialogContent className="max-h-[82vh] overflow-y-auto sm:max-w-2xl">
+        <DialogContent className="max-h-[85vh] w-[92vw] max-w-2xl overflow-y-auto rounded-2xl p-5 sm:p-7">
           <DialogHeader>
             <span className="w-fit rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-brand">
               {open?.category}
@@ -215,7 +207,7 @@ function ThoughtsPage() {
               {open?.title}
             </DialogTitle>
             <DialogDescription>
-              {open?.date} · {open?.read}
+              {open?.read}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">

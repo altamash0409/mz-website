@@ -9,7 +9,7 @@ import { TrackRecord } from "@/components/home/TrackRecord";
 import { Faq } from "@/components/home/Faq";
 import { Contact } from "@/components/home/Contact";
 
-const TITLE = "cpie — Oracle NetSuite Consulting & SuiteScript Experts";
+const TITLE = "Consider Pie";
 const DESC =
   "cpie helps enterprises streamline operations, automate workflows and maximize ROI through Oracle NetSuite consulting, SuiteScript development and implementation services.";
 

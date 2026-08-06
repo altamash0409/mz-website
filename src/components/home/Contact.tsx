@@ -43,6 +43,8 @@ export function Contact() {
               {/* Email Link Card */}
               <a
                 href={`mailto:${EMAIL_ADDRESS}`}
+                target="_blank"
+                rel="noreferrer"
                 className="group flex items-center justify-between rounded-2xl border border-border/80 bg-card p-4 shadow-xs transition-all duration-300 hover:border-brand hover:shadow-md"
               >
                 <div className="flex items-center gap-4">
@@ -92,7 +94,7 @@ export function Contact() {
 
           {/* Right Column: Featured Consultation Card */}
           <Reveal delay={0.1}>
-            <div className="relative overflow-hidden rounded-[32px] border border-border/80 bg-card p-8 sm:p-10 md:p-12 shadow-xl">
+            <div className="relative overflow-hidden rounded-3xl sm:rounded-[32px] border border-border/80 bg-card p-5 sm:p-8 md:p-12 shadow-xl">
               {/* Subtle top right ambient background gradient */}
               <div className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-sage/15 blur-3xl" />
 
@@ -119,6 +121,8 @@ export function Contact() {
               <div className="mt-8 space-y-3">
                 <a
                   href={`mailto:${EMAIL_ADDRESS}`}
+                  target="_blank"
+                  rel="noreferrer"
                   className="group flex w-full items-center justify-between rounded-full bg-brand-deep px-7 py-4 text-sm font-semibold text-background shadow-md transition-all duration-300 hover:bg-brand"
                 >
                   <span className="inline-flex items-center gap-2.5">

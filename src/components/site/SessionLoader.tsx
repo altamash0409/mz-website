@@ -4,16 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const KEY = "cpie:splash-seen";
 
 export function SessionLoader() {
-  const [visible, setVisible] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !sessionStorage.getItem(KEY);
-    }
-    return false;
-  });
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!visible) return;
+    if (sessionStorage.getItem(KEY)) {
+      return;
+    }
 
+    setVisible(true);
     sessionStorage.setItem(KEY, "1");
     document.body.style.overflow = "hidden";
 
@@ -26,12 +24,13 @@ export function SessionLoader() {
       clearTimeout(t);
       document.body.style.overflow = "";
     };
-  }, [visible]);
+  }, []);
 
   return (
     <AnimatePresence>
       {visible ? (
         <motion.div
+          id="initial-splash"
           key="splash"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}

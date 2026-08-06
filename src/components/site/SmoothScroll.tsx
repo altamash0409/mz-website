@@ -1,37 +1,42 @@
-import { useEffect, useRef, type ReactNode } from "react";
-import Lenis from "lenis";
+import { useEffect, type ReactNode } from "react";
 
 declare global {
   interface Window {
-    lenis?: Lenis;
+    lenis?: any;
   }
 }
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
-    // Only initialize on client side and non-touch desktop / mouse pointer for ultra smooth scrolling
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 1.5,
-    });
+    let lenisInstance: any = null;
+    let rafId: number | null = null;
 
-    lenisRef.current = lenis;
-    window.lenis = lenis;
+    import("lenis")
+      .then(({ default: Lenis }) => {
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          touchMultiplier: 1.5,
+        });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+        lenisInstance = lenis;
+        window.lenis = lenis;
 
-    const rafId = requestAnimationFrame(raf);
+        function raf(time: number) {
+          lenis.raf(time);
+          rafId = requestAnimationFrame(raf);
+        }
+
+        rafId = requestAnimationFrame(raf);
+      })
+      .catch((err) => {
+        console.warn("Lenis initialization skipped:", err);
+      });
 
     return () => {
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      if (lenisInstance) lenisInstance.destroy();
       delete window.lenis;
     };
   }, []);

@@ -29,7 +29,7 @@ const STEPS = [
 
 export function Approach() {
   return (
-    <section className="section-pad bg-secondary/50" id="approach">
+    <section className="section-pad bg-background" id="approach">
       <div className="shell grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <div className="lg:sticky lg:top-32">

@@ -22,7 +22,7 @@ import {
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "NetSuite Services & Integrations | cpie" },
+      { title: "Consider Pie" },
       {
         name: "description",
         content:

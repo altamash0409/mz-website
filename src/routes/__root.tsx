@@ -9,7 +9,6 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -85,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "cpie — Oracle NetSuite Consulting & Implementation" },
+      { title: "Consider Pie" },
       {
         name: "description",
         content:
@@ -120,6 +119,11 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(sessionStorage.getItem('cpie:splash-seen')){document.documentElement.classList.add('splash-seen');}}catch(e){}`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
@@ -155,7 +159,7 @@ function RootComponent() {
       if (window.lenis) {
         window.lenis.scrollTo(0, { immediate: true });
       } else {
-        window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+        window.scrollTo(0, 0);
       }
     }
   }, [pathname]);
@@ -165,17 +169,7 @@ function RootComponent() {
       <SmoothScroll>
         <SessionLoader />
         <Navbar />
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={pathname}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+        <Outlet />
         <Footer />
         <FloatingActions />
         <Toaster />

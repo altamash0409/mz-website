@@ -91,15 +91,15 @@ export function AiHighlight() {
       </div>
 
       {/* Bottom SVG Wave Divider */}
-      <div className="w-full overflow-hidden leading-none pointer-events-none -mb-1">
+      <div className="relative w-full overflow-hidden leading-none pointer-events-none -mb-px">
         <svg
-          viewBox="0 0 1440 90"
+          viewBox="0 0 1440 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-12 md:h-20 text-background fill-current"
+          className="relative block w-full h-20 sm:h-28 md:h-36 lg:h-44 text-background fill-current translate-y-[1px]"
           preserveAspectRatio="none"
         >
-          <path d="M0,40 C240,80 460,0 720,40 C980,80 1200,15 1440,50 L1440,90 L0,90 Z"></path>
+          <path d="M0,32 C240,110 480,0 720,65 C960,130 1200,20 1440,75 L1440,140 L0,140 Z"></path>
         </svg>
       </div>
     </section>

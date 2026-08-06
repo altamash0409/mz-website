@@ -64,10 +64,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-7 text-4xl leading-[1.08] font-bold sm:text-5xl lg:text-6xl"
+            className="mt-7 text-3xl leading-[1.1] font-bold sm:text-5xl lg:text-6xl"
           >
             Accelerate Business Growth with{" "}
-            <span className="text-gradient-cherry">cpie</span>
+            <span className="text-gradient-cherry">Consider Pie</span>
           </motion.h1>
 
           <motion.p
@@ -84,7 +84,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-9 flex flex-wrap gap-3"
+            className="mt-9 flex flex-col sm:flex-row flex-wrap gap-3"
           >
             <a
               href="#contact"
@@ -95,7 +95,7 @@ export function Hero() {
                   window.lenis.scrollTo(el);
                 }
               }}
-              className="rounded-full bg-cherry px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-xl shadow-cherry/25 transition-transform hover:scale-[1.03]"
+              className="w-full sm:w-auto text-center rounded-full bg-cherry px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-xl shadow-cherry/25 transition-transform hover:scale-[1.03]"
             >
               Book a Consultation
             </a>
@@ -108,7 +108,7 @@ export function Hero() {
                   window.lenis.scrollTo(el);
                 }
               }}
-              className="rounded-full border border-background/25 px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-background/10"
+              className="w-full sm:w-auto text-center rounded-full border border-background/25 px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-background/10"
             >
               See our approach
             </a>
