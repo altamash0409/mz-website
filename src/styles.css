@@ -216,3 +216,20 @@
   max-width: 78rem;
   padding-inline: clamp(1rem, 4vw, 1.5rem);
 }
+
+@media (max-width: 768px) {
+  /* Optimize heavy GPU blur calculations on mobile devices for smooth 60fps scrolling */
+  .blur-\[140px\],
+  .blur-\[150px\],
+  .blur-\[120px\],
+  .blur-3xl {
+    filter: blur(36px) !important;
+    opacity: 0.5 !important;
+  }
+
+  .backdrop-blur-md,
+  .backdrop-blur-2xl {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}

@@ -8,6 +8,11 @@ declare global {
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
+    // Skip Lenis JS scroll calculation on mobile touch devices for maximum native mobile performance
+    if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768) {
+      return;
+    }
+
     let lenisInstance: any = null;
     let rafId: number | null = null;
 
