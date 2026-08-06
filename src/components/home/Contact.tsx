@@ -34,7 +34,7 @@ export function Contact() {
         <div className="mt-14 grid gap-12 lg:grid-cols-2 items-center">
           {/* Left Column */}
           <Reveal>
-            <p className="text-sm sm:text-base leading-relaxed text-muted-foreground max-w-md">
+            <p className="text-sm sm:text-base leading-relaxed text-foreground font-medium max-w-md">
               Book a free strategy call with our certified NetSuite consultants. We&apos;ll map your
               ERP roadmap and share a transparent proposal within 48 hours.
             </p>
