@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -16,6 +17,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
 import { SessionLoader } from "@/components/site/SessionLoader";
+import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -133,20 +135,52 @@ function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    if (typeof window !== "undefined" && !window.location.hash) {
-      window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = hash.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          setTimeout(() => {
+            if (window.lenis) {
+              window.lenis.scrollTo(el);
+            } else {
+              el.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 80);
+          return;
+        }
+      }
+
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+      }
     }
   }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionLoader />
-      <Navbar />
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-      <Footer />
-      <FloatingActions />
-      <Toaster />
+      <SmoothScroll>
+        <SessionLoader />
+        <Navbar />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            <Outlet />
+          </motion.div>
+        </AnimatePresence>
+        <Footer />
+        <FloatingActions />
+        <Toaster />
+      </SmoothScroll>
     </QueryClientProvider>
   );
 }
+

@@ -31,7 +31,13 @@ export function FloatingActions() {
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.6 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => {
+              if (window.lenis) {
+                window.lenis.scrollTo(0);
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
             aria-label="Back to top"
             className="fixed right-6 bottom-6 z-40 rounded-full bg-brand p-3.5 text-primary-foreground shadow-xl transition-transform hover:scale-110"
           >

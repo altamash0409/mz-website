@@ -1,4 +1,4 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
 import { useEffect, useState } from "react";
@@ -13,6 +13,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -25,9 +26,17 @@ export function Navbar() {
 
   const goContact = () => {
     const el = document.getElementById("contact");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-    else window.location.assign("/#contact");
+    if (el) {
+      if (window.lenis) {
+        window.lenis.scrollTo(el);
+      } else {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate({ to: "/", hash: "contact" });
+    }
   };
+
 
   return (
     <header

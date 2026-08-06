@@ -88,16 +88,31 @@ export function Hero() {
           >
             <a
               href="#contact"
+              onClick={(e) => {
+                const el = document.getElementById("contact");
+                if (el && window.lenis) {
+                  e.preventDefault();
+                  window.lenis.scrollTo(el);
+                }
+              }}
               className="rounded-full bg-cherry px-7 py-3.5 text-sm font-semibold text-accent-foreground shadow-xl shadow-cherry/25 transition-transform hover:scale-[1.03]"
             >
               Book a Consultation
             </a>
             <a
               href="#approach"
+              onClick={(e) => {
+                const el = document.getElementById("approach");
+                if (el && window.lenis) {
+                  e.preventDefault();
+                  window.lenis.scrollTo(el);
+                }
+              }}
               className="rounded-full border border-background/25 px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-background/10"
             >
               See our approach
             </a>
+
           </motion.div>
 
           <motion.ul
