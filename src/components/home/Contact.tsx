@@ -8,19 +8,6 @@ const EMAIL_ADDRESS = "nssupport.in@gmail.com";
 export function Contact() {
   return (
     <section className="relative overflow-hidden section-pad bg-[#FFFFFF]" id="contact">
-      {/* Top Left Corner Only Soft Background Wave */}
-      <div className="pointer-events-none absolute top-0 left-0 w-[420px] sm:w-[540px] h-64 overflow-hidden z-0">
-        <svg
-          viewBox="0 0 540 300"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full text-[#0B1F4B]/[0.03] fill-current"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 L540,0 C400,90 280,240 0,300 Z" />
-        </svg>
-      </div>
-
       <div className="shell relative z-10">
         {/* Section Heading */}
         <Reveal className="text-center max-w-3xl mx-auto">
