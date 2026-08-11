@@ -14,7 +14,6 @@ import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import { SessionLoader } from "@/components/site/SessionLoader";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -121,11 +120,6 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(sessionStorage.getItem('cpie:splash-seen')){document.documentElement.classList.add('splash-seen');}}catch(e){}`,
-          }}
-        />
         <HeadContent />
       </head>
       <body>
@@ -169,7 +163,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SmoothScroll>
-        <SessionLoader />
         <Navbar />
         <Outlet />
         <Footer />
