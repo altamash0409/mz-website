@@ -39,7 +39,7 @@ export function FloatingActions() {
               }
             }}
             aria-label="Back to top"
-            className="fixed right-6 bottom-6 z-40 rounded-full bg-brand p-3.5 text-primary-foreground shadow-xl transition-transform hover:scale-110"
+            className="fixed right-6 bottom-6 z-40 rounded-full bg-[#0B1F4B] p-3.5 text-white shadow-xl transition-all hover:bg-[#16357A] hover:scale-110 cursor-pointer"
           >
             <HiOutlineArrowUp size={20} />
           </motion.button>

@@ -43,7 +43,7 @@ const ITEMS = [
 
 export function Capabilities() {
   return (
-    <section className="section-pad" id="capabilities">
+    <section className="section-pad bg-[#FFFFFF]" id="capabilities">
       <div className="shell">
         <SectionHeading
           eyebrow="Why NetSuite"
@@ -53,13 +53,13 @@ export function Capabilities() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((it, i) => (
             <Reveal key={it.title} delay={i * 0.05}>
-              <article className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:shadow-xl">
-                <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-cherry transition-transform duration-300 group-hover:scale-x-100" />
-                <span className="inline-flex rounded-xl bg-secondary p-3 text-brand">
+              <article className="group relative h-full overflow-hidden rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-7 shadow-[0_8px_25px_rgba(11,31,75,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F4B]">
+                <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-[#0B1F4B] transition-transform duration-300 group-hover:scale-x-100" />
+                <span className="inline-flex rounded-lg bg-[#EAF2F8] p-3 text-[#0B1F4B] transition-colors group-hover:bg-[#0B1F4B] group-hover:text-white">
                   <it.icon size={24} />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold text-foreground">{it.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{it.body}</p>
+                <h3 className="mt-5 text-lg font-semibold text-[#0B1F4B]">{it.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#667085]">{it.body}</p>
               </article>
             </Reveal>
           ))}

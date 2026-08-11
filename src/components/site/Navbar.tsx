@@ -1,6 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
+import { HiOutlineBars3, HiOutlineXMark, HiChevronRight } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 
 const NAV = [
@@ -10,17 +10,9 @@ const NAV = [
 ] as const;
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -37,57 +29,52 @@ export function Navbar() {
     }
   };
 
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-strong shadow-[0_1px_0_0_var(--border)]" : "bg-transparent"
-      }`}
-    >
-      <nav className="shell flex h-18 items-center justify-between py-4">
+    <header className="absolute inset-x-0 top-0 z-50 w-full bg-[#FFFFFF] border-b border-[#E5EBF0] text-[#0B1F4B]">
+      <nav className="shell flex items-center justify-between py-3.5 sm:py-4">
         <Link
           to="/"
-          className={`font-display text-xl font-bold tracking-tight transition-colors ${
-            scrolled ? "text-brand" : "text-background"
-          }`}
+          className="inline-flex items-center shrink-0 transition-opacity hover:opacity-90"
         >
-          c<span className="text-cherry">pie</span>
+          <img
+            src="/logo.png"
+            alt="Consider Pie Logo"
+            className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto object-contain drop-shadow-xs scale-170 sm:scale-190 md:scale-210 lg:scale-225 origin-left translate-y-2.5 sm:translate-y-3.5 md:translate-y-4"
+          />
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
-          {NAV.map((item) => (
-            <li key={item.to}>
-              <Link
-                to={item.to}
-                activeOptions={{ exact: item.to === "/" }}
-                className={`text-sm font-medium transition-colors hover:text-cherry ${
-                  scrolled ? "text-muted-foreground" : "text-background/75"
-                }`}
-                activeProps={{ className: "font-semibold !text-cherry" }}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="hidden items-center gap-6 lg:gap-8 md:flex">
+          <ul className="flex items-center gap-6 lg:gap-8 text-sm font-medium">
+            {NAV.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  activeOptions={{ exact: item.to === "/" }}
+                  className="text-[#0B1F4B] transition-colors hover:text-[#16357A]"
+                  activeProps={{ className: "!text-[#0B1F4B] font-semibold underline decoration-[#0B1F4B] underline-offset-8 decoration-2" }}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        <div className="flex items-center gap-2">
           <button
             onClick={goContact}
-            className="hidden rounded-full bg-cherry px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-cherry/25 transition-transform hover:scale-[1.03] sm:inline-flex"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#0B1F4B] px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition-all hover:bg-[#16357A] cursor-pointer"
           >
-            Book Consultation
-          </button>
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setOpen((v) => !v)}
-            className={`rounded-full border p-2 md:hidden ${
-              scrolled ? "border-border text-brand" : "border-background/25 text-background"
-            }`}
-          >
-            {open ? <HiOutlineXMark size={20} /> : <HiOutlineBars3 size={20} />}
+            <span>Book Consultation</span>
+            <HiChevronRight className="text-base" />
           </button>
         </div>
+
+        <button
+          aria-label="Toggle menu"
+          onClick={() => setOpen((v) => !v)}
+          className="rounded-md border border-[#D9E2EA] p-2 text-[#0B1F4B] md:hidden"
+        >
+          {open ? <HiOutlineXMark size={22} /> : <HiOutlineBars3 size={22} />}
+        </button>
       </nav>
 
       <AnimatePresence>
@@ -96,23 +83,23 @@ export function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="glass-strong overflow-hidden md:hidden"
+            className="bg-[#FFFFFF] overflow-hidden md:hidden border-t border-[#E5EBF0]"
           >
-            <ul className="shell flex flex-col gap-1 py-4">
+            <ul className="shell flex flex-col gap-2 py-5">
               {NAV.map((item) => (
                 <li key={item.to}>
                   <Link
                     to={item.to}
-                    className="block rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-secondary"
+                    className="block rounded-lg px-4 py-2.5 text-base font-medium text-[#0B1F4B] hover:text-[#16357A] hover:bg-[#F5F9FC]"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="pt-2 border-t border-[#E5EBF0]">
                 <button
                   onClick={goContact}
-                  className="mt-2 w-full rounded-full bg-cherry px-5 py-2.5 text-sm font-semibold text-accent-foreground"
+                  className="w-full rounded-lg bg-[#0B1F4B] px-6 py-3 text-base font-semibold text-white hover:bg-[#16357A]"
                 >
                   Book Consultation
                 </button>
@@ -124,3 +111,6 @@ export function Navbar() {
     </header>
   );
 }
+
+
+

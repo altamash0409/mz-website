@@ -35,7 +35,6 @@ export const Route = createFileRoute("/thoughts")({
 });
 
 const CATEGORIES = [
-  "All",
   "ERP Strategy",
   "NetSuite Administration",
   "Engineering",
@@ -124,27 +123,27 @@ const ARTICLES = [
 ];
 
 function ThoughtsPage() {
-  const [active, setActive] = useState<(typeof CATEGORIES)[number]>("All");
+  const [active, setActive] = useState<(typeof CATEGORIES)[number]>("ERP Strategy");
   const [open, setOpen] = useState<(typeof ARTICLES)[number] | null>(null);
 
   const filtered = useMemo(
-    () => (active === "All" ? ARTICLES : ARTICLES.filter((a) => a.category === active)),
+    () => ARTICLES.filter((a) => a.category === active),
     [active],
   );
 
   return (
-    <main>
-      <section className="relative overflow-hidden bg-brand-deep pt-36 pb-24 text-background">
-        <div className="pointer-events-none absolute top-0 left-1/4 h-96 w-96 rounded-full bg-sage/20 blur-[140px]" />
+    <main className="bg-[#F5F9FC]">
+      <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-24 text-[#0B1F4B]">
+        <div className="pointer-events-none absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs font-semibold tracking-widest uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-cherry" /> The cpie journal
+            <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> The cpie journal
             </span>
-            <h1 className="mt-6 text-4xl font-bold sm:text-5xl">
-              Thoughts from the <span className="text-gradient-cherry">Cloud</span>
+            <h1 className="mt-6 text-4xl font-bold text-[#0B1F4B] sm:text-5xl">
+              Thoughts from the <span className="text-[#0B1F4B]">Cloud</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-background/70">
+            <p className="mx-auto mt-6 max-w-2xl text-base text-[#667085]">
               Field notes from live NetSuite engagements — architecture decisions, engineering
               patterns and the operational lessons behind them.
             </p>
@@ -152,17 +151,17 @@ function ThoughtsPage() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad bg-[#F5F9FC]">
         <div className="shell">
           <div className="flex flex-wrap justify-center gap-2">
             {CATEGORIES.map((c) => (
               <button
                 key={c}
                 onClick={() => setActive(c)}
-                className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+                className={`rounded-lg border px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
                   active === c
-                    ? "border-brand bg-brand text-primary-foreground"
-                    : "border-border bg-card text-muted-foreground hover:border-sage hover:text-brand"
+                    ? "border-[#0B1F4B] bg-[#0B1F4B] text-white shadow-xs"
+                    : "border-[#D9E2EA] bg-[#FFFFFF] text-[#667085] hover:border-[#0B1F4B] hover:text-[#0B1F4B]"
                 }`}
               >
                 {c}
@@ -174,19 +173,19 @@ function ThoughtsPage() {
             {filtered.map((a, i) => (
               <article
                 key={a.title}
-                className="group flex h-full cursor-pointer flex-col rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-sage hover:shadow-xl"
+                className="group flex h-full cursor-pointer flex-col rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-7 shadow-[0_8px_25px_rgba(11,31,75,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F4B]"
                 onClick={() => setOpen(a)}
               >
-                <span className="w-fit rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-brand">
+                <span className="w-fit rounded-md bg-[#EAF2F8] px-3 py-1 text-xs font-semibold text-[#0B1F4B]">
                   {a.category}
                 </span>
-                <h2 className="mt-4 text-lg leading-snug font-semibold text-foreground group-hover:text-brand">
+                <h2 className="mt-4 text-lg leading-snug font-semibold text-[#0B1F4B] transition-colors">
                   {a.title}
                 </h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-[#667085]">
                   {a.excerpt}
                 </p>
-                <div className="mt-6 flex items-center gap-4 border-t border-border pt-4 text-xs text-muted-foreground">
+                <div className="mt-6 flex items-center gap-4 border-t border-[#D9E2EA] pt-4 text-xs text-[#667085]">
                   <span className="inline-flex items-center gap-1.5">
                     <HiOutlineClock size={14} /> {a.read}
                   </span>
@@ -198,19 +197,19 @@ function ThoughtsPage() {
       </section>
       <Contact />
       <Dialog open={open !== null} onOpenChange={(o) => !o && setOpen(null)}>
-        <DialogContent className="max-h-[85vh] w-[92vw] max-w-2xl overflow-y-auto rounded-2xl p-5 sm:p-7">
+        <DialogContent className="max-h-[85vh] w-[92vw] max-w-2xl overflow-y-auto rounded-xl p-5 sm:p-7 bg-[#FFFFFF] border-[#D9E2EA] text-[#0B1F4B]">
           <DialogHeader>
-            <span className="w-fit rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-brand">
+            <span className="w-fit rounded-md bg-[#EAF2F8] px-3 py-1 text-xs font-semibold text-[#0B1F4B]">
               {open?.category}
             </span>
-            <DialogTitle className="font-display pt-2 text-2xl leading-snug">
+            <DialogTitle className="font-display pt-2 text-2xl leading-snug text-[#0B1F4B]">
               {open?.title}
             </DialogTitle>
-            <DialogDescription>
+            <DialogDescription className="text-[#667085]">
               {open?.read}
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
+          <div className="space-y-4 text-sm leading-relaxed text-[#667085]">
             {open?.body.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
           </div>
         </DialogContent>

@@ -154,20 +154,19 @@ const INTEGRATIONS = [
 
 function ServicesPage() {
   return (
-    <main>
-      <section className="relative overflow-hidden bg-brand-deep pt-36 pb-24 text-background">
-        <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-sage/20 blur-[140px]" />
-        <div className="pointer-events-none absolute right-0 bottom-0 h-80 w-80 rounded-full bg-cherry/15 blur-[140px]" />
+    <main className="bg-[#F5F9FC]">
+      <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-24 text-[#0B1F4B]">
+        <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs font-semibold tracking-widest uppercase">
-              <span className="h-1.5 w-1.5 rounded-full bg-cherry" /> Services & Integrations
+            <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> Services & Integrations
             </span>
-            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold sm:text-5xl">
+            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold text-[#0B1F4B] sm:text-5xl">
               Enterprise NetSuite Services{" "}
-              <span className="text-gradient-cherry">Engineered for Scale</span>
+              <span className="text-[#0B1F4B]">Engineered for Scale</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-background/70">
+            <p className="mx-auto mt-6 max-w-2xl text-base text-[#667085]">
               From first configuration to the thousandth automated transaction — a single team for
               implementation, engineering, integration and long-term care of your NetSuite account.
             </p>
@@ -175,7 +174,7 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad bg-[#FFFFFF]">
         <div className="shell">
           <SectionHeading
             eyebrow="Core services"
@@ -185,12 +184,12 @@ function ServicesPage() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.05}>
-                <article className="group h-full rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-sage hover:shadow-xl">
-                  <span className="inline-flex rounded-xl bg-secondary p-3 text-brand transition-colors group-hover:bg-cherry group-hover:text-accent-foreground">
+                <article className="group h-full rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 shadow-[0_8px_25px_rgba(11,31,75,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F4B]">
+                  <span className="inline-flex rounded-lg bg-[#EAF2F8] p-3 text-[#0B1F4B] transition-colors group-hover:bg-[#0B1F4B] group-hover:text-white">
                     <s.icon size={22} />
                   </span>
-                  <h3 className="mt-5 text-base font-semibold text-foreground">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                  <h3 className="mt-5 text-base font-semibold text-[#0B1F4B]">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#667085]">{s.body}</p>
                 </article>
               </Reveal>
             ))}
@@ -200,22 +199,22 @@ function ServicesPage() {
 
       <IndustryExpertise />
 
-      <section className="section-pad">
+      <section className="section-pad bg-[#FFFFFF]">
         <div className="shell">
           <SectionHeading
             eyebrow="Integration architecture"
             title="Connected to everything you run"
             subtitle="Resilient, observable data flows with retry logic, alerting and full audit trails."
           />
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-px overflow-hidden rounded-xl border border-[#D9E2EA] bg-[#D9E2EA] sm:grid-cols-2 lg:grid-cols-3">
             {INTEGRATIONS.map((it, i) => (
               <Reveal key={it.name} delay={i * 0.04}>
-                <article className="h-full bg-card p-8 transition-colors hover:bg-secondary/60">
-                  <span className="text-xs font-semibold tracking-widest text-sage uppercase">
+                <article className="h-full bg-[#FFFFFF] p-8 transition-colors hover:bg-[#F5F9FC]">
+                  <span className="text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase">
                     {it.tag}
                   </span>
-                  <h3 className="mt-2 text-lg font-semibold text-foreground">{it.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{it.body}</p>
+                  <h3 className="mt-2 text-lg font-semibold text-[#0B1F4B]">{it.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[#667085]">{it.body}</p>
                 </article>
               </Reveal>
             ))}

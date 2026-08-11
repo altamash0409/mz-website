@@ -39,12 +39,12 @@ export function SectionHeading({
   return (
     <Reveal className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       {eyebrow ? (
-        <span className="inline-flex items-center rounded-full border border-border bg-secondary px-3 py-1 text-xs font-semibold tracking-widest text-brand uppercase">
+        <span className="inline-flex items-center rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-3.5 py-1 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl">{title}</h2>
-      {subtitle ? <p className="mt-4 text-base text-muted-foreground">{subtitle}</p> : null}
+      <h2 className="mt-4 text-3xl font-bold text-[#0B1F4B] sm:text-4xl">{title}</h2>
+      {subtitle ? <p className="mt-4 text-base text-[#667085]">{subtitle}</p> : null}
     </Reveal>
   );
 }

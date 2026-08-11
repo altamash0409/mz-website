@@ -86,24 +86,24 @@ const SECTORS = [
 
 export function IndustryExpertise() {
   return (
-    <section className="section-pad bg-secondary/30" id="industry-expertise">
+    <section className="section-pad bg-[#F5F9FC]" id="industry-expertise">
       <div className="shell">
         {/* Header */}
         <Reveal className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold tracking-widest text-muted-foreground uppercase shadow-xs">
+          <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/50 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0B1F4B]/40 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#0B1F4B]" />
             </span>
             Industry Expertise
           </span>
 
-          <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 font-display text-3xl font-bold tracking-tight text-[#0B1F4B] sm:text-4xl lg:text-5xl">
             Specialized Solutions for{" "}
-            <span className="text-brand">Your Sector</span>
+            <span className="text-[#0B1F4B]">Your Sector</span>
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-sm sm:text-base leading-relaxed text-[#667085] max-w-2xl mx-auto">
             Generic ERP implementations fail because every industry operates differently. We pre-configure
             NetSuite with tailored workflows, KPIs, and compliance rules built for your domain.
           </p>
@@ -115,39 +115,39 @@ export function IndustryExpertise() {
             const Icon = sec.icon;
             return (
               <Reveal key={sec.title} delay={i * 0.06} className="h-full">
-                <article className="group flex h-full flex-col justify-between rounded-[28px] border border-border/80 bg-card p-8 md:p-9 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl">
+                <article className="group flex h-full flex-col justify-between rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-8 md:p-9 shadow-[0_8px_25px_rgba(11,31,75,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#0B1F4B]">
                   <div>
                     {/* Icon Header */}
-                    <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-cherry/10 text-cherry transition-colors group-hover:bg-cherry group-hover:text-accent-foreground">
+                    <div className="flex h-13 w-13 items-center justify-center rounded-lg bg-[#EAF2F8] text-[#0B1F4B] transition-colors group-hover:bg-[#0B1F4B] group-hover:text-white">
                       <Icon size={24} />
                     </div>
 
                     {/* Title */}
-                    <h3 className="mt-6 font-display text-xl font-bold tracking-tight text-foreground">
+                    <h3 className="mt-6 font-display text-xl font-bold tracking-tight text-[#0B1F4B]">
                       {sec.title}
                     </h3>
 
                     {/* Sub-tagline */}
-                    <p className="mt-2 text-xs font-bold tracking-wider text-brand uppercase">
+                    <p className="mt-2 text-xs font-bold tracking-wider text-[#0B1F4B] uppercase">
                       {sec.subTag}
                     </p>
 
                     {/* Description */}
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-4 text-sm leading-relaxed text-[#667085]">
                       {sec.description}
                     </p>
                   </div>
 
                   {/* Bottom Capabilities Checklist */}
                   <div>
-                    <div className="my-6 border-t border-border/60" />
-                    <p className="text-[11px] font-bold tracking-wider text-muted-foreground/80 uppercase mb-3.5">
+                    <div className="my-6 border-t border-[#D9E2EA]" />
+                    <p className="text-[11px] font-bold tracking-wider text-[#667085] uppercase mb-3.5">
                       Key Capabilities:
                     </p>
                     <ul className="space-y-2.5">
                       {sec.capabilities.map((cap) => (
-                        <li key={cap} className="flex items-start gap-2.5 text-xs font-medium text-foreground/85">
-                          <HiOutlineCheckCircle size={16} className="text-brand shrink-0 mt-0.5" />
+                        <li key={cap} className="flex items-start gap-2.5 text-xs font-medium text-[#0B1F4B]">
+                          <HiOutlineCheckCircle size={16} className="text-[#0B1F4B] shrink-0 mt-0.5" />
                           <span>{cap}</span>
                         </li>
                       ))}

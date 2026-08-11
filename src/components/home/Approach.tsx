@@ -29,31 +29,31 @@ const STEPS = [
 
 export function Approach() {
   return (
-    <section className="section-pad bg-background" id="approach">
+    <section className="section-pad bg-[#FFFFFF]" id="approach">
       <div className="shell grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <div className="lg:sticky lg:top-32">
-            <span className="inline-flex items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-semibold tracking-widest text-brand uppercase">
+            <span className="inline-flex items-center rounded-md border border-[#D9E2EA] bg-[#F5F9FC] px-3.5 py-1 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
               Implementation method
             </span>
-            <h2 className="mt-5 text-3xl font-bold text-foreground sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-bold text-[#0B1F4B] sm:text-4xl">
               Our Proven Implementation Approach
             </h2>
-            <p className="mt-4 max-w-md text-base text-muted-foreground">
+            <p className="mt-4 max-w-md text-base text-[#667085]">
               Follow our battle-tested 6-step framework to transform your NetSuite ERP operations.
             </p>
           </div>
         </Reveal>
 
-        <ol className="divide-y divide-border border-y border-border">
+        <ol className="divide-y divide-[#D9E2EA] border-y border-[#D9E2EA]">
           {STEPS.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.06}>
               <li className="group flex gap-6 py-7 transition-colors">
-                <span className="font-display w-8 shrink-0 text-lg font-bold text-cherry tabular-nums">
+                <span className="font-display w-8 shrink-0 text-lg font-bold text-[#0B1F4B] tabular-nums">
                   {i + 1}.
                 </span>
-                <p className="text-base leading-relaxed text-muted-foreground">
-                  <span className="font-semibold text-foreground">{s.title}</span> {s.body}
+                <p className="text-base leading-relaxed text-[#667085]">
+                  <span className="font-semibold text-[#0B1F4B]">{s.title}</span> {s.body}
                 </p>
               </li>
             </Reveal>
