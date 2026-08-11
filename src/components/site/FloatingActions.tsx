@@ -16,10 +16,10 @@ export function FloatingActions() {
   return (
     <>
       <a
-        href="https://wa.me/919167843480?text=Hi%20cpie%2C%20I%27d%20like%20to%20discuss%20a%20NetSuite%20project."
+        href="https://wa.me/919167843480?text=Hi..."
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat with cpie on WhatsApp"
+        aria-label="Chat on WhatsApp"
         className="fixed bottom-6 left-6 z-40 flex h-13 w-13 items-center justify-center rounded-full bg-[oklch(0.72_0.17_145)] p-3.5 text-white shadow-xl transition-transform hover:scale-110"
       >
         <FaWhatsapp size={24} />
