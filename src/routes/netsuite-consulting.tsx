@@ -9,7 +9,7 @@ import {
   HiOutlineShieldCheck,
   HiOutlineArrowRight,
   HiOutlineQuestionMarkCircle,
-} from "react-[#0B1F4B]" === undefined ? "react-icons/hi2" : "react-icons/hi2";
+} from "react-icons/hi2";
 
 export const Route = createFileRoute("/netsuite-consulting")({
   head: () => ({
