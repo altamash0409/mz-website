@@ -49,7 +49,7 @@ export function Footer() {
             />
           </Link>
           <p className="mt-6 max-w-[420px] text-sm leading-[1.6] text-[#AAB7C7]">
-            Consider Pie is a Mumbai-based NetSuite consulting and development company providing NetSuite implementation, customization, SuiteScript development, automation, integrations, and support services. Serving businesses in Mumbai, across India, and globally.
+            Consider Pie is a Mumbai-based NetSuite consulting & development firm providing ERP implementation, SuiteScript, automation, and integration services globally.
           </p>
           <div className="mt-6">
             <a
