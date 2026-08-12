@@ -16,7 +16,7 @@ export function FloatingActions() {
   return (
     <>
       <a
-        href="https://wa.me/919167843480?text=Hi..."
+        href={`https://wa.me/919167843480?text=${encodeURIComponent("Hi, I’m interested in your NetSuite consulting services. I’d like to discuss my requirements and explore how you can help.")}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
