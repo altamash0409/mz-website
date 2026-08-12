@@ -24,11 +24,23 @@ export const Route = createFileRoute("/thoughts")({
         property: "og:description",
         content: "ERP strategy, NetSuite administration, SuiteScript and integration insights.",
       },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/thoughts" },
+      { property: "og:url", content: "https://www.considerpie.com/thoughts" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/thoughts" }],
+    links: [{ rel: "canonical", href: "https://www.considerpie.com/thoughts" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 2, name: "Thoughts", item: "https://www.considerpie.com/thoughts" },
+          ],
+        }),
+      },
+    ],
   }),
   component: ThoughtsPage,
 });

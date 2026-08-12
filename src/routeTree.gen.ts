@@ -12,6 +12,17 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ThoughtsRouteImport } from './routes/thoughts'
+import { Route as NetsuiteConsultingRouteImport } from './routes/netsuite-consulting'
+import { Route as NetsuiteImplementationRouteImport } from './routes/netsuite-implementation'
+import { Route as NetsuiteDevelopmentRouteImport } from './routes/netsuite-development'
+import { Route as SuitescriptDevelopmentRouteImport } from './routes/suitescript-development'
+import { Route as NetsuiteIntegrationRouteImport } from './routes/netsuite-integration'
+import { Route as NetsuiteAutomationRouteImport } from './routes/netsuite-automation'
+import { Route as NetsuiteSupportRouteImport } from './routes/netsuite-support'
+import { Route as NetsuiteCustomizationRouteImport } from './routes/netsuite-customization'
+import { Route as NetsuiteHealthCheckRouteImport } from './routes/netsuite-health-check'
+import { Route as NetsuiteDataMigrationRouteImport } from './routes/netsuite-data-migration'
+import { Route as NetsuiteOneworldConsultingRouteImport } from './routes/netsuite-oneworld-consulting'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
 import { Route as CaseStudiesCustomerStatementAutomationRouteImport } from './routes/case-studies/customer-statement-automation'
 import { Route as CaseStudiesFinanceAutomationJeCreationRouteImport } from './routes/case-studies/finance-automation-je-creation'
@@ -30,6 +41,61 @@ const ServicesRoute = ServicesRouteImport.update({
 const ThoughtsRoute = ThoughtsRouteImport.update({
   id: '/thoughts',
   path: '/thoughts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteConsultingRoute = NetsuiteConsultingRouteImport.update({
+  id: '/netsuite-consulting',
+  path: '/netsuite-consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteImplementationRoute = NetsuiteImplementationRouteImport.update({
+  id: '/netsuite-implementation',
+  path: '/netsuite-implementation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteDevelopmentRoute = NetsuiteDevelopmentRouteImport.update({
+  id: '/netsuite-development',
+  path: '/netsuite-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuitescriptDevelopmentRoute = SuitescriptDevelopmentRouteImport.update({
+  id: '/suitescript-development',
+  path: '/suitescript-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteIntegrationRoute = NetsuiteIntegrationRouteImport.update({
+  id: '/netsuite-integration',
+  path: '/netsuite-integration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteAutomationRoute = NetsuiteAutomationRouteImport.update({
+  id: '/netsuite-automation',
+  path: '/netsuite-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteSupportRoute = NetsuiteSupportRouteImport.update({
+  id: '/netsuite-support',
+  path: '/netsuite-support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteCustomizationRoute = NetsuiteCustomizationRouteImport.update({
+  id: '/netsuite-customization',
+  path: '/netsuite-customization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteHealthCheckRoute = NetsuiteHealthCheckRouteImport.update({
+  id: '/netsuite-health-check',
+  path: '/netsuite-health-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteDataMigrationRoute = NetsuiteDataMigrationRouteImport.update({
+  id: '/netsuite-data-migration',
+  path: '/netsuite-data-migration',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NetsuiteOneworldConsultingRoute = NetsuiteOneworldConsultingRouteImport.update({
+  id: '/netsuite-oneworld-consulting',
+  path: '/netsuite-oneworld-consulting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
@@ -60,6 +126,17 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
   '/thoughts': typeof ThoughtsRoute
+  '/netsuite-consulting': typeof NetsuiteConsultingRoute
+  '/netsuite-implementation': typeof NetsuiteImplementationRoute
+  '/netsuite-development': typeof NetsuiteDevelopmentRoute
+  '/suitescript-development': typeof SuitescriptDevelopmentRoute
+  '/netsuite-integration': typeof NetsuiteIntegrationRoute
+  '/netsuite-automation': typeof NetsuiteAutomationRoute
+  '/netsuite-support': typeof NetsuiteSupportRoute
+  '/netsuite-customization': typeof NetsuiteCustomizationRoute
+  '/netsuite-health-check': typeof NetsuiteHealthCheckRoute
+  '/netsuite-data-migration': typeof NetsuiteDataMigrationRoute
+  '/netsuite-oneworld-consulting': typeof NetsuiteOneworldConsultingRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
@@ -69,6 +146,17 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
   '/thoughts': typeof ThoughtsRoute
+  '/netsuite-consulting': typeof NetsuiteConsultingRoute
+  '/netsuite-implementation': typeof NetsuiteImplementationRoute
+  '/netsuite-development': typeof NetsuiteDevelopmentRoute
+  '/suitescript-development': typeof SuitescriptDevelopmentRoute
+  '/netsuite-integration': typeof NetsuiteIntegrationRoute
+  '/netsuite-automation': typeof NetsuiteAutomationRoute
+  '/netsuite-support': typeof NetsuiteSupportRoute
+  '/netsuite-customization': typeof NetsuiteCustomizationRoute
+  '/netsuite-health-check': typeof NetsuiteHealthCheckRoute
+  '/netsuite-data-migration': typeof NetsuiteDataMigrationRoute
+  '/netsuite-oneworld-consulting': typeof NetsuiteOneworldConsultingRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
@@ -79,6 +167,17 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
   '/thoughts': typeof ThoughtsRoute
+  '/netsuite-consulting': typeof NetsuiteConsultingRoute
+  '/netsuite-implementation': typeof NetsuiteImplementationRoute
+  '/netsuite-development': typeof NetsuiteDevelopmentRoute
+  '/suitescript-development': typeof SuitescriptDevelopmentRoute
+  '/netsuite-integration': typeof NetsuiteIntegrationRoute
+  '/netsuite-automation': typeof NetsuiteAutomationRoute
+  '/netsuite-support': typeof NetsuiteSupportRoute
+  '/netsuite-customization': typeof NetsuiteCustomizationRoute
+  '/netsuite-health-check': typeof NetsuiteHealthCheckRoute
+  '/netsuite-data-migration': typeof NetsuiteDataMigrationRoute
+  '/netsuite-oneworld-consulting': typeof NetsuiteOneworldConsultingRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
@@ -90,6 +189,17 @@ export interface FileRouteTypes {
     | '/'
     | '/services'
     | '/thoughts'
+    | '/netsuite-consulting'
+    | '/netsuite-implementation'
+    | '/netsuite-development'
+    | '/suitescript-development'
+    | '/netsuite-integration'
+    | '/netsuite-automation'
+    | '/netsuite-support'
+    | '/netsuite-customization'
+    | '/netsuite-health-check'
+    | '/netsuite-data-migration'
+    | '/netsuite-oneworld-consulting'
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
     | '/case-studies/landed-cost-automation'
@@ -99,6 +209,17 @@ export interface FileRouteTypes {
     | '/'
     | '/services'
     | '/thoughts'
+    | '/netsuite-consulting'
+    | '/netsuite-implementation'
+    | '/netsuite-development'
+    | '/suitescript-development'
+    | '/netsuite-integration'
+    | '/netsuite-automation'
+    | '/netsuite-support'
+    | '/netsuite-customization'
+    | '/netsuite-health-check'
+    | '/netsuite-data-migration'
+    | '/netsuite-oneworld-consulting'
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
     | '/case-studies/landed-cost-automation'
@@ -108,6 +229,17 @@ export interface FileRouteTypes {
     | '/'
     | '/services'
     | '/thoughts'
+    | '/netsuite-consulting'
+    | '/netsuite-implementation'
+    | '/netsuite-development'
+    | '/suitescript-development'
+    | '/netsuite-integration'
+    | '/netsuite-automation'
+    | '/netsuite-support'
+    | '/netsuite-customization'
+    | '/netsuite-health-check'
+    | '/netsuite-data-migration'
+    | '/netsuite-oneworld-consulting'
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
     | '/case-studies/landed-cost-automation'
@@ -118,6 +250,17 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ServicesRoute: typeof ServicesRoute
   ThoughtsRoute: typeof ThoughtsRoute
+  NetsuiteConsultingRoute: typeof NetsuiteConsultingRoute
+  NetsuiteImplementationRoute: typeof NetsuiteImplementationRoute
+  NetsuiteDevelopmentRoute: typeof NetsuiteDevelopmentRoute
+  SuitescriptDevelopmentRoute: typeof SuitescriptDevelopmentRoute
+  NetsuiteIntegrationRoute: typeof NetsuiteIntegrationRoute
+  NetsuiteAutomationRoute: typeof NetsuiteAutomationRoute
+  NetsuiteSupportRoute: typeof NetsuiteSupportRoute
+  NetsuiteCustomizationRoute: typeof NetsuiteCustomizationRoute
+  NetsuiteHealthCheckRoute: typeof NetsuiteHealthCheckRoute
+  NetsuiteDataMigrationRoute: typeof NetsuiteDataMigrationRoute
+  NetsuiteOneworldConsultingRoute: typeof NetsuiteOneworldConsultingRoute
   CaseStudiesCustomerStatementAutomationRoute: typeof CaseStudiesCustomerStatementAutomationRoute
   CaseStudiesFinanceAutomationJeCreationRoute: typeof CaseStudiesFinanceAutomationJeCreationRoute
   CaseStudiesLandedCostAutomationRoute: typeof CaseStudiesLandedCostAutomationRoute
@@ -145,6 +288,83 @@ declare module '@tanstack/react-router' {
       path: '/thoughts'
       fullPath: '/thoughts'
       preLoaderRoute: typeof ThoughtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-consulting': {
+      id: '/netsuite-consulting'
+      path: '/netsuite-consulting'
+      fullPath: '/netsuite-consulting'
+      preLoaderRoute: typeof NetsuiteConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-implementation': {
+      id: '/netsuite-implementation'
+      path: '/netsuite-implementation'
+      fullPath: '/netsuite-implementation'
+      preLoaderRoute: typeof NetsuiteImplementationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-development': {
+      id: '/netsuite-development'
+      path: '/netsuite-development'
+      fullPath: '/netsuite-development'
+      preLoaderRoute: typeof NetsuiteDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/suitescript-development': {
+      id: '/suitescript-development'
+      path: '/suitescript-development'
+      fullPath: '/suitescript-development'
+      preLoaderRoute: typeof SuitescriptDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-integration': {
+      id: '/netsuite-integration'
+      path: '/netsuite-integration'
+      fullPath: '/netsuite-integration'
+      preLoaderRoute: typeof NetsuiteIntegrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-automation': {
+      id: '/netsuite-automation'
+      path: '/netsuite-automation'
+      fullPath: '/netsuite-automation'
+      preLoaderRoute: typeof NetsuiteAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-support': {
+      id: '/netsuite-support'
+      path: '/netsuite-support'
+      fullPath: '/netsuite-support'
+      preLoaderRoute: typeof NetsuiteSupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-customization': {
+      id: '/netsuite-customization'
+      path: '/netsuite-customization'
+      fullPath: '/netsuite-customization'
+      preLoaderRoute: typeof NetsuiteCustomizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-health-check': {
+      id: '/netsuite-health-check'
+      path: '/netsuite-health-check'
+      fullPath: '/netsuite-health-check'
+      preLoaderRoute: typeof NetsuiteHealthCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-data-migration': {
+      id: '/netsuite-data-migration'
+      path: '/netsuite-data-migration'
+      fullPath: '/netsuite-data-migration'
+      preLoaderRoute: typeof NetsuiteDataMigrationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/netsuite-oneworld-consulting': {
+      id: '/netsuite-oneworld-consulting'
+      path: '/netsuite-oneworld-consulting'
+      fullPath: '/netsuite-oneworld-consulting'
+      preLoaderRoute: typeof NetsuiteOneworldConsultingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies/': {
@@ -182,6 +402,17 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ServicesRoute: ServicesRoute,
   ThoughtsRoute: ThoughtsRoute,
+  NetsuiteConsultingRoute: NetsuiteConsultingRoute,
+  NetsuiteImplementationRoute: NetsuiteImplementationRoute,
+  NetsuiteDevelopmentRoute: NetsuiteDevelopmentRoute,
+  SuitescriptDevelopmentRoute: SuitescriptDevelopmentRoute,
+  NetsuiteIntegrationRoute: NetsuiteIntegrationRoute,
+  NetsuiteAutomationRoute: NetsuiteAutomationRoute,
+  NetsuiteSupportRoute: NetsuiteSupportRoute,
+  NetsuiteCustomizationRoute: NetsuiteCustomizationRoute,
+  NetsuiteHealthCheckRoute: NetsuiteHealthCheckRoute,
+  NetsuiteDataMigrationRoute: NetsuiteDataMigrationRoute,
+  NetsuiteOneworldConsultingRoute: NetsuiteOneworldConsultingRoute,
   CaseStudiesCustomerStatementAutomationRoute:
     CaseStudiesCustomerStatementAutomationRoute,
   CaseStudiesFinanceAutomationJeCreationRoute:

@@ -404,9 +404,79 @@ function CustomerStatementCaseStudyPage() {
 
           <Reveal className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
             <p>
-              The solution created a centralized and configurable process for customer statement generation and distribution. By combining customer-level configuration, saved search processing, Map/Reduce automation, dynamic Excel generation, and subsidiary-specific logic, the business can manage complex statement requirements through a scalable framework.
+              The solution created a centralized and configurable process for customer statement generation and distribution. By combining customer-level configuration, saved search processing,{" "}
+              <Link to="/netsuite-automation" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                NetSuite process automation
+              </Link>
+              , dynamic Excel generation, and{" "}
+              <Link to="/netsuite-oneworld-consulting" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                NetSuite OneWorld multi-subsidiary logic
+              </Link>
+              , the business manages complex global statement requirements powered by custom{" "}
+              <Link to="/suitescript-development" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                SuiteScript 2.x development
+              </Link>
+              .
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* RELATED SERVICES */}
+      <section className="section-pad bg-[#FFFFFF]">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="Related NetSuite Services"
+            subtitle="Explore the underlying practice areas featured in this automation solution."
+          />
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <Reveal>
+              <Link
+                to="/netsuite-automation"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite Automation Services →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Financial reconciliations, automated statement dispatch, and background processing.
+                </p>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.05}>
+              <Link
+                to="/suitescript-development"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  SuiteScript Development →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Governance-safe Map/Reduce batch processing and dynamic file generation.
+                </p>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <Link
+                to="/netsuite-oneworld-consulting"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite OneWorld Consulting →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Multi-subsidiary parameter routing, localized templates, and language controls.
+                </p>
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 

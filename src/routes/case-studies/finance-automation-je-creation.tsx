@@ -2,13 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
 import {
-  HiOutlineDocumentDuplicate,
-  HiOutlineClipboardDocumentCheck,
-  HiOutlineBuildingOffice2,
-  HiOutlineClock,
-  HiOutlineQueueList,
-  HiOutlineShieldCheck,
+  HiOutlineCheckCircle,
   HiOutlineArrowRight,
+  HiOutlineShieldCheck,
+  HiOutlineCalculator,
 } from "react-icons/hi2";
 
 export const Route = createFileRoute(
@@ -22,278 +19,149 @@ export const Route = createFileRoute(
       {
         name: "description",
         content:
-          "Explore a NetSuite financial automation workflow for transaction review, department corrections, and automated journal entry creation.",
+          "Automated journal entry creation for COGS department corrections in NetSuite using Suitelets, Custom Records, and Map/Reduce automation.",
+      },
+      {
+        name: "keywords",
+        content:
+          "NetSuite Journal Entry Automation, COGS Department Correction, SuiteScript Map Reduce, NetSuite Finance Automation",
       },
       {
         property: "og:title",
-        content: "Automated Journal Entry Creation in NetSuite | Consider Pie",
+        content:
+          "Automated Journal Entry Creation for COGS Department Corrections",
       },
       {
         property: "og:description",
         content:
-          "Explore a NetSuite financial automation workflow for transaction review, department corrections, and automated journal entry creation.",
+          "Automated journal entry creation for COGS department corrections in NetSuite using Suitelets, Custom Records, and Map/Reduce automation.",
       },
-      { property: "og:type", content: "website" },
+      { property: "og:type", content: "article" },
       {
         property: "og:url",
-        content: "/case-studies/finance-automation-je-creation",
+        content:
+          "https://www.considerpie.com/case-studies/finance-automation-je-creation",
       },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "/case-studies/finance-automation-je-creation",
+        href: "https://www.considerpie.com/case-studies/finance-automation-je-creation",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.considerpie.com/case-studies" },
+            { "@type": "ListItem", position: 3, name: "Finance Automation JE Creation", item: "https://www.considerpie.com/case-studies/finance-automation-je-creation" },
+          ],
+        }),
       },
     ],
   }),
-  component: FinanceAutomationCaseStudyPage,
+  component: FinanceAutomationCaseStudy,
 });
 
-const TECH_TAGS = [
-  "NetSuite",
-  "SuiteScript 2.x",
-  "Suitelet",
-  "Map/Reduce",
-  "Saved Searches",
-];
-
-const CHALLENGES = [
-  {
-    icon: HiOutlineBuildingOffice2,
-    title: "Department Values Missing or Overwritten",
-    desc: "Department values on COGS transactions overwritten during downstream processing.",
-  },
-  {
-    icon: HiOutlineClipboardDocumentCheck,
-    title: "Manual Review of Affected Transactions",
-    desc: "Finance teams forced to manually inspect line-by-line accounting entries.",
-  },
-  {
-    icon: HiOutlineDocumentDuplicate,
-    title: "COGS Accounting Corrections",
-    desc: "Laborious creation of manual adjustment journal entries at month-end.",
-  },
-  {
-    icon: HiOutlineClock,
-    title: "Month-End Processing Pressure",
-    desc: "Tight accounting close windows impacted by manual reconciliation bottlenecks.",
-  },
-  {
-    icon: HiOutlineQueueList,
-    title: "Large Transaction Volumes",
-    desc: "Processing tens of thousands of lines exceeding UI governance thresholds.",
-  },
-  {
-    icon: HiOutlineShieldCheck,
-    title: "Need for Controlled Review",
-    desc: "Requirement for finance user verification before posting automated adjustments.",
-  },
-];
-
-const PROCESS_STEPS = [
-  { step: "01", title: "Saved Search", desc: "Retrieve transactions needing department fixes" },
-  { step: "02", title: "Suitelet UI", desc: "Render interactive review interface" },
-  { step: "03", title: "Select Criteria", desc: "Filter by subsidiary & posting period" },
-  { step: "04", title: "Generate Data", desc: "Load transaction information for review" },
-  { step: "05", title: "Review Data", desc: "Paginated user verification of entries" },
-  { step: "06", title: "Submit Processing", desc: "Write queue payload to custom record" },
-  { step: "07", title: "Map/Reduce JE Creation", desc: "Execute background journal posting" },
-  { step: "08", title: "Error Handling & Email", desc: "Log exceptions and send email alert" },
-];
-
-const WORKFLOW_STEPS_DETAILED = [
-  {
-    step: "STEP 1 — Identify Transactions",
-    desc: "A saved search retrieves transactions containing the relevant department information.",
-  },
-  {
-    step: "STEP 2 — Select Processing Criteria",
-    desc: "Users select the required subsidiary and posting period through a Suitelet interface.",
-  },
-  {
-    step: "STEP 3 — Generate Information",
-    desc: "The user generates the relevant transaction information for review.",
-  },
-  {
-    step: "STEP 4 — Review the Data",
-    desc: "The Suitelet provides a structured review process before submission. For larger data volumes, pagination is used to support efficient data review.",
-  },
-  {
-    step: "STEP 5 — Submit for Processing",
-    desc: "When the user submits the process, a custom record captures the required processing inputs.",
-  },
-  {
-    step: "STEP 6 — Map/Reduce Processing",
-    desc: "The Map/Reduce script processes the submitted entries and creates the required journal entries.",
-  },
-  {
-    step: "STEP 7 — Error Handling and Completion",
-    desc: "The process includes error handling and sends completion information through email.",
-  },
+const METRICS = [
+  { label: "AUTOMATED CORRECTIONS", value: "100%", sub: "Eliminated manual JE data entry" },
+  { label: "FINANCIAL CONTROL", value: "Review First", sub: "User approval before script execution" },
+  { label: "SCALABILITY", value: "Multi-Threaded", sub: "Map/Reduce background processing" },
 ];
 
 const ARCHITECTURE_NODES = [
-  "Saved Search",
-  "Suitelet Interface",
-  "User Review",
-  "Custom Record",
-  "Map/Reduce Processing",
-  "Journal Entry Creation",
-  "Error Handling",
-  "Email Completion",
+  "Saved Search Filtering",
+  "Suitelet Verification Dashboard",
+  "Staging Custom Record",
+  "Map/Reduce Journal Posting",
 ];
 
-function FinanceAutomationCaseStudyPage() {
+function FinanceAutomationCaseStudy() {
   return (
     <main className="bg-[#F5F9FC]">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-24 text-[#0B1F4B]">
+      <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-20 text-[#0B1F4B]">
         <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
-            <div className="mb-4 flex items-center justify-center">
-              <Link
-                to="/case-studies"
-                className="text-xs font-semibold text-[#667085] hover:text-[#0B1F4B] transition-colors"
-              >
-                ← Back to Case Studies
-              </Link>
-            </div>
-
             <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> FINANCE AUTOMATION
+              <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> CASE STUDY · FINANCE AUTOMATION
             </span>
-
-            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold text-[#0B1F4B] sm:text-5xl">
-              Automating Journal Entry Creation for Department Corrections
+            <h1 className="mx-auto mt-6 max-w-4xl text-3xl font-bold text-[#0B1F4B] sm:text-4xl lg:text-5xl">
+              Automated Journal Entry Creation for COGS Department Corrections
             </h1>
-
-            <p className="mx-auto mt-6 max-w-2xl text-base text-[#667085]">
-              A NetSuite automation workflow designed to identify transactions requiring department corrections, provide a review process, and automate journal entry creation for financial processing.
+            <p className="mx-auto mt-4 max-w-2xl text-base text-[#667085]">
+              Streamlining complex Cost of Goods Sold department reclassifications through controlled Suitelet verification and background Map/Reduce processing.
             </p>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-2">
-              {TECH_TAGS.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-3 py-1 text-xs font-semibold text-[#0B1F4B] shadow-2xs"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* 2. THE CHALLENGE */}
-      <section className="section-pad bg-[#FFFFFF]">
+      {/* METRICS STRIP */}
+      <section className="border-y border-[#D9E2EA] bg-[#FFFFFF] py-10">
         <div className="shell">
-          <SectionHeading
-            eyebrow="Financial Operations Context"
-            title="The Challenge"
-            subtitle="Controlled department corrections for COGS-related transactions."
-          />
-
-          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
-            <p>
-              During financial processing, department values associated with COGS-related transactions can be missing or overwritten as transactions move through purchasing, sales, payment, and downstream processes.
-            </p>
-            <p className="mt-4">
-              As a result, finance teams may need to manually identify affected transactions and perform department corrections through journal entries.
-            </p>
-            <p className="mt-4">
-              The objective was to create a structured automation process to identify relevant transactions, allow users to review the data, and automate the journal entry creation process.
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {CHALLENGES.map((c, i) => (
-              <Reveal key={c.title} delay={i * 0.05}>
-                <article className="h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-sm">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0B1F4B] text-white">
-                    <c.icon size={20} />
+          <div className="grid gap-6 sm:grid-cols-3 text-center">
+            {METRICS.map((m, i) => (
+              <Reveal key={m.label} delay={i * 0.05}>
+                <div className="p-4">
+                  <div className="text-xs font-bold tracking-wider text-[#0B1F4B] uppercase">
+                    {m.label}
                   </div>
-                  <h3 className="mt-4 text-base font-semibold text-[#0B1F4B]">
-                    {c.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-[#667085] leading-relaxed">
-                    {c.desc}
-                  </p>
-                </article>
+                  <div className="mt-2 font-display text-3xl font-bold text-[#0B1F4B]">
+                    {m.value}
+                  </div>
+                  <div className="mt-1 text-xs text-[#667085]">{m.sub}</div>
+                </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. THE SOLUTION & PROCESS FLOW */}
-      <section className="section-pad bg-[#F5F9FC]">
-        <div className="shell">
-          <SectionHeading
-            eyebrow="Workflow Architecture"
-            title="The Solution"
-            subtitle="Structured review Suitelet coupled with asynchronous Map/Reduce journal entry posting."
-          />
-
-          <div className="mt-12">
-            <Reveal>
-              <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 sm:p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
-                <h3 className="text-sm font-bold tracking-wider text-[#0B1F4B] uppercase mb-8 text-center sm:text-left">
-                  Visual Process Flow
-                </h3>
-
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {PROCESS_STEPS.map((ps, idx) => (
-                    <div
-                      key={ps.title}
-                      className="relative flex flex-col justify-between rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-5"
-                    >
-                      <div>
-                        <span className="text-xs font-bold text-[#0B1F4B]">
-                          STEP {ps.step}
-                        </span>
-                        <h4 className="mt-2 text-base font-semibold text-[#0B1F4B]">
-                          {ps.title}
-                        </h4>
-                        <p className="mt-1.5 text-xs text-[#667085] leading-relaxed">
-                          {ps.desc}
-                        </p>
-                      </div>
-                      {idx < PROCESS_STEPS.length - 1 && (
-                        <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#0B1F4B] bg-[#FFFFFF] rounded-full p-1 border border-[#D9E2EA]">
-                          <HiOutlineArrowRight size={14} />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. HOW THE PROCESS WORKS */}
+      {/* 2. EXECUTIVE SUMMARY */}
       <section className="section-pad bg-[#FFFFFF]">
-        <div className="shell">
+        <div className="shell max-w-4xl">
           <SectionHeading
-            eyebrow="Step-by-Step Execution"
-            title="How the Process Works"
-            subtitle="Clear audit trail from data discovery to automated journal entry generation."
+            eyebrow="Overview"
+            title="Executive Summary"
+            subtitle="Automating high-volume department reclassifications while ensuring strict financial governance."
           />
 
-          <div className="mt-12 space-y-4 max-w-4xl">
-            {WORKFLOW_STEPS_DETAILED.map((s, idx) => (
-              <Reveal key={s.step} delay={idx * 0.04}>
-                <div className="rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6">
-                  <span className="text-xs font-bold tracking-wider text-[#0B1F4B] uppercase">
-                    {s.step}
-                  </span>
-                  <p className="mt-2 text-sm font-medium text-[#667085] leading-relaxed">
-                    {s.desc}
-                  </p>
+          <Reveal className="mt-8 text-base leading-relaxed text-[#667085] space-y-4">
+            <p>
+              In multi-subsidiary NetSuite accounts, inventory transactions and Cost of Goods Sold (COGS) postings can occasionally record against default departments instead of line-item specific operational departments. Manually reviewing and creating journal entries to reclassify these transactions is time-consuming and prone to human oversight.
+            </p>
+            <p>
+              Consider Pie designed an enterprise automation framework using NetSuite Saved Searches, a custom Suitelet review dashboard, custom staging records, and a Map/Reduce execution engine to identify, verify, and post department correction journal entries automatically.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3. BUSINESS CHALLENGE */}
+      <section className="section-pad bg-[#F5F9FC]">
+        <div className="shell max-w-4xl">
+          <SectionHeading
+            eyebrow="Challenges"
+            title="The Business Challenge"
+            subtitle="Operational obstacles requiring an automated financial reclassification workflow."
+          />
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            {[
+              { title: "Manual Journal Overhead", desc: "Finance team spending hours manually compiling spreadsheets to create monthly reclassification journal entries." },
+              { title: "Risk of Posting Errors", desc: "Manual line-item entry increased the likelihood of incorrect GL account or department selections." },
+              { title: "Lack of Approval Auditability", desc: "Absence of a centralized interface to verify proposed adjustments before journal creation." },
+              { title: "Governance Timeouts", desc: "Attempting to create hundreds of journal lines synchronously caused UI execution timeouts." },
+            ].map((c, i) => (
+              <Reveal key={c.title} delay={i * 0.05}>
+                <div className="rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 shadow-2xs">
+                  <h3 className="text-base font-bold text-[#0B1F4B]">{c.title}</h3>
+                  <p className="mt-2 text-sm text-[#667085] leading-relaxed">{c.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -301,12 +169,55 @@ function FinanceAutomationCaseStudyPage() {
         </div>
       </section>
 
-      {/* 5. TECHNICAL APPROACH / ARCHITECTURE */}
+      {/* 4. TECHNICAL SOLUTION */}
+      <section className="section-pad bg-[#FFFFFF]">
+        <div className="shell max-w-4xl">
+          <SectionHeading
+            eyebrow="Implementation"
+            title="The Technical Solution"
+            subtitle="Combining NetSuite SuiteScript 2.x components into a controlled three-stage pipeline."
+          />
+
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                step: "01",
+                title: "Identification via Saved Searches",
+                desc: "Optimized saved searches continuously identify COGS transactions where recorded department differs from expected item department parameters.",
+              },
+              {
+                step: "02",
+                title: "Suitelet Verification Dashboard",
+                desc: "A custom Suitelet interface presents eligible transactions to finance managers, allowing line-item selection and confirmation prior to processing.",
+              },
+              {
+                step: "03",
+                title: "Staging Custom Record & Map/Reduce",
+                desc: "Confirmed items generate staging records that trigger a governance-safe Map/Reduce script to post consolidated Journal Entries in background threads.",
+              },
+            ].map((s, i) => (
+              <Reveal key={s.step} delay={i * 0.05}>
+                <div className="flex gap-5 rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 shadow-2xs">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#0B1F4B] text-white font-bold">
+                    {s.step}
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-[#0B1F4B]">{s.title}</h3>
+                    <p className="mt-1.5 text-sm text-[#667085] leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ARCHITECTURE PIPELINE */}
       <section className="section-pad bg-[#F5F9FC]">
         <div className="shell">
           <SectionHeading
-            eyebrow="System Architecture"
-            title="Designed for Controlled Financial Processing"
+            eyebrow="System Design"
+            title="Pipeline Architecture"
             subtitle="Separating data selection, user verification, and background execution for high volumes."
           />
 
@@ -339,7 +250,7 @@ function FinanceAutomationCaseStudyPage() {
 
       {/* 6. THE RESULT */}
       <section className="section-pad bg-[#FFFFFF]">
-        <div className="shell text-center">
+        <div className="shell text-center max-w-4xl">
           <SectionHeading
             eyebrow="Outcome"
             title="The Result"
@@ -348,9 +259,79 @@ function FinanceAutomationCaseStudyPage() {
 
           <Reveal className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
             <p>
-              The solution created a structured workflow for identifying transactions requiring department corrections and automating journal entry creation. By combining saved searches, a Suitelet-based review process, custom records, and Map/Reduce processing, the process supports controlled financial automation while reducing manual processing requirements.
+              The solution created a structured workflow for identifying transactions requiring department corrections and automating journal entry creation. By combining saved searches, a Suitelet-based review process, custom records, and{" "}
+              <Link to="/netsuite-automation" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                NetSuite process automation
+              </Link>
+              , the process supports controlled financial automation built using specialized{" "}
+              <Link to="/suitescript-development" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                SuiteScript development
+              </Link>
+              {" "}and custom{" "}
+              <Link to="/netsuite-development" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                NetSuite custom development services
+              </Link>
+              .
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* RELATED SERVICES */}
+      <section className="section-pad bg-[#F5F9FC]">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="Related NetSuite Services"
+            subtitle="Explore the underlying practice areas featured in this automation solution."
+          />
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <Reveal>
+              <Link
+                to="/netsuite-automation"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite Automation Services →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Automated financial journal creation, GL reclassification, and month-end close automation.
+                </p>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.05}>
+              <Link
+                to="/suitescript-development"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  SuiteScript Development →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Suitelet review dashboards, N/search APIs, and background Map/Reduce script pipelines.
+                </p>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <Link
+                to="/netsuite-development"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite Development Services →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Custom staging record design, field sourcing rules, and enterprise logic.
+                </p>
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 

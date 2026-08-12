@@ -27,11 +27,23 @@ export const Route = createFileRoute("/case-studies/")({
         content:
           "Explore NetSuite automation, development, inventory costing, customer statement, and financial process solutions developed by Consider Pie.",
       },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/case-studies" },
+      { property: "og:url", content: "https://www.considerpie.com/case-studies" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/case-studies" }],
+    links: [{ rel: "canonical", href: "https://www.considerpie.com/case-studies" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.considerpie.com/case-studies" },
+          ],
+        }),
+      },
+    ],
   }),
   component: CaseStudiesIndexPage,
 });

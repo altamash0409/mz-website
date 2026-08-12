@@ -45,11 +45,11 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-4xl font-display text-4xl font-bold leading-[1.12] text-[#0B1F4B] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight"
         >
-          Transform Your Business{" "}
+          NetSuite Consulting &{" "}
           <span className="block sm:inline">
-            with{" "}
+            Solutions in{" "}
             <span className="relative inline-block text-[#0B1F4B] underline decoration-[#0B1F4B] underline-offset-8 decoration-3 sm:decoration-4">
-              NetSuite.
+              Mumbai.
             </span>
           </span>
         </motion.h1>
@@ -61,7 +61,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-[#667085] sm:text-lg md:text-xl font-normal"
         >
-          We help businesses optimize, customize, automate, and integrate NetSuite — turning complex processes into scalable operations.
+          Consider Pie is a Mumbai-based NetSuite consulting and development company helping businesses optimize, customize, automate, integrate, and scale their NetSuite ERP across Mumbai, India, and globally.
         </motion.p>
 
         {/* CTA Buttons */}

@@ -25,10 +25,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://www.considerpie.com/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://www.considerpie.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -36,8 +36,8 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           name: "Consider Pie",
-          url: "https://considerpie.com",
-          logo: "https://considerpie.com/logo.png",
+          url: "https://www.considerpie.com",
+          logo: "https://www.considerpie.com/logo.png",
           description: DESC,
           areaServed: ["Mumbai", "Maharashtra", "India", "Worldwide"],
           address: {

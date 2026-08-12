@@ -93,9 +93,9 @@ export function Contact() {
 
               {/* Headline */}
               <h3 className="mt-6 font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
-                Book a free <span className="text-white">NetSuite</span>
+                Consult Now with <span className="text-white">NetSuite</span>
                 <br />
-                consultation
+                Experts
               </h3>
 
               {/* Description */}
@@ -142,9 +142,9 @@ export function Contact() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-display text-lg font-bold text-white">Free</p>
+                  <p className="font-display text-lg font-bold text-white">Consult</p>
                   <p className="text-[10px] font-bold tracking-wider text-[#D8E1EC] uppercase">
-                    CONSULTATION
+                    NOW
                   </p>
                 </div>
                 <div>

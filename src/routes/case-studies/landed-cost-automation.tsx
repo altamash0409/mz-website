@@ -315,7 +315,11 @@ function LandedCostCaseStudyPage() {
 
           <Reveal className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
             <p>
-              The solution provides a consistent automation framework for retrieving landed cost allocations, calculating effective unit costs, and updating relevant transaction values. This reduces manual calculation effort and improves visibility into effective inventory costs.
+              The automated landed cost calculation workflow established complete financial visibility and inventory accuracy. Built through tailored{" "}
+              <Link to="/netsuite-customization" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
+                NetSuite customization
+              </Link>
+              , this solution reduces manual effort and ensures compliance across all inventory transactions.
             </p>
           </Reveal>
 
@@ -326,6 +330,64 @@ function LandedCostCaseStudyPage() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* RELATED SERVICES */}
+      <section className="section-pad bg-[#FFFFFF]">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="Related NetSuite Services"
+            subtitle="Explore the underlying practice areas featured in this automation solution."
+          />
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <Reveal>
+              <Link
+                to="/netsuite-automation"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite Automation Services →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Automated landed cost allocations, expense distribution, and item receipt processing.
+                </p>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.05}>
+              <Link
+                to="/netsuite-development"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite Development Services →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Custom transaction line logic, Effective Unit Cost recalculation scripts.
+                </p>
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <Link
+                to="/netsuite-customization"
+                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
+              >
+                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
+                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
+                  NetSuite Customization Services →
+                </h3>
+                <p className="mt-1.5 text-xs text-[#667085]">
+                  Custom item receipt body & line fields, custom record allocations.
+                </p>
+              </Link>
+            </Reveal>
+          </div>
         </div>
       </section>
 

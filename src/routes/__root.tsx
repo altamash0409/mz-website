@@ -98,6 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "canonical", href: "https://www.considerpie.com" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -115,6 +116,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/logo.png", type: "image/png", sizes: "192x192" },
       { rel: "apple-touch-icon", href: "/logo.png" },
       { rel: "shortcut icon", href: "/logo.png", type: "image/png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Consider Pie",
+          url: "https://www.considerpie.com",
+          logo: "https://www.considerpie.com/logo.png",
+          sameAs: ["https://www.linkedin.com/in/considerpie-%CF%80-836384421/"],
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "+91-91678-43480",
+            contactType: "customer service",
+            email: "nssupport.in@gmail.com",
+            areaServed: ["IN", "Worldwide"],
+            availableLanguage: ["English", "Hindi"],
+          },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Mumbai",
+            addressRegion: "Maharashtra",
+            addressCountry: "IN",
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
