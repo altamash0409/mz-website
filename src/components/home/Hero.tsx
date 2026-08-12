@@ -1,21 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import {
-  HiOutlineGlobeAlt,
-  HiOutlineCheckBadge,
-  HiOutlineSquare3Stack3D,
-  HiArrowRight,
-} from "react-icons/hi2";
-
-const TRUST = [
-  { icon: HiOutlineCheckBadge, label: "NetSuite Consulting & Development" },
-  { icon: HiOutlineGlobeAlt, label: "Mumbai, India · Serving Globally" },
-  { icon: HiOutlineSquare3Stack3D, label: "Customization · Automation · Integrations" },
-];
+import { HiArrowRight } from "react-icons/hi2";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-24 text-[#0B1F4B] lg:pt-72 lg:pb-32">
+    <section className="relative overflow-hidden bg-[#F5F9FC] min-h-screen min-h-[100dvh] flex flex-col justify-center pt-36 sm:pt-44 pb-16 sm:pb-24 text-[#0B1F4B] lg:pt-48 lg:pb-32">
       {/* Background ambient glow - extremely soft */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[36rem] w-[36rem] sm:h-[48rem] sm:w-[48rem] rounded-full bg-[#0B1F4B]/[0.025] blur-[150px]" />
 
@@ -92,34 +81,6 @@ export function Hero() {
           >
             Explore Our Services
           </Link>
-        </motion.div>
-
-        {/* Trust Badges Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-14 w-full max-w-4xl"
-        >
-          <div className="rounded-2xl border border-[#D9E2EA]/90 bg-white/90 backdrop-blur-xs p-4 sm:p-5 shadow-[0_4px_25px_rgba(11,31,75,0.05)]">
-            <ul className="flex flex-col sm:flex-row items-center justify-around gap-4 sm:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-[#D9E2EA]/60 text-xs sm:text-sm font-medium text-[#475467]">
-              {TRUST.map((t, idx) => (
-                <li
-                  key={t.label}
-                  className={`flex items-center gap-3 w-full sm:w-auto justify-center ${
-                    idx !== 0 ? "pt-3 sm:pt-0 sm:pl-6" : ""
-                  }`}
-                >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EAF2F8] text-[#0B1F4B]">
-                    <t.icon size={18} />
-                  </div>
-                  <span className="text-[#0B1F4B] font-semibold text-center sm:text-left">
-                    {t.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </motion.div>
       </div>
     </section>
