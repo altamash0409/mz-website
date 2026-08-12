@@ -26,13 +26,18 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "NetSuite implementation, SuiteScript 2.1 engineering, integrations, managed admin, data migration and ERP audits — delivered by certified cpie consultants.",
+          "Enterprise Oracle NetSuite implementation, SuiteScript 2.1 engineering, RESTlet integrations, Saved Search reporting, data migration, and ongoing managed support by Consider Pie.",
       },
-      { property: "og:title", content: "Enterprise NetSuite Services Engineered for Scale" },
+      {
+        name: "keywords",
+        content:
+          "NetSuite Services, Oracle NetSuite, NetSuite ERP, SuiteScript 2.1, NetSuite Integration, Saved Search, Script, NetSuite Automation, Business Solutions, RESTlet, SuiteTalk, Managed Support",
+      },
+      { property: "og:title", content: "Enterprise NetSuite Services Engineered for Scale | Consider Pie" },
       {
         property: "og:description",
         content:
-          "Implementation, SuiteScript engineering, integrations and 24/7 managed NetSuite support.",
+          "Implementation, SuiteScript engineering, integrations and ongoing managed NetSuite support.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/services" },
@@ -61,7 +66,7 @@ const SERVICES = [
   },
   {
     icon: HiOutlineLifebuoy,
-    title: "Managed Admin & 24/7 Support",
+    title: "Managed Admin & Ongoing Support",
     body: "SLA-backed administration, release-window regression testing and hypercare for global operations.",
   },
   {
@@ -131,14 +136,14 @@ const INTEGRATIONS = [
     body: "Opportunity-to-cash flow with account, quote and invoice parity between both platforms.",
   },
   {
-    name: "3PL Logistics",
-    tag: "ShipStation · FedEx",
-    body: "Automated shipment creation, rate shopping, label generation and tracking write-back.",
+    name: "HubSpot",
+    tag: "CRM & Inbound",
+    body: "Bi-directional sync for leads, contacts, deals, company records, and lifecycle stage alignment.",
   },
   {
-    name: "Payment Gateways",
-    tag: "Stripe · PayPal",
-    body: "Tokenised payments, automated deposit matching and settlement reconciliation.",
+    name: "SFTP & File Automation",
+    tag: "Batch & Banking",
+    body: "Automated secure file transfers, bank statement processing, CSV imports, and scheduled batch feeds.",
   },
   {
     name: "Custom RESTlets",
@@ -179,7 +184,7 @@ function ServicesPage() {
           <SectionHeading
             eyebrow="Core services"
             title="What we deliver"
-            subtitle="Eight practice areas covering the full lifecycle of an Oracle NetSuite account."
+            subtitle="Eight practice areas covering the full lifecycle of a NetSuite account."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s, i) => (

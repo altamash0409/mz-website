@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "Do you support our account after go-live?",
-    a: "Yes. Every implementation includes a hypercare period, and most clients continue on a managed-services retainer covering administration, release-window regression testing, enhancements and 24x7 incident response.",
+    a: "Yes. Every implementation includes a hypercare period, and most clients continue on a managed-services retainer covering administration, release-window regression testing, enhancements and ongoing incident support.",
   },
   {
     q: "Can you customise NetSuite without breaking upgrades?",
@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: "Which systems can you integrate with NetSuite?",
-    a: "Shopify, Salesforce, Stripe, PayPal, ShipStation, FedEx, and any REST or SOAP-capable platform via RESTlets, SuiteTalk or middleware such as Celigo and Boomi. Every integration ships with idempotent handling, retry logic and monitoring.",
+    a: "Shopify, Salesforce, HubSpot, SFTP pipelines, and any REST or SOAP-capable platform via RESTlets, SuiteTalk or middleware such as Celigo and Boomi. Every integration ships with idempotent handling, retry logic and monitoring.",
   },
   {
     q: "Can you rescue a stalled or failed implementation?",

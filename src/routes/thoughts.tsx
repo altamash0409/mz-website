@@ -8,13 +8,18 @@ import { ARTICLES, Article } from "@/data/articles";
 export const Route = createFileRoute("/thoughts")({
   head: () => ({
     meta: [
-      { title: "Consider Pie — Thoughts from the Cloud" },
+      { title: "Consider Pie" },
       {
         name: "description",
         content:
-          "Field notes on ERP strategy, NetSuite administration, SuiteScript engineering and integration architecture from the cpie consulting team.",
+          "Field notes on NetSuite ERP strategy, SuiteScript 2.x development, saved search optimization, RESTlet integration, and business solution architecture from Consider Pie.",
       },
-      { property: "og:title", content: "Thoughts from the Cloud — cpie" },
+      {
+        name: "keywords",
+        content:
+          "NetSuite Articles, Oracle NetSuite, NetSuite ERP, SuiteScript, Saved Search, NetSuite Integration, NetSuite Automation, Business Solutions, ERP Strategy",
+      },
+      { property: "og:title", content: "Thoughts from the Cloud | Consider Pie" },
       {
         property: "og:description",
         content: "ERP strategy, NetSuite administration, SuiteScript and integration insights.",
@@ -62,7 +67,7 @@ function ThoughtsPage() {
           <div className="text-center">
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> The cpie journal
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> The Consider Pie journal
               </span>
               <h1 className="mt-6 text-4xl font-bold text-[#0B1F4B] sm:text-5xl">
                 Thoughts from the <span className="text-[#0B1F4B]">Cloud</span>

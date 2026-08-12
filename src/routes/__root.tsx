@@ -78,15 +78,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
+      { name: "theme-color", content: "#0B1F4B" },
       { title: "Consider Pie" },
       {
         name: "description",
         content:
-          "Enterprise Oracle NetSuite consulting, SuiteScript engineering and integration services.",
+          "Consider Pie offers enterprise Oracle NetSuite ERP consulting, SuiteScript development, saved search customization, RESTlet/SuiteTalk integration, workflow automation, and business solutions from Mumbai, India.",
       },
-      { name: "author", content: "cpie" },
-      { property: "og:site_name", content: "cpie" },
+      {
+        name: "keywords",
+        content:
+          "NetSuite, Oracle NetSuite, NetSuite ERP, NetSuite Integration, Saved Search, SuiteScript, NetSuite Script, NetSuite Automation, Business Solutions, NetSuite Consulting Mumbai, ERP Implementation, SuiteTalk, RESTlets",
+      },
+      { name: "author", content: "Consider Pie" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:site_name", content: "Consider Pie" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

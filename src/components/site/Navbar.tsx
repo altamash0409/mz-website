@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 const NAV = [
   { to: "/", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/case-studies", label: "Case Studies" },
   { to: "/thoughts", label: "Thoughts from the Cloud" },
 ] as const;
 
@@ -38,7 +39,8 @@ export function Navbar() {
         >
           <img
             src="/logo.png"
-            alt="Consider Pie Logo"
+            alt="Consider Pie - NetSuite Consulting & Development Logo"
+            decoding="async"
             className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto object-contain drop-shadow-xs scale-170 sm:scale-190 md:scale-210 lg:scale-225 origin-left translate-y-2.5 sm:translate-y-3.5 md:translate-y-4"
           />
         </Link>
@@ -61,19 +63,18 @@ export function Navbar() {
 
           <button
             onClick={goContact}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#0B1F4B] px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition-all hover:bg-[#16357A] cursor-pointer"
+            className="rounded-lg bg-[#0B1F4B] px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#16357A] cursor-pointer"
           >
-            <span>Book Consultation</span>
-            <HiChevronRight className="text-base" />
+            Book Consultation
           </button>
         </div>
 
         <button
-          aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="rounded-md border border-[#D9E2EA] p-2 text-[#0B1F4B] md:hidden"
+          className="rounded-lg p-2.5 text-[#0B1F4B] md:hidden cursor-pointer hover:bg-[#F5F9FC]"
+          aria-label="Toggle navigation menu"
         >
-          {open ? <HiOutlineXMark size={22} /> : <HiOutlineBars3 size={22} />}
+          {open ? <HiOutlineXMark size={24} /> : <HiOutlineBars3 size={24} />}
         </button>
       </nav>
 
@@ -90,6 +91,7 @@ export function Navbar() {
                 <li key={item.to}>
                   <Link
                     to={item.to}
+                    onClick={() => setOpen(false)}
                     className="block rounded-lg px-4 py-2.5 text-base font-medium text-[#0B1F4B] hover:text-[#16357A] hover:bg-[#F5F9FC]"
                   >
                     {item.label}

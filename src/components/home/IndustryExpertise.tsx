@@ -15,7 +15,7 @@ const SECTORS = [
     title: "Manufacturing & Assembly",
     subTag: "MULTI-LEVEL BOMS, WORK ORDERS & SUPPLY CHAIN CONTROL",
     description:
-      "Streamline raw material procurement, work-in-progress (WIP) tracking, shop floor execution, and assembly management. cpie builds custom SuiteScripts to calculate actual vs standard production costs in real time.",
+      "Streamline raw material procurement, work-in-progress (WIP) tracking, shop floor execution, and assembly management. Consider Pie builds custom SuiteScripts to calculate actual vs standard production costs in real time.",
     capabilities: [
       "Work Order & Routing Automation",
       "Multi-Level Bill of Materials (BOM)",

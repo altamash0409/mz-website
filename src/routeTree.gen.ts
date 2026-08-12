@@ -12,6 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ThoughtsRouteImport } from './routes/thoughts'
+import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
+import { Route as CaseStudiesCustomerStatementAutomationRouteImport } from './routes/case-studies/customer-statement-automation'
+import { Route as CaseStudiesFinanceAutomationJeCreationRouteImport } from './routes/case-studies/finance-automation-je-creation'
+import { Route as CaseStudiesLandedCostAutomationRouteImport } from './routes/case-studies/landed-cost-automation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +32,96 @@ const ThoughtsRoute = ThoughtsRouteImport.update({
   path: '/thoughts',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
+  id: '/case-studies/',
+  path: '/case-studies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesCustomerStatementAutomationRoute =
+  CaseStudiesCustomerStatementAutomationRouteImport.update({
+    id: '/case-studies/customer-statement-automation',
+    path: '/case-studies/customer-statement-automation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CaseStudiesFinanceAutomationJeCreationRoute =
+  CaseStudiesFinanceAutomationJeCreationRouteImport.update({
+    id: '/case-studies/finance-automation-je-creation',
+    path: '/case-studies/finance-automation-je-creation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CaseStudiesLandedCostAutomationRoute =
+  CaseStudiesLandedCostAutomationRouteImport.update({
+    id: '/case-studies/landed-cost-automation',
+    path: '/case-studies/landed-cost-automation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
   '/thoughts': typeof ThoughtsRoute
+  '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
+  '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
+  '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
   '/thoughts': typeof ThoughtsRoute
+  '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
+  '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
+  '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
+  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/services': typeof ServicesRoute
   '/thoughts': typeof ThoughtsRoute
+  '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
+  '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
+  '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/services' | '/thoughts'
+  fullPaths:
+    | '/'
+    | '/services'
+    | '/thoughts'
+    | '/case-studies/customer-statement-automation'
+    | '/case-studies/finance-automation-je-creation'
+    | '/case-studies/landed-cost-automation'
+    | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/services' | '/thoughts'
-  id: '__root__' | '/' | '/services' | '/thoughts'
+  to:
+    | '/'
+    | '/services'
+    | '/thoughts'
+    | '/case-studies/customer-statement-automation'
+    | '/case-studies/finance-automation-je-creation'
+    | '/case-studies/landed-cost-automation'
+    | '/case-studies'
+  id:
+    | '__root__'
+    | '/'
+    | '/services'
+    | '/thoughts'
+    | '/case-studies/customer-statement-automation'
+    | '/case-studies/finance-automation-je-creation'
+    | '/case-studies/landed-cost-automation'
+    | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ServicesRoute: typeof ServicesRoute
   ThoughtsRoute: typeof ThoughtsRoute
+  CaseStudiesCustomerStatementAutomationRoute: typeof CaseStudiesCustomerStatementAutomationRoute
+  CaseStudiesFinanceAutomationJeCreationRoute: typeof CaseStudiesFinanceAutomationJeCreationRoute
+  CaseStudiesLandedCostAutomationRoute: typeof CaseStudiesLandedCostAutomationRoute
+  CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +147,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThoughtsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/': {
+      id: '/case-studies/'
+      path: '/case-studies'
+      fullPath: '/case-studies/'
+      preLoaderRoute: typeof CaseStudiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/customer-statement-automation': {
+      id: '/case-studies/customer-statement-automation'
+      path: '/case-studies/customer-statement-automation'
+      fullPath: '/case-studies/customer-statement-automation'
+      preLoaderRoute: typeof CaseStudiesCustomerStatementAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/finance-automation-je-creation': {
+      id: '/case-studies/finance-automation-je-creation'
+      path: '/case-studies/finance-automation-je-creation'
+      fullPath: '/case-studies/finance-automation-je-creation'
+      preLoaderRoute: typeof CaseStudiesFinanceAutomationJeCreationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/landed-cost-automation': {
+      id: '/case-studies/landed-cost-automation'
+      path: '/case-studies/landed-cost-automation'
+      fullPath: '/case-studies/landed-cost-automation'
+      preLoaderRoute: typeof CaseStudiesLandedCostAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +182,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ServicesRoute: ServicesRoute,
   ThoughtsRoute: ThoughtsRoute,
+  CaseStudiesCustomerStatementAutomationRoute:
+    CaseStudiesCustomerStatementAutomationRoute,
+  CaseStudiesFinanceAutomationJeCreationRoute:
+    CaseStudiesFinanceAutomationJeCreationRoute,
+  CaseStudiesLandedCostAutomationRoute: CaseStudiesLandedCostAutomationRoute,
+  CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
