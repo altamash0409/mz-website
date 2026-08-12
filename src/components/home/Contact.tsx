@@ -22,7 +22,7 @@ export function Contact() {
           {/* Left Column */}
           <Reveal>
             <p className="text-sm sm:text-base leading-relaxed text-[#667085] font-medium max-w-md">
-              Book a free strategy call with our certified NetSuite consultants. We&apos;ll map your
+              Consult with our NetSuite experts today. We&apos;ll map your
               ERP roadmap and share a transparent proposal within 48 hours.
             </p>
 
