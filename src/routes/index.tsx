@@ -8,7 +8,7 @@ import { TrackRecord } from "@/components/home/TrackRecord";
 import { Faq } from "@/components/home/Faq";
 import { Contact } from "@/components/home/Contact";
 
-const TITLE = "Consider Pie";
+const TITLE = "Consider Pie | Enterprise NetSuite ERP Solutions & SuiteScript Consulting";
 const DESC =
   "Consider Pie is a NetSuite consulting & development firm based in Mumbai, India. We deliver custom SuiteScript development, NetSuite ERP implementation, Saved Search reporting, API integrations, and business automation solutions globally.";
 
@@ -30,6 +30,16 @@ export const Route = createFileRoute("/")({
     ],
     links: [{ rel: "canonical", href: "https://www.considerpie.com/" }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Consider Pie",
+          alternateName: ["ConsiderPie", "Consider Pie NetSuite Solutions", "Consider Pie ERP Solutions"],
+          url: "https://www.considerpie.com/",
+        }),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

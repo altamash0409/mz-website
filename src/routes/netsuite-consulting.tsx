@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import {
   HiOutlineBriefcase,
   HiOutlineCheckCircle,
@@ -59,7 +60,7 @@ export const Route = createFileRoute("/netsuite-consulting")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 1, name: "Consider Pie", item: "https://www.considerpie.com" },
             { "@type": "ListItem", position: 2, name: "Services", item: "https://www.considerpie.com/services" },
             { "@type": "ListItem", position: 3, name: "NetSuite Consulting", item: "https://www.considerpie.com/netsuite-consulting" },
           ],
@@ -109,6 +110,9 @@ function NetSuiteConsultingPage() {
         <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
+            <div className="mb-6 flex justify-center">
+              <Breadcrumbs items={[{ label: "Services", to: "/services" }, { label: "NetSuite Consulting" }]} />
+            </div>
             <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> NETSUITE CONSULTING
             </span>

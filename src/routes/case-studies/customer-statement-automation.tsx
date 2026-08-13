@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import {
   HiOutlineCalendar,
   HiOutlineDocumentText,
@@ -19,7 +20,7 @@ export const Route = createFileRoute(
   head: () => ({
     meta: [
       {
-        title: "Consider Pie",
+        title: "Automated Customer Statement Distribution | NetSuite Case Study | Consider Pie",
       },
       {
         name: "description",
@@ -39,14 +40,28 @@ export const Route = createFileRoute(
       { property: "og:type", content: "website" },
       {
         property: "og:url",
-        content: "/case-studies/customer-statement-automation",
+        content: "https://www.considerpie.com/case-studies/customer-statement-automation",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "/case-studies/customer-statement-automation",
+        href: "https://www.considerpie.com/case-studies/customer-statement-automation",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Consider Pie", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.considerpie.com/case-studies" },
+            { "@type": "ListItem", position: 3, name: "Customer Statement Automation", item: "https://www.considerpie.com/case-studies/customer-statement-automation" },
+          ],
+        }),
       },
     ],
   }),
@@ -153,13 +168,8 @@ function CustomerStatementCaseStudyPage() {
         <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
-            <div className="mb-4 flex items-center justify-center">
-              <Link
-                to="/case-studies"
-                className="text-xs font-semibold text-[#667085] hover:text-[#0B1F4B] transition-colors"
-              >
-                ← Back to Case Studies
-              </Link>
+            <div className="mb-6 flex justify-center">
+              <Breadcrumbs items={[{ label: "Case Studies", to: "/case-studies" }, { label: "Customer Statement Automation" }]} />
             </div>
 
             <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">

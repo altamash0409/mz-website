@@ -2,12 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/site/Reveal";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { Contact } from "@/components/home/Contact";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { HiOutlineArrowRight } from "react-icons/hi2";
 
 export const Route = createFileRoute("/case-studies/")({
   head: () => ({
     meta: [
-      { title: "Consider Pie" },
+      { title: "NetSuite Case Studies & Automation Solutions | Consider Pie" },
       {
         name: "description",
         content:
@@ -38,7 +39,7 @@ export const Route = createFileRoute("/case-studies/")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 1, name: "Consider Pie", item: "https://www.considerpie.com" },
             { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.considerpie.com/case-studies" },
           ],
         }),
@@ -56,6 +57,9 @@ function CaseStudiesIndexPage() {
         <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
+            <div className="mb-6 flex justify-center">
+              <Breadcrumbs items={[{ label: "Case Studies" }]} />
+            </div>
             <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> OUR WORK
             </span>

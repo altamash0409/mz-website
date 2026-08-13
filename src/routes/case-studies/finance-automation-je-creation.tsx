@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import {
   HiOutlineCheckCircle,
   HiOutlineArrowRight,
@@ -14,7 +15,7 @@ export const Route = createFileRoute(
   head: () => ({
     meta: [
       {
-        title: "Consider Pie",
+        title: "Automated Journal Entry Creation | NetSuite Case Study | Consider Pie",
       },
       {
         name: "description",
@@ -29,7 +30,7 @@ export const Route = createFileRoute(
       {
         property: "og:title",
         content:
-          "Automated Journal Entry Creation for COGS Department Corrections",
+          "Automated Journal Entry Creation for COGS Department Corrections | Consider Pie",
       },
       {
         property: "og:description",
@@ -56,7 +57,7 @@ export const Route = createFileRoute(
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 1, name: "Consider Pie", item: "https://www.considerpie.com" },
             { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.considerpie.com/case-studies" },
             { "@type": "ListItem", position: 3, name: "Finance Automation JE Creation", item: "https://www.considerpie.com/case-studies/finance-automation-je-creation" },
           ],
@@ -88,6 +89,9 @@ function FinanceAutomationCaseStudy() {
         <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
+            <div className="mb-6 flex justify-center">
+              <Breadcrumbs items={[{ label: "Case Studies", to: "/case-studies" }, { label: "Finance Automation JE Creation" }]} />
+            </div>
             <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
               <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> CASE STUDY · FINANCE AUTOMATION
             </span>

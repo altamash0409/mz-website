@@ -3,12 +3,13 @@ import { useMemo, useState, useEffect } from "react";
 import { HiOutlineClock, HiArrowRight, HiXMark } from "react-icons/hi2";
 import { Reveal } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
+import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { ARTICLES, Article } from "@/data/articles";
 
 export const Route = createFileRoute("/thoughts")({
   head: () => ({
     meta: [
-      { title: "Consider Pie" },
+      { title: "Thoughts from the Cloud | NetSuite ERP Insights | Consider Pie" },
       {
         name: "description",
         content:
@@ -35,7 +36,7 @@ export const Route = createFileRoute("/thoughts")({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.considerpie.com" },
+            { "@type": "ListItem", position: 1, name: "Consider Pie", item: "https://www.considerpie.com" },
             { "@type": "ListItem", position: 2, name: "Thoughts", item: "https://www.considerpie.com/thoughts" },
           ],
         }),
@@ -78,6 +79,9 @@ function ThoughtsPage() {
         <div className="shell relative">
           <div className="text-center">
             <Reveal>
+              <div className="mb-6 flex justify-center">
+                <Breadcrumbs items={[{ label: "Thoughts from the Cloud" }]} />
+              </div>
               <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> The Consider Pie journal
               </span>

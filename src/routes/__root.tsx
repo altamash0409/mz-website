@@ -123,6 +123,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Consider Pie",
+          alternateName: ["ConsiderPie", "Consider Pie NetSuite Solutions", "Consider Pie ERP Consulting"],
+          url: "https://www.considerpie.com/",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "Organization",
           name: "Consider Pie",
           url: "https://www.considerpie.com",
