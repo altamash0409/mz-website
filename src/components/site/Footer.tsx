@@ -53,7 +53,7 @@ export function Footer() {
           </p>
           <div className="mt-6">
             <a
-              href="https://www.linkedin.com/in/considerpie-%CF%80-836384421/"
+              href="https://www.linkedin.com/company/consider-pie/"
               target="_blank"
               rel="noreferrer"
               aria-label="Consider Pie LinkedIn profile"

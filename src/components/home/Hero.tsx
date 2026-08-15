@@ -4,7 +4,7 @@ import { HiArrowRight } from "react-icons/hi2";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#F5F9FC] min-h-screen min-h-[100dvh] flex flex-col justify-center pt-36 sm:pt-44 pb-16 sm:pb-24 text-[#0B1F4B] lg:pt-48 lg:pb-32">
+    <section className="relative overflow-hidden bg-[#F5F9FC] min-h-screen min-h-[100dvh] flex flex-col justify-center pt-24 sm:pt-32 pb-16 sm:pb-24 text-[#0B1F4B] lg:pt-36 lg:pb-28">
       {/* Background ambient glow - extremely soft */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[36rem] w-[36rem] sm:h-[48rem] sm:w-[48rem] rounded-full bg-[#0B1F4B]/[0.025] blur-[150px]" />
 
@@ -17,14 +17,20 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 inline-flex flex-wrap items-center justify-center gap-2.5 rounded-full border border-[#D9E2EA] bg-white px-4 py-1.5 shadow-[0_2px_8px_rgba(11,31,75,0.04)] text-[10px] font-bold tracking-widest text-[#0B1F4B] uppercase sm:text-xs"
+          className="mb-5 sm:mb-6 inline-flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-1.5 rounded-full border border-[#D9E2EA] bg-white px-3.5 sm:px-4.5 py-1.5 sm:py-2 shadow-[0_2px_8px_rgba(11,31,75,0.04)] text-[9px] min-[380px]:text-[10px] font-bold tracking-widest text-[#0B1F4B] uppercase sm:text-xs"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" />
-          <span>NETSUITE CONSULTING</span>
-          <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" />
-          <span>AUTOMATION</span>
-          <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" />
-          <span>INTEGRATIONS</span>
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B] shrink-0" />
+            <span>NETSUITE CONSULTING</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B] shrink-0" />
+            <span>AUTOMATION</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B] shrink-0" />
+            <span>INTEGRATIONS</span>
+          </span>
         </motion.div>
 
         {/* Main Title */}

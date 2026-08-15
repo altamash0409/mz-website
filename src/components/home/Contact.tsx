@@ -2,7 +2,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { HiOutlineEnvelope, HiOutlineArrowRight } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa6";
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/considerpie-%CF%80-836384421/";
+const LINKEDIN_URL = "https://www.linkedin.com/company/consider-pie/";
 const EMAIL_ADDRESS = "nssupport.in@gmail.com";
 
 export function Contact() {

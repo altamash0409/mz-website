@@ -137,7 +137,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Consider Pie",
           url: "https://www.considerpie.com",
           logo: "https://www.considerpie.com/logo.png",
-          sameAs: ["https://www.linkedin.com/in/considerpie-%CF%80-836384421/"],
+          sameAs: ["https://www.linkedin.com/company/consider-pie/"],
           contactPoint: {
             "@type": "ContactPoint",
             telephone: "+91-91678-43480",
