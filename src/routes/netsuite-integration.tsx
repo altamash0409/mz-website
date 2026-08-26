@@ -118,6 +118,12 @@ function NetSuiteIntegrationPage() {
             subtitle="Robust data pipelines with token-based authentication and full audit trails."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              Our NetSuite integration services combine specialized NetSuite API integration capabilities with custom NetSuite development to drive real-time data sync and cross-platform NetSuite automation. From e-commerce and CRM tools to banking portals and 3PL providers, we build reliable, secure connection pipelines.
+            </p>
+          </Reveal>
+
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {INTEGRATION_TYPES.map((it, i) => (
               <Reveal key={it.name} delay={i * 0.05}>

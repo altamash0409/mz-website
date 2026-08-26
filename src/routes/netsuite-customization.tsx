@@ -118,6 +118,12 @@ function NetSuiteCustomizationPage() {
             subtitle="Clean, upgrade-compatible customizations built on NetSuite best practices."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              As your trusted NetSuite technical consultant, Consider Pie delivers targeted NetSuite customization services that adapt the ERP to your unique business workflows. From custom transaction forms and field sourcing rules to automated SuiteFlow workflows, we ensure your customizations remain clean, maintainable, and fully upgrade-compatible.
+            </p>
+          </Reveal>
+
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {CUSTOMIZATIONS.map((c, i) => (
               <Reveal key={c.name} delay={i * 0.05}>

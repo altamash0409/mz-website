@@ -119,6 +119,12 @@ function NetSuiteImplementationPage() {
             subtitle="Minimizing cutover risk while establishing a scalable NetSuite foundation."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              As your trusted NetSuite partner for enterprise ERP rollout, Consider Pie delivers end-to-end NetSuite implementation services designed for growing enterprises. Combining strategic NetSuite consulting expertise with post-launch NetSuite optimization, we ensure your NetSuite ERP rollout establishes a reliable foundation for long-term growth.
+            </p>
+          </Reveal>
+
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROCESS_STEPS.map((ps, i) => (
               <Reveal key={ps.step} delay={i * 0.05}>

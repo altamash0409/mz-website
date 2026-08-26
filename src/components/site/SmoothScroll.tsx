@@ -8,6 +8,11 @@ declare global {
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
+    // Respect user preference for reduced motion
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     // Skip Lenis JS scroll calculation on mobile touch devices for maximum native mobile performance
     if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth < 768) {
       return;
@@ -19,7 +24,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     import("lenis")
       .then(({ default: Lenis }) => {
         const lenis = new Lenis({
-          duration: 1.2,
+          duration: 0.9,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           smoothWheel: true,
           touchMultiplier: 1.5,

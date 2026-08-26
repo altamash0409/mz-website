@@ -8,9 +8,9 @@ import { TrackRecord } from "@/components/home/TrackRecord";
 import { Faq } from "@/components/home/Faq";
 import { Contact } from "@/components/home/Contact";
 
-const TITLE = "Consider Pie | Enterprise NetSuite ERP Solutions & SuiteScript Consulting";
+const TITLE = "Consider Pie | NetSuite Consulting & Implementation Services";
 const DESC =
-  "Consider Pie is a NetSuite consulting & development firm based in Mumbai, India. We deliver custom SuiteScript development, NetSuite ERP implementation, Saved Search reporting, API integrations, and business automation solutions globally.";
+  "Consider Pie is a NetSuite consulting and development firm. We provide expert NetSuite consultant services, NetSuite implementation services, SuiteScript customization, API integration, and business automation globally.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "NetSuite, Oracle NetSuite, ERP, NetSuite ERP, NetSuite Integration, Saved Search, SuiteScript, NetSuite Script, NetSuite Automation, Business Solutions, NetSuite Consulting, NetSuite Developer Mumbai",
+          "NetSuite, NetSuite consultant, NetSuite consulting, NetSuite consulting services, NetSuite implementation, NetSuite implementation services, NetSuite customization, NetSuite integration, NetSuite development, NetSuite support, NetSuite ERP, NetSuite automation",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },

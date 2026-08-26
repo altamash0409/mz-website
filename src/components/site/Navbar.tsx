@@ -40,7 +40,10 @@ export function Navbar() {
           <img
             src="/logo.png"
             alt="Consider Pie - NetSuite Consulting & Development Logo"
+            fetchPriority="high"
             decoding="async"
+            width={200}
+            height={64}
             className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto object-contain drop-shadow-xs scale-170 sm:scale-190 md:scale-210 lg:scale-225 origin-left translate-y-2.5 sm:translate-y-3.5 md:translate-y-4"
           />
         </Link>

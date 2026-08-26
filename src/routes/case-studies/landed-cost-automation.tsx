@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
@@ -7,8 +7,6 @@ import {
   HiOutlineCube,
   HiOutlineArrowsRightLeft,
   HiOutlineSparkles,
-  HiOutlineArrowRight,
-  HiOutlineCheckCircle,
   HiOutlineDocumentCheck,
   HiOutlineScale,
 } from "react-icons/hi2";
@@ -117,34 +115,11 @@ const WORKFLOW_STEPS = [
   { step: "7", title: "Complete", desc: "Save record with full audit trail" },
 ];
 
-const TRANSACTION_TYPES = [
-  {
-    name: "Item Receipt",
-    sublist: "item sublist",
-    desc: "Inbound inventory receipts from Purchase Orders with vendor freight and duty allocations.",
-  },
-  {
-    name: "Inventory Adjustment",
-    sublist: "inventory sublist",
-    desc: "Manual or automated stock adjustments requiring accurate inventory cost alignment.",
-  },
-  {
-    name: "Transfer Order",
-    sublist: "item sublist",
-    desc: "Inter-location inventory transfers subject to handling, freight, and transit duty charges.",
-  },
-  {
-    name: "Assembly Build / Unbuild",
-    sublist: "component sublist",
-    desc: "Manufacturing work order builds requiring component-level effective unit cost updates.",
-  },
-];
-
 function LandedCostCaseStudyPage() {
   return (
     <main className="bg-[#F5F9FC]">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-24 text-[#0B1F4B]">
+      <section className="relative overflow-hidden bg-[#F5F9FC] pt-56 sm:pt-64 pb-20 text-[#0B1F4B]">
         <div className="pointer-events-none absolute -top-24 left-1/3 h-96 w-96 rounded-full bg-[#0B1F4B]/[0.02] blur-[140px]" />
         <div className="shell relative text-center">
           <Reveal>
@@ -152,15 +127,20 @@ function LandedCostCaseStudyPage() {
               <Breadcrumbs items={[{ label: "Case Studies", to: "/case-studies" }, { label: "Landed Cost Automation" }]} />
             </div>
 
-            <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> INVENTORY & COSTING AUTOMATION
-            </span>
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <span className="inline-flex items-center gap-2 rounded-md border border-[#D9E2EA] bg-[#FFFFFF] px-4 py-1.5 text-xs font-semibold tracking-wider text-[#0B1F4B] uppercase shadow-2xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> INVENTORY & COSTING AUTOMATION
+              </span>
+              <span className="inline-flex items-center rounded-md bg-[#0B1F4B] px-3 py-1.5 text-xs font-bold tracking-wider text-white uppercase shadow-2xs">
+                SCRIPT: SUITESCRIPT 2.X LANDED COST SCRIPT
+              </span>
+            </div>
 
-            <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold text-[#0B1F4B] sm:text-5xl">
+            <h1 className="mx-auto mt-6 max-w-4xl text-3xl font-bold text-[#0B1F4B] sm:text-4xl lg:text-5xl">
               Automated Landed Cost & Effective Unit Cost Calculation
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-base text-[#667085]">
+            <p className="mx-auto mt-4 max-w-2xl text-base text-[#667085]">
               A NetSuite automation solution designed to retrieve applicable landed cost allocations, calculate effective unit costs, and update transaction values automatically.
             </p>
 
@@ -187,7 +167,7 @@ function LandedCostCaseStudyPage() {
             subtitle="Eliminating manual calculation bottlenecks in inventory valuation."
           />
 
-          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+          <Reveal className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-[#667085]">
             <p>
               Additional costs such as freight, duties, and other applicable charges can affect the true cost of inventory. Calculating and applying these costs consistently across transaction lines and multiple transaction types can require manual effort.
             </p>
@@ -216,7 +196,7 @@ function LandedCostCaseStudyPage() {
         </div>
       </section>
 
-      {/* 3. THE SOLUTION & WORKFLOW */}
+      {/* 3. THE SOLUTION */}
       <section className="section-pad bg-[#F5F9FC]">
         <div className="shell">
           <SectionHeading
@@ -228,12 +208,12 @@ function LandedCostCaseStudyPage() {
           <div className="mt-12">
             <Reveal>
               <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 sm:p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
-                <h3 className="text-sm font-bold tracking-wider text-[#0B1F4B] uppercase mb-8 text-center sm:text-left">
+                <h3 className="text-sm font-bold tracking-wider text-[#0B1F4B] uppercase mb-8 text-center">
                   Visual Cost Calculation Workflow
                 </h3>
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {WORKFLOW_STEPS.map((ws, idx) => (
+                  {WORKFLOW_STEPS.map((ws) => (
                     <div
                       key={ws.title}
                       className="relative flex flex-col justify-between rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-5"
@@ -249,11 +229,6 @@ function LandedCostCaseStudyPage() {
                           {ws.desc}
                         </p>
                       </div>
-                      {idx < WORKFLOW_STEPS.length - 1 && (
-                        <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10 text-[#0B1F4B] bg-[#FFFFFF] rounded-full p-1 border border-[#D9E2EA]">
-                          <HiOutlineArrowRight size={14} />
-                        </div>
-                      )}
                     </div>
                   ))}
                 </div>
@@ -263,145 +238,7 @@ function LandedCostCaseStudyPage() {
         </div>
       </section>
 
-      {/* 4. HOW IT WORKS */}
-      <section className="section-pad bg-[#FFFFFF]">
-        <div className="shell">
-          <SectionHeading
-            eyebrow="Detailed Logic"
-            title="How It Works"
-            subtitle="Step-by-step execution path for landed cost allocation and unit cost updates."
-          />
-
-          <div className="mt-12 space-y-4 max-w-4xl">
-            {[
-              {
-                step: "STEP 1 — Identify Transaction",
-                desc: "The automation evaluates the relevant transaction upon creation, modification, or scheduled trigger.",
-              },
-              {
-                step: "STEP 2 — Determine the Correct Sublist",
-                desc: "The script inspects the transaction record type and selects the targeted sublist (item, inventory, or component).",
-              },
-              {
-                step: "STEP 3 — Identify Applicable Lines",
-                desc: "Relevant item or component lines requiring landed cost adjustments are identified for processing.",
-              },
-              {
-                step: "STEP 4 — Retrieve Landed Cost",
-                desc: "Applicable landed cost allocations (freight, duties, customs, handling) are retrieved from linked records or cost categories.",
-              },
-              {
-                step: "STEP 5 — Calculate Effective Unit Cost",
-                desc: "The automation combines the original FX amount and applicable landed cost before calculating the final per-unit cost.",
-              },
-              {
-                step: "STEP 6 — Update the Transaction",
-                desc: "The calculated effective unit cost value is automatically applied directly to the relevant transaction line.",
-              },
-            ].map((s, idx) => (
-              <Reveal key={s.step} delay={idx * 0.04}>
-                <div className="rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6">
-                  <span className="text-xs font-bold tracking-wider text-[#0B1F4B] uppercase">
-                    {s.step}
-                  </span>
-                  <p className="mt-2 text-sm font-medium text-[#667085] leading-relaxed">
-                    {s.desc}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. THE RESULT */}
-      <section className="section-pad bg-[#F5F9FC]">
-        <div className="shell text-center">
-          <SectionHeading
-            eyebrow="Business Value"
-            title="The Result"
-            subtitle="Automated precision and full transparency into effective inventory valuation."
-          />
-
-          <Reveal className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
-            <p>
-              The automated landed cost calculation workflow established complete financial visibility and inventory accuracy. Built through tailored{" "}
-              <Link to="/netsuite-customization" className="font-semibold text-[#0B1F4B] underline hover:text-[#16357A]">
-                NetSuite customization
-              </Link>
-              , this solution reduces manual effort and ensures compliance across all inventory transactions.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.1} className="mx-auto mt-8 max-w-3xl">
-            <div className="rounded-xl border border-[#0B1F4B]/20 bg-[#EAF2F8]/60 p-6 border-l-4 border-l-[#0B1F4B] text-center">
-              <p className="font-display text-lg font-bold text-[#0B1F4B]">
-                "Accurate landed cost. Automated calculation. Consistent cost processing."
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* RELATED SERVICES */}
-      <section className="section-pad bg-[#FFFFFF]">
-        <div className="shell">
-          <SectionHeading
-            eyebrow="Capabilities"
-            title="Related NetSuite Services"
-            subtitle="Explore the underlying practice areas featured in this automation solution."
-          />
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            <Reveal>
-              <Link
-                to="/netsuite-automation"
-                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
-              >
-                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
-                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
-                  NetSuite Automation Services →
-                </h3>
-                <p className="mt-1.5 text-xs text-[#667085]">
-                  Automated landed cost allocations, expense distribution, and item receipt processing.
-                </p>
-              </Link>
-            </Reveal>
-
-            <Reveal delay={0.05}>
-              <Link
-                to="/netsuite-development"
-                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
-              >
-                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
-                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
-                  NetSuite Development Services →
-                </h3>
-                <p className="mt-1.5 text-xs text-[#667085]">
-                  Custom transaction line logic, Effective Unit Cost recalculation scripts.
-                </p>
-              </Link>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <Link
-                to="/netsuite-customization"
-                className="group block h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-xs"
-              >
-                <span className="text-xs font-bold text-[#0B1F4B] uppercase">PRACTICE AREA</span>
-                <h3 className="mt-2 text-base font-bold text-[#0B1F4B] group-hover:text-[#16357A]">
-                  NetSuite Customization Services →
-                </h3>
-                <p className="mt-1.5 text-xs text-[#667085]">
-                  Custom item receipt body & line fields, custom record allocations.
-                </p>
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. CONTACT SECTION */}
+      {/* 4. CONTACT SECTION */}
       <Contact />
     </main>
   );

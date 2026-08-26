@@ -119,6 +119,12 @@ function NetSuiteDataMigrationPage() {
             subtitle="Ensuring strict data integrity and zero financial loss during ERP cutovers."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              Executing a seamless NetSuite migration requires strategic data mapping and strict validation rules. As part of a complete NetSuite implementation or standalone legacy system cutover, our NetSuite consulting team ensures your master records and transaction balances transition accurately into NetSuite ERP.
+            </p>
+          </Reveal>
+
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {MIGRATION_PHASES.map((m, i) => (
               <Reveal key={m.name} delay={i * 0.05}>

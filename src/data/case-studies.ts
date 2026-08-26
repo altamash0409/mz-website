@@ -82,4 +82,25 @@ export const CASE_STUDIES: CaseStudy[] = [
     link: "/case-studies/finance-automation-je-creation",
     icon: HiOutlineDocumentDuplicate,
   },
+  {
+    id: "netsuite-pricing-intelligence",
+    slug: "netsuite-pricing-intelligence",
+    category: "PRICING & REPORTING AUTOMATION",
+    title: "NetSuite Pricing Intelligence & Analysis Solution",
+    fullTitle: "NetSuite Pricing Intelligence & Transaction-Level Analysis Solution",
+    subtitle:
+      "A custom NetSuite reporting solution designed to access complex Pricing Matrix data, compare Base Prices against Customer Price Levels, and process bulk report requests.",
+    shortDescription:
+      "Developed a custom NetSuite reporting solution to analyze Pricing Matrix data, compare Base Prices against Customer Price Levels across transaction types, and manage high-volume report requests.",
+    techTags: [
+      "NetSuite",
+      "SuiteScript 2.x",
+      "Pricing Matrix",
+      "Suitelet",
+      "Scheduled Script",
+      "Excel / CSV Export",
+    ],
+    link: "/case-studies/netsuite-pricing-intelligence",
+    icon: HiOutlineChartBar,
+  },
 ];

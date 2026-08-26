@@ -45,6 +45,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
               itemType="https://schema.org/ListItem"
             >
               <meta itemProp="position" content={String(position)} />
+              <meta itemProp="item" content={itemUrl} />
 
               {index > 0 && (
                 <HiChevronRight
@@ -63,8 +64,6 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
               ) : (
                 <Link
                   to={item.to as any}
-                  itemProp="item"
-                  href={itemUrl}
                   className="inline-flex items-center gap-1 text-[#667085] transition-colors hover:text-[#0B1F4B]"
                 >
                   {index === 0 && <HiOutlineHome size={14} className="shrink-0" />}

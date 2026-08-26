@@ -140,7 +140,7 @@ function NetSuiteConsultingPage() {
               Growing organizations often struggle to translate complex business processes into efficient NetSuite workflows. Without strategic guidance, NetSuite accounts can suffer from performance degradation, redundant customizations, and operational friction.
             </p>
             <p className="mt-4">
-              At Consider Pie, our Mumbai-based NetSuite consultants work closely with your leadership, finance, and operations teams to evaluate your current setup, remove process bottlenecks, and build a sustainable long-term ERP roadmap.
+              At Consider Pie, our dedicated NetSuite technical consultants deliver comprehensive NetSuite ERP consulting and long-term NetSuite optimization. We work closely with your leadership, finance, and operations teams to evaluate your current setup, remove process bottlenecks, and build a sustainable long-term ERP roadmap.
             </p>
           </Reveal>
 

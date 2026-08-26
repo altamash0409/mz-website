@@ -185,17 +185,29 @@
   padding-inline: clamp(1.25rem, 5vw, 2.5rem);
 }
 
+@utility gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+@utility optimize-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
 @media (max-width: 768px) {
   .blur-\[140px\],
   .blur-\[150px\],
   .blur-\[120px\],
   .blur-3xl {
-    filter: blur(36px) !important;
-    opacity: 0.15 !important;
+    filter: blur(24px) !important;
+    opacity: 0.12 !important;
   }
 
   .backdrop-blur-md,
-  .backdrop-blur-2xl {
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }

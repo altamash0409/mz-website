@@ -118,6 +118,12 @@ function NetSuiteSupportPage() {
             subtitle="Keeping your NetSuite environment secure, performant, and aligned with business growth."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              Our NetSuite support services provide reliable, SLA-backed administration and continuous system maintenance. Working alongside an assigned NetSuite consultant, your team gains access to comprehensive NetSuite managed services, proactive incident resolution, and continuous NetSuite optimization.
+            </p>
+          </Reveal>
+
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s, i) => (
               <Reveal key={s.name} delay={i * 0.05}>

@@ -119,6 +119,12 @@ function NetSuiteDevelopmentPage() {
             subtitle="Engineered for performance, governance safety, and upgrade compatibility."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              Our NetSuite technical consultants specialize in advanced NetSuite SuiteScript development and custom NetSuite development services. Whether you need a dedicated NetSuite developer to build custom record architectures, automate complex business logic, or extend native ERP capabilities, we engineer upgrade-safe, governance-compliant code.
+            </p>
+          </Reveal>
+
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {CAPABILITIES.map((cap, i) => (
               <Reveal key={cap} delay={i * 0.04}>

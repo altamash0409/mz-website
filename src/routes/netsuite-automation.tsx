@@ -119,6 +119,12 @@ function NetSuiteAutomationPage() {
             subtitle="Transforming manual administrative procedures into background automated scripts."
           />
 
+          <Reveal className="mt-8 max-w-3xl text-base leading-relaxed text-[#667085]">
+            <p>
+              Our NetSuite automation services streamline critical operations across NetSuite financial management, NetSuite inventory management, and executive decision-making. By automating data flows into custom NetSuite reporting and NetSuite analytics dashboards, we eliminate manual spreadsheet reconciliations and accelerate month-end close.
+            </p>
+          </Reveal>
+
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {AUTOMATIONS.map((auto, i) => (
               <Reveal key={auto.name} delay={i * 0.05}>

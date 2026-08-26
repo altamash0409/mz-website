@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "canonical", href: "https://www.considerpie.com" },
-      { rel: "preload", href: "/logo.png", as: "image", type: "image/png" },
+      { rel: "preload", href: "/logo.png", as: "image", type: "image/png", fetchPriority: "high" },
       {
         rel: "stylesheet",
         href: appCss,

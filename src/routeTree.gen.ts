@@ -27,6 +27,7 @@ import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/inde
 import { Route as CaseStudiesCustomerStatementAutomationRouteImport } from './routes/case-studies/customer-statement-automation'
 import { Route as CaseStudiesFinanceAutomationJeCreationRouteImport } from './routes/case-studies/finance-automation-je-creation'
 import { Route as CaseStudiesLandedCostAutomationRouteImport } from './routes/case-studies/landed-cost-automation'
+import { Route as CaseStudiesNetsuitePricingIntelligenceRouteImport } from './routes/case-studies/netsuite-pricing-intelligence'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -122,6 +123,12 @@ const CaseStudiesLandedCostAutomationRoute =
     path: '/case-studies/landed-cost-automation',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CaseStudiesNetsuitePricingIntelligenceRoute =
+  CaseStudiesNetsuitePricingIntelligenceRouteImport.update({
+    id: '/case-studies/netsuite-pricing-intelligence',
+    path: '/case-studies/netsuite-pricing-intelligence',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -141,6 +148,7 @@ export interface FileRoutesByFullPath {
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
+  '/case-studies/netsuite-pricing-intelligence': typeof CaseStudiesNetsuitePricingIntelligenceRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -161,6 +169,7 @@ export interface FileRoutesByTo {
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
+  '/case-studies/netsuite-pricing-intelligence': typeof CaseStudiesNetsuitePricingIntelligenceRoute
   '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
@@ -182,6 +191,7 @@ export interface FileRoutesById {
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
+  '/case-studies/netsuite-pricing-intelligence': typeof CaseStudiesNetsuitePricingIntelligenceRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
@@ -204,6 +214,7 @@ export interface FileRouteTypes {
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
     | '/case-studies/landed-cost-automation'
+    | '/case-studies/netsuite-pricing-intelligence'
     | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
     | '/case-studies/landed-cost-automation'
+    | '/case-studies/netsuite-pricing-intelligence'
     | '/case-studies'
   id:
     | '__root__'
@@ -244,6 +256,7 @@ export interface FileRouteTypes {
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
     | '/case-studies/landed-cost-automation'
+    | '/case-studies/netsuite-pricing-intelligence'
     | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
@@ -265,6 +278,7 @@ export interface RootRouteChildren {
   CaseStudiesCustomerStatementAutomationRoute: typeof CaseStudiesCustomerStatementAutomationRoute
   CaseStudiesFinanceAutomationJeCreationRoute: typeof CaseStudiesFinanceAutomationJeCreationRoute
   CaseStudiesLandedCostAutomationRoute: typeof CaseStudiesLandedCostAutomationRoute
+  CaseStudiesNetsuitePricingIntelligenceRoute: typeof CaseStudiesNetsuitePricingIntelligenceRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
@@ -396,6 +410,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesLandedCostAutomationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/netsuite-pricing-intelligence': {
+      id: '/case-studies/netsuite-pricing-intelligence'
+      path: '/case-studies/netsuite-pricing-intelligence'
+      fullPath: '/case-studies/netsuite-pricing-intelligence'
+      preLoaderRoute: typeof CaseStudiesNetsuitePricingIntelligenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -419,6 +440,8 @@ const rootRouteChildren: RootRouteChildren = {
   CaseStudiesFinanceAutomationJeCreationRoute:
     CaseStudiesFinanceAutomationJeCreationRoute,
   CaseStudiesLandedCostAutomationRoute: CaseStudiesLandedCostAutomationRoute,
+  CaseStudiesNetsuitePricingIntelligenceRoute:
+    CaseStudiesNetsuitePricingIntelligenceRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 export const routeTree = rootRouteImport
