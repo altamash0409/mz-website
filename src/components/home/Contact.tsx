@@ -3,7 +3,7 @@ import { HiOutlineEnvelope, HiOutlineArrowRight } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa6";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/consider-pie/";
-const EMAIL_ADDRESS = "nssupport.in@gmail.com";
+const EMAIL_ADDRESS = "contact@considerpie.com";
 
 export function Contact() {
   return (

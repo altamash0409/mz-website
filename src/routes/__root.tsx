@@ -142,7 +142,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "@type": "ContactPoint",
             telephone: "+91-91678-43480",
             contactType: "customer service",
-            email: "nssupport.in@gmail.com",
+            email: "contact@considerpie.com",
             areaServed: ["IN", "Worldwide"],
             availableLanguage: ["English", "Hindi"],
           },

@@ -17,7 +17,7 @@ const LEGAL = {
       "Consider Pie collects only the information you voluntarily provide through our consultation forms — name, email, phone, company and message content.",
       "We use this data solely to respond to your enquiry and scope potential NetSuite engagements. We never sell or rent personal data to third parties.",
       "Client ERP data accessed during implementation engagements is governed by a signed NDA and handled under least-privilege access controls inside your own NetSuite account.",
-      "You may request deletion of your enquiry data at any time by writing to nssupport.in@gmail.com.",
+      "You may request deletion of your enquiry data at any time by writing to contact@considerpie.com.",
     ],
   },
   terms: {
@@ -39,16 +39,16 @@ export function Footer() {
       <div className="shell grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr] items-start">
         {/* LEFT COLUMN: Logo, Description, LinkedIn */}
         <div className="flex flex-col items-start">
-          <Link to="/" className="inline-block bg-white/95 px-3 py-2 rounded-xl shadow-md border border-white/20 transition-transform hover:scale-[1.02]">
+          <Link to="/" className="inline-block transition-opacity hover:opacity-90">
             <img
               src="/logo.png"
               alt="Consider Pie NetSuite Consulting Logo"
               loading="lazy"
               decoding="async"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+              className="h-11 sm:h-13 md:h-15 w-auto object-contain brightness-0 invert"
             />
           </Link>
-          <p className="mt-6 max-w-[420px] text-sm leading-[1.6] text-[#AAB7C7]">
+          <p className="mt-3.5 max-w-[420px] text-sm leading-relaxed text-[#AAB7C7]">
             Consider Pie is a Mumbai-based NetSuite consulting & development firm providing ERP implementation, SuiteScript, automation, and integration services globally.
           </p>
           <div className="mt-6">
@@ -117,7 +117,7 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="mailto:nssupport.in@gmail.com"
+                href="mailto:contact@considerpie.com"
                 target="_blank"
                 rel="noreferrer"
                 className="transition-colors duration-200 hover:text-white"
@@ -143,8 +143,8 @@ export function Footer() {
             </div>
             <div className="pt-2 flex items-center gap-2.5 text-xs text-[#AAB7C7]">
               <HiOutlineEnvelope size={16} className="shrink-0 text-white" />
-              <a href="mailto:nssupport.in@gmail.com" className="hover:text-white transition-colors">
-                nssupport.in@gmail.com
+              <a href="mailto:contact@considerpie.com" className="hover:text-white transition-colors">
+                contact@considerpie.com
               </a>
             </div>
           </div>

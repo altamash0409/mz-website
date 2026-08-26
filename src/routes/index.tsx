@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
             addressRegion: "Maharashtra",
             addressCountry: "IN",
           },
-          email: "nssupport.in@gmail.com",
+          email: "contact@considerpie.com",
           telephone: "+91-91678-43480",
           knowsAbout: [
             "Oracle NetSuite ERP Consulting",
