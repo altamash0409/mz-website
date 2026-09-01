@@ -68,7 +68,7 @@ export function Navbar() {
             onClick={goContact}
             className="rounded-lg bg-[#0B1F4B] px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition-colors hover:bg-[#16357A] cursor-pointer"
           >
-            Consult Now
+            Contact Us
           </button>
         </div>
 
@@ -106,7 +106,7 @@ export function Navbar() {
                   onClick={goContact}
                   className="w-full rounded-lg bg-[#0B1F4B] px-6 py-3 text-base font-semibold text-white hover:bg-[#16357A]"
                 >
-                  Consult Now
+                  Contact Us
                 </button>
               </li>
             </ul>

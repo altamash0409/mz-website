@@ -35,7 +35,7 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <section className="section-pad bg-[#F5F9FC]" id="faq">
+    <section className="section-pad bg-[#FFFFFF]" id="faq">
       <div className="shell">
         <SectionHeading
           eyebrow="FAQ"

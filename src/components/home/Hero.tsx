@@ -66,6 +66,13 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
         >
+          <Link
+            to="/services"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-[#D9E2EA] bg-white px-7 py-3.5 text-base font-semibold text-[#0B1F4B] shadow-2xs hover:bg-[#F5F9FC] hover:border-[#0B1F4B] hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Explore Our Services
+          </Link>
+
           <a
             href="#contact"
             onClick={(e) => {
@@ -77,16 +84,9 @@ export function Hero() {
             }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg bg-[#0B1F4B] px-8 py-3.5 text-base font-semibold text-white shadow-xs hover:bg-[#16357A] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
           >
-            <span>Talk to a NetSuite Expert</span>
+            <span>Schedule Free Consultation</span>
             <HiArrowRight className="text-lg" />
           </a>
-
-          <Link
-            to="/services"
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-[#D9E2EA] bg-white px-7 py-3.5 text-base font-semibold text-[#0B1F4B] shadow-2xs hover:bg-[#F5F9FC] hover:border-[#0B1F4B] hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Explore Our Services
-          </Link>
         </motion.div>
       </div>
     </section>

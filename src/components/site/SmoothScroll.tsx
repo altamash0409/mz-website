@@ -1,11 +1,5 @@
 import { useEffect, type ReactNode } from "react";
 
-declare global {
-  interface Window {
-    lenis?: any;
-  }
-}
-
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Respect user preference for reduced motion
