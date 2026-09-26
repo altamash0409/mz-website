@@ -15,22 +15,22 @@ import {
 export const Route = createFileRoute("/netsuite-consulting")({
   head: () => ({
     meta: [
-      { title: "NetSuite Consulting Services in Mumbai | Consider Pie" },
+      { title: "NetSuite Consulting Services & ERP Advisory | Consider Pie" },
       {
         name: "description",
         content:
-          "Consider Pie provides enterprise NetSuite consulting services, ERP strategy, process optimization, and technical guidance from Mumbai, India, serving clients globally.",
+          "Consider Pie provides expert NetSuite consulting services for US & international businesses. ERP requirements, strategy, process optimization, OneWorld advisory, and post-go-live support.",
       },
       {
         name: "keywords",
         content:
-          "NetSuite Consulting Services, NetSuite Consultant Mumbai, NetSuite ERP Consultant, NetSuite Consulting Mumbai, NetSuite Consultant India, ERP Consulting Mumbai",
+          "NetSuite consulting services, NetSuite consultant USA, NetSuite solution provider, NetSuite ERP consultant, NetSuite advisor, NetSuite consulting Mumbai",
       },
-      { property: "og:title", content: "NetSuite Consulting Services in Mumbai | Consider Pie" },
+      { property: "og:title", content: "NetSuite Consulting Services & ERP Advisory | Consider Pie" },
       {
         property: "og:description",
         content:
-          "Enterprise NetSuite consulting services, ERP strategy, process optimization, and technical guidance.",
+          "Enterprise NetSuite consulting services, ERP strategy, process optimization, OneWorld setup, and technical guidance for US & global businesses.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.considerpie.com/netsuite-consulting" },

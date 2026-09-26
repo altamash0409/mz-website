@@ -80,16 +80,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
       { name: "theme-color", content: "#0B1F4B" },
-      { title: "Consider Pie" },
+      { title: "Consider Pie | NetSuite Consulting, Custom Development & Integration" },
       {
         name: "description",
         content:
-          "Consider Pie offers enterprise Oracle NetSuite ERP consulting, SuiteScript development, saved search customization, RESTlet/SuiteTalk integration, workflow automation, and business solutions from Mumbai, India.",
+          "Consider Pie provides expert NetSuite ERP consulting, SuiteScript 2.1 development, RESTlet API integration, and workflow automation for growing US & global businesses from Mumbai, India.",
       },
       {
         name: "keywords",
         content:
-          "NetSuite, Oracle NetSuite, NetSuite ERP, NetSuite Integration, Saved Search, SuiteScript, NetSuite Script, NetSuite Automation, Business Solutions, NetSuite Consulting Mumbai, ERP Implementation, SuiteTalk, RESTlets",
+          "NetSuite consulting services, NetSuite development services, NetSuite integration services, SuiteScript 2.1, NetSuite workflow automation, NetSuite consultant USA, hire NetSuite developer, NetSuite ERP implementation, Consider Pie Mumbai",
       },
       { name: "author", content: "Consider Pie" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
@@ -133,17 +133,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": "ProfessionalService",
           name: "Consider Pie",
           url: "https://www.considerpie.com",
           logo: "https://www.considerpie.com/logo.png",
+          description: "Enterprise NetSuite ERP consulting, custom SuiteScript development, API integration, and workflow automation.",
           sameAs: ["https://www.linkedin.com/company/consider-pie/"],
           contactPoint: {
             "@type": "ContactPoint",
             telephone: "+91-91678-43480",
             contactType: "customer service",
             email: "contact@considerpie.com",
-            areaServed: ["IN", "Worldwide"],
+            areaServed: ["US", "IN", "AE", "SA", "QA", "AU", "GB"],
             availableLanguage: ["English", "Hindi"],
           },
           address: {
@@ -152,6 +153,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressRegion: "Maharashtra",
             addressCountry: "IN",
           },
+          knowsAbout: [
+            "Oracle NetSuite ERP",
+            "SuiteScript 2.1",
+            "RESTlet API Integration",
+            "SuiteFlow Automation",
+            "NetSuite Customization",
+            "NetSuite OneWorld Consulting"
+          ]
         }),
       },
     ],

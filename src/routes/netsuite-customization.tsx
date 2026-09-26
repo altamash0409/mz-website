@@ -11,22 +11,22 @@ import {
 export const Route = createFileRoute("/netsuite-customization")({
   head: () => ({
     meta: [
-      { title: "NetSuite Customization Services | Custom Workflows | Consider Pie" },
+      { title: "NetSuite Customization Services & Custom Fields | Consider Pie" },
       {
         name: "description",
         content:
-          "Tailored NetSuite customization services. Modify standard transaction forms, build custom records, configure custom fields, and align NetSuite with your business.",
+          "Tailored NetSuite customization services. Modify standard transaction forms, build custom records, configure custom fields, Advanced PDF/HTML templates, and role dashboards.",
       },
       {
         name: "keywords",
         content:
-          "NetSuite Customization Services, NetSuite Custom Development, NetSuite Custom Workflows, NetSuite Custom Scripts, NetSuite Customization Mumbai",
+          "netsuite customization services, netsuite custom records, netsuite custom fields, netsuite custom forms, advanced pdf templates, netsuite saved searches",
       },
-      { property: "og:title", content: "NetSuite Customization Services | Custom Workflows | Consider Pie" },
+      { property: "og:title", content: "NetSuite Customization Services & Custom Fields | Consider Pie" },
       {
         property: "og:description",
         content:
-          "Tailored NetSuite customization services. Modify transaction forms, custom records, custom fields, and business logic.",
+          "Tailored NetSuite customization services: custom records, custom fields, forms, dashboards, Advanced PDF templates, and custom searches.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.considerpie.com/netsuite-customization" },

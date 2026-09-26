@@ -11,22 +11,22 @@ import {
 export const Route = createFileRoute("/netsuite-integration")({
   head: () => ({
     meta: [
-      { title: "NetSuite Integration Services | RESTlet & SuiteTalk API | Consider Pie" },
+      { title: "NetSuite Integration Services & API Connectors | Consider Pie" },
       {
         name: "description",
         content:
-          "NetSuite API integration services connecting NetSuite ERP with e-commerce, CRM, banking, 3PL logistics, and custom applications via RESTlets and SuiteTalk.",
+          "Enterprise NetSuite integration services. Seamlessly connect NetSuite ERP with Salesforce, Shopify, HubSpot, 3PL logistics, and custom APIs via RESTlets & SuiteTalk.",
       },
       {
         name: "keywords",
         content:
-          "NetSuite Integration Services, NetSuite API Integration, NetSuite REST API Integration, SuiteTalk Integration, NetSuite Web Services, Third-Party NetSuite Integration",
+          "netsuite integration services, netsuite api integration company, netsuite integration company near me, netsuite salesforce integration, netsuite shopify integration, netsuite 3pl integration, restlet integration",
       },
-      { property: "og:title", content: "NetSuite Integration Services | RESTlet & SuiteTalk API | Consider Pie" },
+      { property: "og:title", content: "NetSuite Integration Services & API Connectors | Consider Pie" },
       {
         property: "og:description",
         content:
-          "NetSuite API integration services connecting NetSuite ERP with e-commerce, CRM, banking, and custom systems.",
+          "Enterprise NetSuite API integration services connecting NetSuite ERP with e-commerce, CRM, 3PL, EDI, and custom API ecosystems.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.considerpie.com/netsuite-integration" },

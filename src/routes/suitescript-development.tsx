@@ -12,22 +12,22 @@ import {
 export const Route = createFileRoute("/suitescript-development")({
   head: () => ({
     meta: [
-      { title: "SuiteScript Development Services | NetSuite Scripting | Consider Pie" },
+      { title: "SuiteScript 2.1 Development Services | NetSuite Scripting | Consider Pie" },
       {
         name: "description",
         content:
-          "SuiteScript 2.x development services including User Event, Scheduled, Map/Reduce, and Suitelet scripts engineered for governance-safe NetSuite execution.",
+          "Expert SuiteScript 2.1 development services. Custom Suitelets, User Event, Client Scripts, Map/Reduce, Scheduled Scripts, and RESTlets engineered for enterprise governance.",
       },
       {
         name: "keywords",
         content:
-          "SuiteScript Development Services, SuiteScript Developer Mumbai, NetSuite SuiteScript Developer, NetSuite Custom Scripts, SuiteScript 2.x Development, Map/Reduce Development, Suitelet Development",
+          "netsuite suitescript development, suitescript 2.1, suitelet development, map reduce script, user event script, restlet development, hire suitescript developer",
       },
-      { property: "og:title", content: "SuiteScript Development Services | NetSuite Scripting | Consider Pie" },
+      { property: "og:title", content: "SuiteScript 2.1 Development Services | NetSuite Scripting | Consider Pie" },
       {
         property: "og:description",
         content:
-          "SuiteScript 2.x development services including User Event, Scheduled, Map/Reduce, and Suitelet scripts.",
+          "Expert SuiteScript 2.1 development services: User Event, Scheduled, Map/Reduce, and Suitelet scripts engineered for governance-safe NetSuite execution.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.considerpie.com/suitescript-development" },

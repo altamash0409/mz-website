@@ -12,22 +12,22 @@ import {
 export const Route = createFileRoute("/netsuite-automation")({
   head: () => ({
     meta: [
-      { title: "NetSuite Automation Services | Workflow & Process Automation | Consider Pie" },
+      { title: "NetSuite Automation Services & Workflow Optimization | Consider Pie" },
       {
         name: "description",
         content:
-          "NetSuite workflow & process automation services. We automate financial reconciliations, customer statements, landed cost, and intercompany transactions.",
+          "Enterprise NetSuite automation services. Automate repetitive business processes, SuiteFlow approvals, transaction workflows, financial reconciliations, and GL entries.",
       },
       {
         name: "keywords",
         content:
-          "NetSuite Automation Services, NetSuite Workflow Automation, NetSuite Business Process Automation, NetSuite Financial Automation, NetSuite Process Automation",
+          "netsuite automation services, netsuite workflow automation, how to automate netsuite workflows, suiteflow automation, netsuite financial automation",
       },
-      { property: "og:title", content: "NetSuite Automation Services | Workflow & Process Automation | Consider Pie" },
+      { property: "og:title", content: "NetSuite Automation Services & Workflow Optimization | Consider Pie" },
       {
         property: "og:description",
         content:
-          "NetSuite workflow & process automation services. We automate financial reconciliations, customer statements, landed cost, and intercompany transactions.",
+          "Enterprise NetSuite automation solutions: SuiteFlow approvals, scheduled Map/Reduce scripts, transaction automation, and pricing intelligence engines.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.considerpie.com/netsuite-automation" },

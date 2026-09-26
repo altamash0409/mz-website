@@ -8,9 +8,9 @@ import { TrackRecord } from "@/components/home/TrackRecord";
 import { Faq } from "@/components/home/Faq";
 import { Contact } from "@/components/home/Contact";
 
-const TITLE = "Consider Pie | NetSuite Consulting & Implementation Services";
+const TITLE = "NetSuite Consulting, Custom Development & Integration | Consider Pie";
 const DESC =
-  "Consider Pie is a NetSuite consulting and development firm. We provide expert NetSuite consultant services, NetSuite implementation services, SuiteScript customization, API integration, and business automation globally.";
+  "Consider Pie provides expert NetSuite consulting, custom SuiteScript 2.1 development, RESTlet API integrations, and workflow automation. Based in Mumbai, India, serving US & global businesses.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "NetSuite, NetSuite consultant, NetSuite consulting, NetSuite consulting services, NetSuite implementation, NetSuite implementation services, NetSuite customization, NetSuite integration, NetSuite development, NetSuite support, NetSuite ERP, NetSuite automation",
+          "NetSuite consulting, NetSuite development, NetSuite integration, NetSuite automation, SuiteScript development, NetSuite consultant USA, hire NetSuite developer, NetSuite solution provider, NetSuite customization, Consider Pie",
       },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
           url: "https://www.considerpie.com",
           logo: "https://www.considerpie.com/logo.png",
           description: DESC,
-          areaServed: ["Mumbai", "Maharashtra", "India", "Worldwide"],
+          areaServed: ["United States", "UAE", "Saudi Arabia", "Qatar", "Australia", "United Kingdom", "India"],
           address: {
             "@type": "PostalAddress",
             addressLocality: "Mumbai",
@@ -60,14 +60,14 @@ export const Route = createFileRoute("/")({
           telephone: "+91-91678-43480",
           knowsAbout: [
             "Oracle NetSuite ERP Consulting",
-            "NetSuite SuiteScript 2.x Development",
+            "NetSuite SuiteScript 2.1 Development",
             "NetSuite Advanced Saved Search",
             "NetSuite RESTlet & SuiteTalk Integration",
             "NetSuite Workflow Automation",
             "NetSuite Enterprise Business Solutions",
             "NetSuite Customization & Support",
           ],
-          serviceType: "NetSuite ERP Consulting, SuiteScript Development, Integration & Business Solutions",
+          serviceType: "NetSuite ERP Consulting, SuiteScript Development, Integration & Business Automation",
         }),
       },
     ],

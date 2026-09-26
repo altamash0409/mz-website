@@ -12,22 +12,22 @@ import {
 export const Route = createFileRoute("/netsuite-development")({
   head: () => ({
     meta: [
-      { title: "NetSuite Development Services | Custom ERP Solutions | Consider Pie" },
+      { title: "NetSuite Development Services & Custom Engineering | Consider Pie" },
       {
         name: "description",
         content:
-          "Custom NetSuite development services in Mumbai. We build tailored SuiteScript applications, custom records, and complex business logic for enterprise scale.",
+          "Enterprise NetSuite development services. Hire experienced NetSuite developers for custom SuiteScript 2.1, RESTlets, custom records, and complex business logic.",
       },
       {
         name: "keywords",
         content:
-          "NetSuite Development Services, NetSuite Developer Mumbai, Custom NetSuite Development, NetSuite Development Company, NetSuite Custom Development",
+          "netsuite development services, netsuite development company, hire netsuite developer, outsource netsuite development, suitescript development, netsuite custom development",
       },
-      { property: "og:title", content: "NetSuite Development Services | Custom ERP Solutions | Consider Pie" },
+      { property: "og:title", content: "NetSuite Development Services & Custom Engineering | Consider Pie" },
       {
         property: "og:description",
         content:
-          "Custom NetSuite development services, SuiteScript engineering, custom record architectures, and complex logic.",
+          "Custom NetSuite development services, SuiteScript 2.1 engineering, RESTlets, custom record architectures, and complex enterprise logic.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://www.considerpie.com/netsuite-development" },
