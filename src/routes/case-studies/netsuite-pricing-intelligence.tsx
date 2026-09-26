@@ -9,6 +9,10 @@ import {
   HiOutlineClock,
   HiOutlineFunnel,
   HiOutlineInbox,
+  HiOutlineCheckCircle,
+  HiOutlineArrowTrendingUp,
+  HiOutlineShieldCheck,
+  HiOutlineSquares2X2,
 } from "react-icons/hi2";
 
 export const Route = createFileRoute(
@@ -22,12 +26,7 @@ export const Route = createFileRoute(
       {
         name: "description",
         content:
-          "Explore a custom NetSuite reporting solution designed to access Pricing Matrix data, compare Base Prices against Customer Price Levels, and automate bulk report generation.",
-      },
-      {
-        name: "keywords",
-        content:
-          "NetSuite Pricing Matrix, Customer Price Level, NetSuite Pricing Intelligence, SuiteScript Reporting, NetSuite Invoice Analysis, Credit Memo Pricing, Bulk Report Processing",
+          "Explore a NetSuite reporting solution designed to evaluate transaction-level pricing, compare Base Prices against Customer Price Levels, and support commercial decision-making.",
       },
       {
         property: "og:title",
@@ -37,7 +36,7 @@ export const Route = createFileRoute(
       {
         property: "og:description",
         content:
-          "Explore a custom NetSuite reporting solution designed to access Pricing Matrix data, compare Base Prices against Customer Price Levels, and automate bulk report generation.",
+          "Explore a NetSuite reporting solution designed to evaluate transaction-level pricing, compare Base Prices against Customer Price Levels, and support commercial decision-making.",
       },
       { property: "og:type", content: "article" },
       {
@@ -72,12 +71,10 @@ export const Route = createFileRoute(
 });
 
 const TECH_TAGS = [
-  "NetSuite",
-  "SuiteScript 2.x",
-  "Pricing Matrix",
-  "Suitelet",
-  "Scheduled Script",
-  "Excel / CSV Export",
+  "NetSuite ERP",
+  "Pricing Matrix Analysis",
+  "Commercial Intelligence",
+  "Executive Reporting",
 ];
 
 const CHALLENGES = [
@@ -88,8 +85,8 @@ const CHALLENGES = [
   },
   {
     icon: HiOutlineTableCells,
-    title: "Complex Pricing Matrix Structure",
-    desc: "Pricing details reside inside NetSuite's complex Pricing Matrix, which standard reporting tools cannot query directly.",
+    title: "Complex Pricing Structures",
+    desc: "Pricing details reside inside complex pricing levels and matrices, hindering direct transaction-level evaluation.",
   },
   {
     icon: HiOutlineFunnel,
@@ -103,23 +100,50 @@ const CHALLENGES = [
   },
   {
     icon: HiOutlineClock,
-    title: "UI Execution Timeouts",
-    desc: "Large multi-subsidiary reports spanning thousands of invoice and credit memo lines crash standard browser sessions.",
+    title: "High Volume Reporting Overhead",
+    desc: "Large multi-subsidiary datasets spanning thousands of invoice and credit memo lines required extensive manual aggregation.",
   },
   {
     icon: HiOutlineInbox,
-    title: "Lack of Request Tracking & Audit",
-    desc: "Absence of a centralized portal for managers to view request history, status progress, and re-download generated reports.",
+    title: "Lack of Centralized Audit History",
+    desc: "Absence of a centralized portal for managers to track request history and maintain audit visibility.",
   },
 ];
 
-const PROCESS_STEPS = [
-  { step: "01", title: "Filter Selection", desc: "Select mandatory Subsidiary & Date Range plus optional filters (Customer, Location, Brand, Sales Rep)." },
-  { step: "02", title: "Pre-Flight Validation", desc: "System checks required filters and queries data availability before submitting." },
-  { step: "03", title: "Transaction Fetch", desc: "Retrieves all relevant Invoices and Credit Memos matching criteria within the subsidiary." },
-  { step: "04", title: "Pricing Matrix Lookup", desc: "Queries item Pricing Matrix to extract Base Price and applicable Customer Price Level." },
-  { step: "05", title: "Variance Analysis", desc: "Compares Base Price vs. Customer Price Level for transaction-level margin evaluation." },
-  { step: "06", title: "Report Dispatch", desc: "Paginates on-screen view and processes bulk exports via background queue with email notification." },
+const BUSINESS_REQUIREMENTS = [
+  "Granular transaction-level pricing reporting across Invoices and Credit Memos.",
+  "Comparison of item Base Prices against Customer Price Levels for specific transaction lines.",
+  "Multi-dimensional reporting filters including Subsidiary, Date Range, Customer, Location, Brand, and Sales Representative.",
+  "High-volume reporting capability for enterprise datasets without operational performance degradation.",
+  "Centralized dashboard interface for executives to track report requests and export commercial analysis.",
+];
+
+const OUTCOMES = [
+  {
+    icon: HiOutlineChartBar,
+    title: "Improved Transaction-Level Pricing Visibility",
+    desc: "Gave commercial leaders clear visibility into price level execution and margin performance across every line item.",
+  },
+  {
+    icon: HiOutlineTableCells,
+    title: "Easier Pricing Analysis",
+    desc: "Simplified the evaluation of base prices versus customer-specific price levels across global subsidiaries.",
+  },
+  {
+    icon: HiOutlineArrowTrendingUp,
+    title: "Better Management Reporting",
+    desc: "Delivered fast, multi-filtered financial reports for senior executives, sales leaders, and financial controllers.",
+  },
+  {
+    icon: HiOutlineCheckCircle,
+    title: "Faster Identification of Pricing Variances",
+    desc: "Accelerated detection of pricing discrepancies, unapproved discounts, and transaction-level margin erosion.",
+  },
+  {
+    icon: HiOutlineShieldCheck,
+    title: "Better Support for Commercial Decision-Making",
+    desc: "Empowered leadership with reliable pricing intelligence to optimize commercial strategies and protect profitability.",
+  },
 ];
 
 function PricingIntelligenceCaseStudyPage() {
@@ -144,7 +168,7 @@ function PricingIntelligenceCaseStudyPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> PRICING & REPORTING AUTOMATION
               </span>
               <span className="inline-flex items-center rounded-md bg-[#0B1F4B] px-3 py-1.5 text-xs font-bold tracking-wider text-white uppercase shadow-2xs">
-                SCRIPT: SUITELET & SCHEDULED REPORTING ENGINE
+                SALES PRICING & MARGIN VISIBILITY
               </span>
             </div>
 
@@ -153,7 +177,7 @@ function PricingIntelligenceCaseStudyPage() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-3xl text-base text-[#667085]">
-              A custom NetSuite reporting solution designed to access complex Pricing Matrix data, compare Base Prices against Customer Price Levels across subsidiaries, and automate bulk report processing.
+              A custom NetSuite reporting solution designed to evaluate complex Pricing Matrix data, compare Base Prices against Customer Price Levels across subsidiaries, and automate commercial report processing.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-2">
@@ -176,15 +200,15 @@ function PricingIntelligenceCaseStudyPage() {
           <SectionHeading
             eyebrow="Background & Problem"
             title="The Business Challenge"
-            subtitle="Bridging the gap between day-to-day item price fluctuations and NetSuite's complex Pricing Matrix."
+            subtitle="Bridging the gap between day-to-day item price fluctuations and transaction margin transparency."
           />
 
           <Reveal className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-[#667085] space-y-4">
             <p>
-              Managers need to monitor item pricing for specific transactions across different subsidiaries and date ranges. Since item costs can fluctuate from day to day, they need to compare the <strong>Base Price</strong> against the applicable <strong>Customer Price Level</strong> for each transaction to identify pricing differences and ensure accurate pricing.
+              Managers need to monitor item pricing for specific transactions across different subsidiaries and date ranges. Since item costs can fluctuate from day to day, comparing the <strong>Base Price</strong> against the applicable <strong>Customer Price Level</strong> for each transaction is essential to identify pricing differences and ensure accurate commercial execution.
             </p>
             <p>
-              However, this information cannot be obtained through standard NetSuite reporting tools. The required pricing information resides within the <strong>Pricing Matrix</strong>, which has a complex multi-tiered structure that is not directly accessible through standard Saved Searches or native NetSuite reports.
+              However, obtaining this visibility across large transaction volumes requires consolidating multi-layered pricing structures into accessible, high-level business reports that executives can use for decision-making.
             </p>
           </Reveal>
 
@@ -208,59 +232,75 @@ function PricingIntelligenceCaseStudyPage() {
         </div>
       </section>
 
-      {/* 3. THE SOLUTION */}
+      {/* 3. BUSINESS REQUIREMENTS */}
       <section className="section-pad bg-[#F5F9FC]">
-        <div className="shell">
+        <div className="shell max-w-4xl">
           <SectionHeading
-            eyebrow="Custom Architecture"
-            title="The Solution"
-            subtitle="Centralized transaction-level pricing reporting with custom Pricing Matrix traversal."
+            eyebrow="Objectives"
+            title="Business Requirements"
+            subtitle="Commercial intelligence requirements defined for transaction-level pricing visibility."
           />
 
-          <Reveal className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-[#667085] space-y-4">
-            <p>
-              A custom reporting solution was developed to address this requirement. The solution allows managers to select the required <strong>Subsidiary, Start Date, and End Date</strong> (mandatory filters), alongside optional filters including <strong>Customer, Location, Brand, and Sales Representative</strong>, to generate a detailed transaction-level report.
-            </p>
-            <p>
-              The system retrieves all relevant transaction types—specifically <strong>Invoices and Credit Memos</strong>—within the selected subsidiary and date range. It inspects each line item, accesses the relevant Pricing Matrix data programmatically, determines the customer price level applicable for that transaction, and compares it directly against the item's Base Price.
-            </p>
+          <Reveal className="mt-10">
+            <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
+              <ul className="space-y-4">
+                {BUSINESS_REQUIREMENTS.map((req, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <HiOutlineCheckCircle className="mt-1 h-5 w-5 shrink-0 text-[#0B1F4B]" />
+                    <span className="text-base text-[#667085] leading-relaxed">{req}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
+        </div>
+      </section>
 
-          {/* PROCESS FLOW DIAGRAM */}
-          <div className="mt-12">
-            <Reveal>
-              <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 sm:p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
-                <h3 className="text-sm font-bold tracking-wider text-[#0B1F4B] uppercase mb-8 text-center">
-                  End-to-End Pricing Intelligence Pipeline
-                </h3>
+      {/* 4. BUSINESS OUTCOME */}
+      <section className="section-pad bg-[#FFFFFF]">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Results & Impact"
+            title="Business Outcome"
+            subtitle="Commercial value and decision-making support delivered to leadership."
+          />
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {PROCESS_STEPS.map((ps) => (
-                    <div
-                      key={ps.title}
-                      className="relative flex flex-col justify-between rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-5"
-                    >
-                      <div>
-                        <span className="text-xs font-bold text-[#0B1F4B]">
-                          STEP {ps.step}
-                        </span>
-                        <h4 className="mt-2 text-base font-semibold text-[#0B1F4B]">
-                          {ps.title}
-                        </h4>
-                        <p className="mt-1.5 text-xs text-[#667085] leading-relaxed">
-                          {ps.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {OUTCOMES.map((o, i) => (
+              <Reveal key={o.title} delay={i * 0.05}>
+                <article className="h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0B1F4B] text-white">
+                    <o.icon size={20} />
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-[#0B1F4B]">
+                    {o.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#667085] leading-relaxed">
+                    {o.desc}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 4. CONTACT SECTION */}
+      {/* 5. TECHNOLOGY & EXPERTISE */}
+      <section className="py-12 bg-[#F5F9FC] border-t border-[#D9E2EA]">
+        <div className="shell text-center">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-[#0B1F4B]">
+              <HiOutlineSquares2X2 size={16} />
+              <span>Technology & Core Expertise</span>
+            </div>
+            <p className="text-sm text-[#667085] max-w-xl mx-auto">
+              NetSuite ERP • Pricing Matrix Intelligence • Commercial Reporting • Sales Variance Analysis
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 6. CONTACT SECTION */}
       <Contact />
     </main>
   );

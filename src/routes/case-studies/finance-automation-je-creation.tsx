@@ -2,6 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { Contact } from "@/components/home/Contact";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
+import {
+  HiOutlineClock,
+  HiOutlineCheckCircle,
+  HiOutlineShieldCheck,
+  HiOutlineDocumentDuplicate,
+  HiOutlineArrowTrendingUp,
+  HiOutlineSquares2X2,
+} from "react-icons/hi2";
 
 export const Route = createFileRoute(
   "/case-studies/finance-automation-je-creation"
@@ -14,12 +22,7 @@ export const Route = createFileRoute(
       {
         name: "description",
         content:
-          "Automated journal entry creation for COGS department corrections in NetSuite using Suitelets, Custom Records, and Map/Reduce automation.",
-      },
-      {
-        name: "keywords",
-        content:
-          "NetSuite Journal Entry Automation, COGS Department Correction, SuiteScript Map Reduce, NetSuite Finance Automation",
+          "Automated journal entry creation for COGS department corrections in NetSuite, enhancing financial control and GL consistency.",
       },
       {
         property: "og:title",
@@ -29,7 +32,7 @@ export const Route = createFileRoute(
       {
         property: "og:description",
         content:
-          "Automated journal entry creation for COGS department corrections in NetSuite using Suitelets, Custom Records, and Map/Reduce automation.",
+          "Automated journal entry creation for COGS department corrections in NetSuite, enhancing financial control and GL consistency.",
       },
       { property: "og:type", content: "article" },
       {
@@ -63,35 +66,51 @@ export const Route = createFileRoute(
 });
 
 const TECH_TAGS = [
-  "NetSuite",
-  "SuiteScript 2.x",
-  "Suitelet",
-  "Map/Reduce",
-  "Saved Searches",
+  "NetSuite ERP",
+  "Finance Automation",
+  "General Ledger Control",
+  "COGS Reclassification",
 ];
 
 const CHALLENGES = [
-  { title: "Manual Journal Overhead", desc: "Finance team spending hours manually compiling spreadsheets to create monthly reclassification journal entries." },
+  { title: "Manual Journal Overhead", desc: "Finance teams spending extensive time manually compiling transaction spreadsheets to create monthly reclassification journal entries." },
   { title: "Risk of Posting Errors", desc: "Manual line-item entry increased the likelihood of incorrect GL account or department selections." },
   { title: "Lack of Approval Auditability", desc: "Absence of a centralized interface to verify proposed adjustments before journal creation." },
-  { title: "Governance Timeouts", desc: "Attempting to create hundreds of journal lines synchronously caused UI execution timeouts." },
+  { title: "Department Misallocations", desc: "Transactions posting to default departments instead of line-item specific operational departments." },
 ];
 
-const SOLUTION_STEPS = [
+const BUSINESS_REQUIREMENTS = [
+  "Automatic identification of COGS transactions requiring departmental reclassification based on item attributes.",
+  "Controlled finance management interface allowing line-item review and verification prior to journal posting.",
+  "Automated creation of reclassification Journal Entries for large transaction volumes without manual line entry.",
+  "Complete audit trail ensuring compliance with corporate accounting policies and internal controls.",
+];
+
+const OUTCOMES = [
   {
-    step: "01",
-    title: "Identification via Saved Searches",
-    desc: "Optimized saved searches continuously identify COGS transactions where recorded department differs from expected item department parameters.",
+    icon: HiOutlineClock,
+    title: "Reduced Repetitive Finance Activities",
+    desc: "Streamlined the monthly financial close by eliminating manual spreadsheet compilation and repetitive line-item entry.",
   },
   {
-    step: "02",
-    title: "Suitelet Verification Dashboard",
-    desc: "A custom Suitelet interface presents eligible transactions to finance managers, allowing line-item selection and confirmation prior to processing.",
+    icon: HiOutlineCheckCircle,
+    title: "More Consistent Accounting Treatment",
+    desc: "Ensured uniform departmental reclassification rules applied systematically across all transactions without human error.",
   },
   {
-    step: "03",
-    title: "Staging Custom Record & Map/Reduce",
-    desc: "Confirmed items generate staging records that trigger a governance-safe Map/Reduce script to post consolidated Journal Entries in background threads.",
+    icon: HiOutlineShieldCheck,
+    title: "Improved Finance Review and Control",
+    desc: "Gave finance managers complete visibility and confirmation oversight before committing journal adjustments to the GL.",
+  },
+  {
+    icon: HiOutlineDocumentDuplicate,
+    title: "Better Transaction-Level Accounting",
+    desc: "Accurately captured granular departmental GL impacts at the transaction level for precise cost accounting.",
+  },
+  {
+    icon: HiOutlineArrowTrendingUp,
+    title: "Scalable Financial Processing",
+    desc: "Enabled the finance department to process thousands of line-item reclassifications effortlessly without operational friction.",
   },
 ];
 
@@ -112,7 +131,7 @@ function FinanceAutomationCaseStudy() {
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> FINANCE AUTOMATION
               </span>
               <span className="inline-flex items-center rounded-md bg-[#0B1F4B] px-3 py-1.5 text-xs font-bold tracking-wider text-white uppercase shadow-2xs">
-                SCRIPT: SUITELET & MAP/REDUCE JOURNAL AUTOMATION
+                AUTOMATED GL IMPACT
               </span>
             </div>
 
@@ -121,7 +140,7 @@ function FinanceAutomationCaseStudy() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base text-[#667085]">
-              Streamlining complex Cost of Goods Sold department reclassifications through controlled Suitelet verification and background Map/Reduce processing.
+              Streamlining complex Cost of Goods Sold department reclassifications through controlled verification and automated journal entry processing.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-2">
@@ -166,34 +185,75 @@ function FinanceAutomationCaseStudy() {
         </div>
       </section>
 
-      {/* 3. THE SOLUTION */}
+      {/* 3. BUSINESS REQUIREMENTS */}
       <section className="section-pad bg-[#F5F9FC]">
         <div className="shell max-w-4xl">
           <SectionHeading
-            eyebrow="Implementation"
-            title="The Technical Solution"
-            subtitle="Combining NetSuite SuiteScript 2.x components into a controlled three-stage pipeline."
+            eyebrow="Objectives"
+            title="Business Requirements"
+            subtitle="Core capabilities required to automate COGS reclassifications with full administrative control."
           />
 
-          <div className="mt-10 space-y-6">
-            {SOLUTION_STEPS.map((s, i) => (
-              <Reveal key={s.step} delay={i * 0.05}>
-                <div className="flex gap-5 rounded-xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 shadow-2xs">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#0B1F4B] text-white font-bold">
-                    {s.step}
+          <Reveal className="mt-10">
+            <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
+              <ul className="space-y-4">
+                {BUSINESS_REQUIREMENTS.map((req, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <HiOutlineCheckCircle className="mt-1 h-5 w-5 shrink-0 text-[#0B1F4B]" />
+                    <span className="text-base text-[#667085] leading-relaxed">{req}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 4. BUSINESS OUTCOME */}
+      <section className="section-pad bg-[#FFFFFF]">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Results & Value"
+            title="Business Outcome"
+            subtitle="Operational value and enhanced financial governance delivered."
+          />
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {OUTCOMES.map((o, i) => (
+              <Reveal key={o.title} delay={i * 0.05}>
+                <article className="h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0B1F4B] text-white">
+                    <o.icon size={20} />
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-[#0B1F4B]">{s.title}</h3>
-                    <p className="mt-1.5 text-sm text-[#667085] leading-relaxed">{s.desc}</p>
-                  </div>
-                </div>
+                  <h3 className="mt-4 text-lg font-bold text-[#0B1F4B]">
+                    {o.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#667085] leading-relaxed">
+                    {o.desc}
+                  </p>
+                </article>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. CONTACT SECTION */}
+      {/* 5. TECHNOLOGY & EXPERTISE */}
+      <section className="py-12 bg-[#F5F9FC] border-t border-[#D9E2EA]">
+        <div className="shell text-center">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-[#0B1F4B]">
+              <HiOutlineSquares2X2 size={16} />
+              <span>Technology & Core Expertise</span>
+            </div>
+            <p className="text-sm text-[#667085] max-w-xl mx-auto">
+              NetSuite ERP • Financial Reclassification • General Ledger Management • Automated Journal Operations
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 6. CONTACT SECTION */}
       <Contact />
     </main>
   );

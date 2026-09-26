@@ -9,6 +9,10 @@ import {
   HiOutlineSparkles,
   HiOutlineDocumentCheck,
   HiOutlineScale,
+  HiOutlineCheckCircle,
+  HiOutlineArrowTrendingUp,
+  HiOutlineShieldCheck,
+  HiOutlineSquares2X2,
 } from "react-icons/hi2";
 
 export const Route = createFileRoute(
@@ -22,7 +26,7 @@ export const Route = createFileRoute(
       {
         name: "description",
         content:
-          "Explore a NetSuite automation solution for retrieving landed cost allocations and calculating effective unit costs across multiple transaction types.",
+          "Explore a NetSuite business automation solution for landed cost allocations and effective unit cost calculations across inventory transactions.",
       },
       {
         property: "og:title",
@@ -31,7 +35,7 @@ export const Route = createFileRoute(
       {
         property: "og:description",
         content:
-          "Explore a NetSuite automation solution for retrieving landed cost allocations and calculating effective unit costs across multiple transaction types.",
+          "Explore a NetSuite business automation solution for landed cost allocations and effective unit cost calculations across inventory transactions.",
       },
       { property: "og:type", content: "website" },
       {
@@ -65,54 +69,79 @@ export const Route = createFileRoute(
 });
 
 const TECH_TAGS = [
-  "NetSuite",
-  "SuiteScript 2.x",
-  "JavaScript",
-  "Inventory Automation",
-  "Landed Cost",
+  "NetSuite ERP",
+  "Inventory Costing & Valuation",
+  "Landed Cost Allocation",
+  "Supply Chain Management",
 ];
 
 const CHALLENGES = [
   {
     icon: HiOutlineCalculator,
-    title: "Manual Landed Cost Calculations",
-    desc: "Labor-intensive manual spreadsheet calculations for allocating landed charges to items.",
+    title: "Manual Landed Cost Overhead",
+    desc: "Labor-intensive manual calculations for allocating freight, duty, and handling fees to individual inventory items.",
   },
   {
     icon: HiOutlineArrowsRightLeft,
     title: "Multiple Transaction Types",
-    desc: "Requirement to handle receipts, adjustments, transfers, and assembly builds seamlessly.",
+    desc: "Managing diverse inventory transaction flows including item receipts, inventory adjustments, transfers, and assembly builds.",
   },
   {
     icon: HiOutlineCube,
-    title: "Different Transaction Sublists",
-    desc: "Navigating varied NetSuite sublists (item sublist, inventory sublist, component sublist).",
+    title: "Varied Sublist Structures",
+    desc: "Ensuring uniform landed cost treatment across different transaction line types and item categories.",
   },
   {
     icon: HiOutlineScale,
-    title: "Landed Cost Allocation Retrieval",
-    desc: "Dynamically fetching correct duty, freight, and insurance allocations per transaction line.",
+    title: "Complex Allocation Factors",
+    desc: "Retrieving accurate freight, duty, and insurance allocations per transaction line without manual error.",
   },
   {
     icon: HiOutlineSparkles,
-    title: "Effective Unit Cost Calculation",
-    desc: "Accurately combining foreign currency (FX) amounts with allocated landed costs.",
+    title: "Foreign Currency Adjustments",
+    desc: "Accurately combining foreign currency purchase rates with allocated landed cost charges.",
   },
   {
     icon: HiOutlineDocumentCheck,
-    title: "Consistent Transaction Processing",
-    desc: "Ensuring zero calculation drift across historical and new inventory transactions.",
+    title: "Valuation Consistency",
+    desc: "Preventing calculation drift and ensuring full auditability for historical and current inventory valuations.",
   },
 ];
 
-const WORKFLOW_STEPS = [
-  { step: "1", title: "Trigger", desc: "User or script event triggers transaction processing" },
-  { step: "2", title: "Identify Applicable Lines", desc: "Scan transaction for eligible inventory lines" },
-  { step: "3", title: "Determine Correct Sublist", desc: "Select item, inventory, or component sublist" },
-  { step: "4", title: "Retrieve Landed Cost", desc: "Fetch freight, duty, and fee allocations" },
-  { step: "5", title: "Calculate Effective Unit Cost", desc: "Combine FX amounts and landed cost allocations to compute net unit cost" },
-  { step: "6", title: "Update Transaction Value", desc: "Write calculated unit cost back to transaction" },
-  { step: "7", title: "Complete", desc: "Save record with full audit trail" },
+const BUSINESS_REQUIREMENTS = [
+  "Automated line-item identification of inventory receipts, assembly builds, and transfers requiring landed cost adjustments.",
+  "Dynamic retrieval and allocation of applicable freight, duty, tax, and handling charges per transaction line.",
+  "Automated calculation of effective net unit costs combining purchase rates and allocated landed cost components.",
+  "Direct updating of transaction values in NetSuite to maintain accurate cost accounting across all inventory assets.",
+  "Seamless support for multi-currency transactions and varied inventory sublists.",
+];
+
+const OUTCOMES = [
+  {
+    icon: HiOutlineCheckCircle,
+    title: "Improved Inventory Costing Consistency",
+    desc: "Ensured landed cost allocations apply uniformly and accurately across all inventory movements and assembly builds.",
+  },
+  {
+    icon: HiOutlineCalculator,
+    title: "Reduced Manual Cost Calculations",
+    desc: "Eliminated manual spreadsheet calculations, reducing administrative overhead and preventing human entry errors.",
+  },
+  {
+    icon: HiOutlineArrowTrendingUp,
+    title: "Better Effective Unit Cost Visibility",
+    desc: "Provided management with accurate, real-time effective unit cost data for reliable product margin evaluation.",
+  },
+  {
+    icon: HiOutlineScale,
+    title: "Better Freight & Duty Management",
+    desc: "Seamlessly incorporated complex ancillary logistics costs directly into gross margin and inventory balance sheet metrics.",
+  },
+  {
+    icon: HiOutlineShieldCheck,
+    title: "Reliable Financial & Supply Chain Data",
+    desc: "Strengthened balance sheet integrity and supply chain transparency with fully audit-ready inventory valuation records.",
+  },
 ];
 
 function LandedCostCaseStudyPage() {
@@ -132,7 +161,7 @@ function LandedCostCaseStudyPage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0B1F4B]" /> INVENTORY & COSTING AUTOMATION
               </span>
               <span className="inline-flex items-center rounded-md bg-[#0B1F4B] px-3 py-1.5 text-xs font-bold tracking-wider text-white uppercase shadow-2xs">
-                SCRIPT: SUITESCRIPT 2.X LANDED COST SCRIPT
+                AUTOMATED LANDED COST PROCESSING
               </span>
             </div>
 
@@ -141,7 +170,7 @@ function LandedCostCaseStudyPage() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base text-[#667085]">
-              A NetSuite automation solution designed to retrieve applicable landed cost allocations, calculate effective unit costs, and update transaction values automatically.
+              A NetSuite business automation solution designed to retrieve landed cost allocations, calculate effective unit costs, and update transaction values automatically.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-2">
@@ -169,10 +198,10 @@ function LandedCostCaseStudyPage() {
 
           <Reveal className="mx-auto mt-8 max-w-3xl text-center text-base leading-relaxed text-[#667085]">
             <p>
-              Additional costs such as freight, duties, and other applicable charges can affect the true cost of inventory. Calculating and applying these costs consistently across transaction lines and multiple transaction types can require manual effort.
+              Additional costs such as freight, duties, and handling charges directly affect the true cost of inventory. Calculating and applying these costs consistently across individual transaction lines and multiple transaction types requires manual effort.
             </p>
             <p className="mt-4">
-              The objective was to automate the identification of applicable transaction lines, retrieve landed cost allocations, calculate the effective unit cost, and update the calculated value directly within NetSuite.
+              The objective was to establish an automated business solution to identify applicable transaction lines, retrieve landed cost allocations, calculate the effective unit cost, and update calculated values directly within NetSuite.
             </p>
           </Reveal>
 
@@ -196,49 +225,75 @@ function LandedCostCaseStudyPage() {
         </div>
       </section>
 
-      {/* 3. THE SOLUTION */}
+      {/* 3. BUSINESS REQUIREMENTS */}
       <section className="section-pad bg-[#F5F9FC]">
-        <div className="shell">
+        <div className="shell max-w-4xl">
           <SectionHeading
-            eyebrow="Automation Pipeline"
-            title="The Solution"
-            subtitle="Automated line identification, allocation lookup, math processing, and line updates."
+            eyebrow="Objectives"
+            title="Business Requirements"
+            subtitle="Key inventory management requirements established for landed cost automation."
           />
 
-          <div className="mt-12">
-            <Reveal>
-              <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-6 sm:p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
-                <h3 className="text-sm font-bold tracking-wider text-[#0B1F4B] uppercase mb-8 text-center">
-                  Visual Cost Calculation Workflow
-                </h3>
+          <Reveal className="mt-10">
+            <div className="rounded-2xl border border-[#D9E2EA] bg-[#FFFFFF] p-8 shadow-[0_8px_25px_rgba(11,31,75,0.06)]">
+              <ul className="space-y-4">
+                {BUSINESS_REQUIREMENTS.map((req, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <HiOutlineCheckCircle className="mt-1 h-5 w-5 shrink-0 text-[#0B1F4B]" />
+                    <span className="text-base text-[#667085] leading-relaxed">{req}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  {WORKFLOW_STEPS.map((ws) => (
-                    <div
-                      key={ws.title}
-                      className="relative flex flex-col justify-between rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-5"
-                    >
-                      <div>
-                        <span className="text-xs font-bold text-[#0B1F4B]">
-                          STEP {ws.step}
-                        </span>
-                        <h4 className="mt-2 text-base font-semibold text-[#0B1F4B]">
-                          {ws.title}
-                        </h4>
-                        <p className="mt-1.5 text-xs text-[#667085] leading-relaxed">
-                          {ws.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
+      {/* 4. BUSINESS OUTCOME */}
+      <section className="section-pad bg-[#FFFFFF]">
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Results & Impact"
+            title="Business Outcome"
+            subtitle="Operational improvements achieved in inventory accounting and cost accuracy."
+          />
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {OUTCOMES.map((o, i) => (
+              <Reveal key={o.title} delay={i * 0.05}>
+                <article className="h-full rounded-xl border border-[#D9E2EA] bg-[#F5F9FC] p-6 transition-all hover:border-[#0B1F4B] hover:shadow-sm">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0B1F4B] text-white">
+                    <o.icon size={20} />
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-[#0B1F4B]">
+                    {o.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[#667085] leading-relaxed">
+                    {o.desc}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 4. CONTACT SECTION */}
+      {/* 5. TECHNOLOGY & EXPERTISE */}
+      <section className="py-12 bg-[#F5F9FC] border-t border-[#D9E2EA]">
+        <div className="shell text-center">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-[#0B1F4B]">
+              <HiOutlineSquares2X2 size={16} />
+              <span>Technology & Core Expertise</span>
+            </div>
+            <p className="text-sm text-[#667085] max-w-xl mx-auto">
+              NetSuite ERP • Inventory Costing & Landed Cost • Multi-Currency Valuation • Supply Chain Accounting
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 6. CONTACT SECTION */}
       <Contact />
     </main>
   );
