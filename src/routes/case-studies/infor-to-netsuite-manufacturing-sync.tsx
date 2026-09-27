@@ -303,7 +303,7 @@ function InforToNetSuiteCaseStudyPage() {
               <span>Technology & Core Expertise</span>
             </div>
             <p className="text-sm text-[#667085] max-w-xl mx-auto">
-              OAuth 2.0 • Python Integration • Advanced Manufacturing
+              Python Transformation • NetSuite Integration • Advanced Manufacturing Module
             </p>
           </Reveal>
         </div>
