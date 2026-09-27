@@ -26,6 +26,7 @@ import { Route as ThoughtsRouteImport } from './routes/thoughts'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
 import { Route as CaseStudiesCustomerStatementAutomationRouteImport } from './routes/case-studies/customer-statement-automation'
 import { Route as CaseStudiesFinanceAutomationJeCreationRouteImport } from './routes/case-studies/finance-automation-je-creation'
+import { Route as CaseStudiesInforToNetsuiteManufacturingSyncRouteImport } from './routes/case-studies/infor-to-netsuite-manufacturing-sync'
 import { Route as CaseStudiesLandedCostAutomationRouteImport } from './routes/case-studies/landed-cost-automation'
 import { Route as CaseStudiesNetsuitePricingIntelligenceRouteImport } from './routes/case-studies/netsuite-pricing-intelligence'
 
@@ -117,6 +118,12 @@ const CaseStudiesFinanceAutomationJeCreationRoute =
     path: '/case-studies/finance-automation-je-creation',
     getParentRoute: () => rootRouteImport,
   } as any)
+const CaseStudiesInforToNetsuiteManufacturingSyncRoute =
+  CaseStudiesInforToNetsuiteManufacturingSyncRouteImport.update({
+    id: '/case-studies/infor-to-netsuite-manufacturing-sync',
+    path: '/case-studies/infor-to-netsuite-manufacturing-sync',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CaseStudiesLandedCostAutomationRoute =
   CaseStudiesLandedCostAutomationRouteImport.update({
     id: '/case-studies/landed-cost-automation',
@@ -147,6 +154,7 @@ export interface FileRoutesByFullPath {
   '/thoughts': typeof ThoughtsRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
+  '/case-studies/infor-to-netsuite-manufacturing-sync': typeof CaseStudiesInforToNetsuiteManufacturingSyncRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
   '/case-studies/netsuite-pricing-intelligence': typeof CaseStudiesNetsuitePricingIntelligenceRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
@@ -168,6 +176,7 @@ export interface FileRoutesByTo {
   '/thoughts': typeof ThoughtsRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
+  '/case-studies/infor-to-netsuite-manufacturing-sync': typeof CaseStudiesInforToNetsuiteManufacturingSyncRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
   '/case-studies/netsuite-pricing-intelligence': typeof CaseStudiesNetsuitePricingIntelligenceRoute
   '/case-studies': typeof CaseStudiesIndexRoute
@@ -190,6 +199,7 @@ export interface FileRoutesById {
   '/thoughts': typeof ThoughtsRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
   '/case-studies/finance-automation-je-creation': typeof CaseStudiesFinanceAutomationJeCreationRoute
+  '/case-studies/infor-to-netsuite-manufacturing-sync': typeof CaseStudiesInforToNetsuiteManufacturingSyncRoute
   '/case-studies/landed-cost-automation': typeof CaseStudiesLandedCostAutomationRoute
   '/case-studies/netsuite-pricing-intelligence': typeof CaseStudiesNetsuitePricingIntelligenceRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
@@ -213,6 +223,7 @@ export interface FileRouteTypes {
     | '/thoughts'
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
+    | '/case-studies/infor-to-netsuite-manufacturing-sync'
     | '/case-studies/landed-cost-automation'
     | '/case-studies/netsuite-pricing-intelligence'
     | '/case-studies/'
@@ -234,6 +245,7 @@ export interface FileRouteTypes {
     | '/thoughts'
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
+    | '/case-studies/infor-to-netsuite-manufacturing-sync'
     | '/case-studies/landed-cost-automation'
     | '/case-studies/netsuite-pricing-intelligence'
     | '/case-studies'
@@ -255,6 +267,7 @@ export interface FileRouteTypes {
     | '/thoughts'
     | '/case-studies/customer-statement-automation'
     | '/case-studies/finance-automation-je-creation'
+    | '/case-studies/infor-to-netsuite-manufacturing-sync'
     | '/case-studies/landed-cost-automation'
     | '/case-studies/netsuite-pricing-intelligence'
     | '/case-studies/'
@@ -277,6 +290,7 @@ export interface RootRouteChildren {
   ThoughtsRoute: typeof ThoughtsRoute
   CaseStudiesCustomerStatementAutomationRoute: typeof CaseStudiesCustomerStatementAutomationRoute
   CaseStudiesFinanceAutomationJeCreationRoute: typeof CaseStudiesFinanceAutomationJeCreationRoute
+  CaseStudiesInforToNetsuiteManufacturingSyncRoute: typeof CaseStudiesInforToNetsuiteManufacturingSyncRoute
   CaseStudiesLandedCostAutomationRoute: typeof CaseStudiesLandedCostAutomationRoute
   CaseStudiesNetsuitePricingIntelligenceRoute: typeof CaseStudiesNetsuitePricingIntelligenceRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
@@ -403,6 +417,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesFinanceAutomationJeCreationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/infor-to-netsuite-manufacturing-sync': {
+      id: '/case-studies/infor-to-netsuite-manufacturing-sync'
+      path: '/case-studies/infor-to-netsuite-manufacturing-sync'
+      fullPath: '/case-studies/infor-to-netsuite-manufacturing-sync'
+      preLoaderRoute: typeof CaseStudiesInforToNetsuiteManufacturingSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies/landed-cost-automation': {
       id: '/case-studies/landed-cost-automation'
       path: '/case-studies/landed-cost-automation'
@@ -439,6 +460,8 @@ const rootRouteChildren: RootRouteChildren = {
     CaseStudiesCustomerStatementAutomationRoute,
   CaseStudiesFinanceAutomationJeCreationRoute:
     CaseStudiesFinanceAutomationJeCreationRoute,
+  CaseStudiesInforToNetsuiteManufacturingSyncRoute:
+    CaseStudiesInforToNetsuiteManufacturingSyncRoute,
   CaseStudiesLandedCostAutomationRoute: CaseStudiesLandedCostAutomationRoute,
   CaseStudiesNetsuitePricingIntelligenceRoute:
     CaseStudiesNetsuitePricingIntelligenceRoute,

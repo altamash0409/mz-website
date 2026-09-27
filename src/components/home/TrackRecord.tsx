@@ -90,6 +90,8 @@ export function TrackRecord() {
         <img
           src="/world-map-bg.jpg"
           alt="World Map Global Reach Background"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-center"
         />
         {/* Soft overlay gradient for high text readability */}
@@ -113,7 +115,9 @@ export function TrackRecord() {
 
           {/* Description Paragraph */}
           <p className="mt-4 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed text-[#0B1F4B] font-semibold">
-            Helping businesses worldwide unlock the full potential of NetSuite with solutions built around their unique needs. From implementation to optimization, we turn complex business processes into smarter, scalable solutions.
+            Helping businesses worldwide unlock the full potential of NetSuite with solutions built
+            around their unique needs. From implementation to optimization, we turn complex business
+            processes into smarter, scalable solutions.
           </p>
 
           {/* Clean Stats Grid - 4 Stats Sitting directly over the map graphic */}

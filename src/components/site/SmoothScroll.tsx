@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from "react";
+import type Lenis from "lenis";
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
@@ -12,35 +13,29 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
       return;
     }
 
-    let lenisInstance: any = null;
-    let rafId: number | null = null;
+    let lenisInstance: Lenis | null = null;
 
     import("lenis")
       .then(({ default: Lenis }) => {
         const lenis = new Lenis({
-          duration: 0.9,
+          duration: 0.7,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           smoothWheel: true,
-          touchMultiplier: 1.5,
+          autoRaf: true,
+          anchors: true,
         });
 
         lenisInstance = lenis;
         window.lenis = lenis;
-
-        function raf(time: number) {
-          lenis.raf(time);
-          rafId = requestAnimationFrame(raf);
-        }
-
-        rafId = requestAnimationFrame(raf);
       })
       .catch((err) => {
         console.warn("Lenis initialization skipped:", err);
       });
 
     return () => {
-      if (rafId !== null) cancelAnimationFrame(rafId);
-      if (lenisInstance) lenisInstance.destroy();
+      if (lenisInstance) {
+        lenisInstance.destroy();
+      }
       delete window.lenis;
     };
   }, []);

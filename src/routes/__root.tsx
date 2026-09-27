@@ -7,6 +7,7 @@ import {
   useRouterState,
   HeadContent,
   Scripts,
+  ScrollRestoration,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -125,7 +126,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Consider Pie",
-          alternateName: ["ConsiderPie", "Consider Pie NetSuite Solutions", "Consider Pie ERP Consulting"],
+          alternateName: [
+            "ConsiderPie",
+            "Consider Pie NetSuite Solutions",
+            "Consider Pie ERP Consulting",
+          ],
           url: "https://www.considerpie.com/",
         }),
       },
@@ -137,7 +142,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Consider Pie",
           url: "https://www.considerpie.com",
           logo: "https://www.considerpie.com/logo.png",
-          description: "Enterprise NetSuite ERP consulting, custom SuiteScript development, API integration, and workflow automation.",
+          description:
+            "Enterprise NetSuite ERP consulting, custom SuiteScript development, API integration, and workflow automation.",
           sameAs: ["https://www.linkedin.com/company/consider-pie/"],
           contactPoint: {
             "@type": "ContactPoint",
@@ -159,8 +165,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "RESTlet API Integration",
             "SuiteFlow Automation",
             "NetSuite Customization",
-            "NetSuite OneWorld Consulting"
-          ]
+            "NetSuite OneWorld Consulting",
+          ],
         }),
       },
     ],
@@ -190,33 +196,38 @@ function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      if (hash) {
-        const id = hash.replace("#", "");
+    if (typeof window === "undefined") return;
+
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      const scrollToHashElement = (attempts = 0) => {
         const el = document.getElementById(id);
         if (el) {
-          setTimeout(() => {
-            if (window.lenis) {
-              window.lenis.scrollTo(el);
-            } else {
-              el.scrollIntoView({ behavior: "smooth" });
-            }
-          }, 80);
-          return;
+          if (window.lenis) {
+            window.lenis.scrollTo(el, { offset: -20 });
+          } else {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        } else if (attempts < 6) {
+          setTimeout(() => scrollToHashElement(attempts + 1), 50);
         }
-      }
+      };
+      setTimeout(() => scrollToHashElement(), 50);
+      return;
+    }
 
-      if (window.lenis) {
-        window.lenis.scrollTo(0, { immediate: true });
-      } else {
-        window.scrollTo(0, 0);
-      }
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+      window.lenis.resize();
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
   }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ScrollRestoration />
       <SmoothScroll>
         <Navbar />
         <Outlet />
@@ -227,4 +238,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
