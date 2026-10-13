@@ -96,7 +96,7 @@ export function Footer() {
                 to="/suitescript-ai"
                 className="transition-colors duration-200 hover:text-white"
               >
-                SuiteScript AI
+                AI Tool
               </Link>
             </li>
           </ul>

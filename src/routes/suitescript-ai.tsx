@@ -17,7 +17,7 @@ export const Route = createFileRoute("/suitescript-ai")({
   head: () => ({
     meta: [
       {
-        title: "SuiteScript AI | AI-Powered NetSuite Development | Consider Pie",
+        title: "AI Tool | SuiteScript AI | Consider Pie",
       },
       {
         name: "description",
@@ -27,16 +27,16 @@ export const Route = createFileRoute("/suitescript-ai")({
       {
         name: "keywords",
         content:
-          "SuiteScript AI, AI SuiteScript analysis, NetSuite AI developer, SuiteScript debugger, SuiteScript 2.1 modernization, AI NetSuite development, Consider Pie",
+          "AI Tool, SuiteScript AI, AI SuiteScript analysis, NetSuite AI developer, SuiteScript debugger, SuiteScript 2.1 modernization, AI NetSuite development, Consider Pie",
       },
       {
         property: "og:title",
-        content: "SuiteScript AI | AI-Powered NetSuite Development | Consider Pie",
+        content: "AI Tool | SuiteScript AI | Consider Pie",
       },
       {
         property: "og:description",
         content:
-          "Explore AI-assisted SuiteScript analysis, code explanations, debugging assistance, and script modernization with Consider Pie's SuiteScript AI.",
+          "Explore AI-assisted SuiteScript analysis, code explanations, debugging assistance, and script modernization with Consider Pie's AI Tool.",
       },
       { property: "og:type", content: "website" },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/suitescript-ai")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          name: "SuiteScript AI",
+          name: "AI Tool - SuiteScript AI",
           applicationCategory: "DeveloperApplication",
           operatingSystem: "Cloud-based",
           provider: {
@@ -80,7 +80,7 @@ export const Route = createFileRoute("/suitescript-ai")({
             {
               "@type": "ListItem",
               position: 2,
-              name: "SuiteScript AI",
+              name: "AI Tool",
               item: "https://www.considerpie.com/suitescript-ai",
             },
           ],
@@ -134,7 +134,7 @@ function SuiteScriptAIPage() {
           <Reveal className="text-center">
             {/* Breadcrumb Navigation */}
             <div className="mb-6 flex justify-center">
-              <Breadcrumbs items={[{ label: "SuiteScript AI" }]} />
+              <Breadcrumbs items={[{ label: "AI Tool" }]} />
             </div>
 
             {/* Small Label */}
@@ -145,7 +145,7 @@ function SuiteScriptAIPage() {
 
             {/* Main Heading */}
             <h1 className="mx-auto mt-6 max-w-4xl font-display text-4xl font-bold tracking-tight text-[#0B1F4B] sm:text-5xl lg:text-6xl">
-              SuiteScript AI
+              AI Tool
             </h1>
 
             {/* Tagline */}

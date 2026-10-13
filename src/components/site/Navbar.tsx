@@ -8,7 +8,7 @@ const NAV = [
   { to: "/services", label: "Services" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/thoughts", label: "Thoughts from the Cloud" },
-  { to: "/suitescript-ai", label: "SuiteScript AI" },
+  { to: "/suitescript-ai", label: "AI Tool" },
 ] as const;
 
 export function Navbar() {
