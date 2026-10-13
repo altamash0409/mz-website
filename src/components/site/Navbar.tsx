@@ -8,6 +8,7 @@ const NAV = [
   { to: "/services", label: "Services" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/thoughts", label: "Thoughts from the Cloud" },
+  { to: "/suitescript-ai", label: "SuiteScript AI" },
 ] as const;
 
 export function Navbar() {
@@ -48,15 +49,18 @@ export function Navbar() {
           />
         </Link>
 
-        <div className="hidden items-center gap-6 lg:gap-8 md:flex">
-          <ul className="flex items-center gap-6 lg:gap-8 text-sm font-medium">
+        <div className="hidden items-center gap-4 lg:gap-6 xl:gap-8 md:flex">
+          <ul className="flex items-center gap-4 lg:gap-6 xl:gap-8 text-sm font-medium">
             {NAV.map((item) => (
               <li key={item.to}>
                 <Link
                   to={item.to}
                   activeOptions={{ exact: item.to === "/" }}
                   className="text-[#0B1F4B] transition-colors hover:text-[#16357A]"
-                  activeProps={{ className: "!text-[#0B1F4B] font-semibold underline decoration-[#0B1F4B] underline-offset-8 decoration-2" }}
+                  activeProps={{
+                    className:
+                      "!text-[#0B1F4B] font-semibold underline decoration-[#0B1F4B] underline-offset-8 decoration-2",
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -116,6 +120,3 @@ export function Navbar() {
     </header>
   );
 }
-
-
-

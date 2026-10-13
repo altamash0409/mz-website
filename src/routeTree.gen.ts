@@ -21,6 +21,7 @@ import { Route as NetsuiteIntegrationRouteImport } from './routes/netsuite-integ
 import { Route as NetsuiteOneworldConsultingRouteImport } from './routes/netsuite-oneworld-consulting'
 import { Route as NetsuiteSupportRouteImport } from './routes/netsuite-support'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SuitescriptAiRouteImport } from './routes/suitescript-ai'
 import { Route as SuitescriptDevelopmentRouteImport } from './routes/suitescript-development'
 import { Route as ThoughtsRouteImport } from './routes/thoughts'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies/index'
@@ -91,6 +92,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SuitescriptAiRoute = SuitescriptAiRouteImport.update({
+  id: '/suitescript-ai',
+  path: '/suitescript-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SuitescriptDevelopmentRoute = SuitescriptDevelopmentRouteImport.update({
   id: '/suitescript-development',
   path: '/suitescript-development',
@@ -150,6 +156,7 @@ export interface FileRoutesByFullPath {
   '/netsuite-oneworld-consulting': typeof NetsuiteOneworldConsultingRoute
   '/netsuite-support': typeof NetsuiteSupportRoute
   '/services': typeof ServicesRoute
+  '/suitescript-ai': typeof SuitescriptAiRoute
   '/suitescript-development': typeof SuitescriptDevelopmentRoute
   '/thoughts': typeof ThoughtsRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
@@ -172,6 +179,7 @@ export interface FileRoutesByTo {
   '/netsuite-oneworld-consulting': typeof NetsuiteOneworldConsultingRoute
   '/netsuite-support': typeof NetsuiteSupportRoute
   '/services': typeof ServicesRoute
+  '/suitescript-ai': typeof SuitescriptAiRoute
   '/suitescript-development': typeof SuitescriptDevelopmentRoute
   '/thoughts': typeof ThoughtsRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
@@ -195,6 +203,7 @@ export interface FileRoutesById {
   '/netsuite-oneworld-consulting': typeof NetsuiteOneworldConsultingRoute
   '/netsuite-support': typeof NetsuiteSupportRoute
   '/services': typeof ServicesRoute
+  '/suitescript-ai': typeof SuitescriptAiRoute
   '/suitescript-development': typeof SuitescriptDevelopmentRoute
   '/thoughts': typeof ThoughtsRoute
   '/case-studies/customer-statement-automation': typeof CaseStudiesCustomerStatementAutomationRoute
@@ -219,6 +228,7 @@ export interface FileRouteTypes {
     | '/netsuite-oneworld-consulting'
     | '/netsuite-support'
     | '/services'
+    | '/suitescript-ai'
     | '/suitescript-development'
     | '/thoughts'
     | '/case-studies/customer-statement-automation'
@@ -241,6 +251,7 @@ export interface FileRouteTypes {
     | '/netsuite-oneworld-consulting'
     | '/netsuite-support'
     | '/services'
+    | '/suitescript-ai'
     | '/suitescript-development'
     | '/thoughts'
     | '/case-studies/customer-statement-automation'
@@ -263,6 +274,7 @@ export interface FileRouteTypes {
     | '/netsuite-oneworld-consulting'
     | '/netsuite-support'
     | '/services'
+    | '/suitescript-ai'
     | '/suitescript-development'
     | '/thoughts'
     | '/case-studies/customer-statement-automation'
@@ -286,6 +298,7 @@ export interface RootRouteChildren {
   NetsuiteOneworldConsultingRoute: typeof NetsuiteOneworldConsultingRoute
   NetsuiteSupportRoute: typeof NetsuiteSupportRoute
   ServicesRoute: typeof ServicesRoute
+  SuitescriptAiRoute: typeof SuitescriptAiRoute
   SuitescriptDevelopmentRoute: typeof SuitescriptDevelopmentRoute
   ThoughtsRoute: typeof ThoughtsRoute
   CaseStudiesCustomerStatementAutomationRoute: typeof CaseStudiesCustomerStatementAutomationRoute
@@ -382,6 +395,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/suitescript-ai': {
+      id: '/suitescript-ai'
+      path: '/suitescript-ai'
+      fullPath: '/suitescript-ai'
+      preLoaderRoute: typeof SuitescriptAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/suitescript-development': {
       id: '/suitescript-development'
       path: '/suitescript-development'
@@ -454,6 +474,7 @@ const rootRouteChildren: RootRouteChildren = {
   NetsuiteOneworldConsultingRoute: NetsuiteOneworldConsultingRoute,
   NetsuiteSupportRoute: NetsuiteSupportRoute,
   ServicesRoute: ServicesRoute,
+  SuitescriptAiRoute: SuitescriptAiRoute,
   SuitescriptDevelopmentRoute: SuitescriptDevelopmentRoute,
   ThoughtsRoute: ThoughtsRoute,
   CaseStudiesCustomerStatementAutomationRoute:

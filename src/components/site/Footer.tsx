@@ -49,7 +49,8 @@ export function Footer() {
             />
           </Link>
           <p className="mt-3.5 max-w-[420px] text-sm leading-relaxed text-[#AAB7C7]">
-            Consider Pie is a Mumbai-based NetSuite consulting & development firm providing ERP implementation, SuiteScript, automation, and integration services globally.
+            Consider Pie is a Mumbai-based NetSuite consulting & development firm providing ERP
+            implementation, SuiteScript, automation, and integration services globally.
           </p>
           <div className="mt-6">
             <a
@@ -88,6 +89,14 @@ export function Footer() {
             <li>
               <Link to="/thoughts" className="transition-colors duration-200 hover:text-white">
                 Thoughts from the Cloud
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/suitescript-ai"
+                className="transition-colors duration-200 hover:text-white"
+              >
+                SuiteScript AI
               </Link>
             </li>
           </ul>
@@ -138,12 +147,17 @@ export function Footer() {
               <HiOutlineMapPin size={18} className="mt-0.5 shrink-0 text-white" />
               <div>
                 <p className="font-semibold text-white">Mumbai, Maharashtra, India</p>
-                <p className="mt-1 text-xs text-[#AAB7C7]">Based in Mumbai, India, serving businesses globally.</p>
+                <p className="mt-1 text-xs text-[#AAB7C7]">
+                  Based in Mumbai, India, serving businesses globally.
+                </p>
               </div>
             </div>
             <div className="pt-2 flex items-center gap-2.5 text-xs text-[#AAB7C7]">
               <HiOutlineEnvelope size={16} className="shrink-0 text-white" />
-              <a href="mailto:contact@considerpie.com" className="hover:text-white transition-colors">
+              <a
+                href="mailto:contact@considerpie.com"
+                className="hover:text-white transition-colors"
+              >
                 contact@considerpie.com
               </a>
             </div>
@@ -186,9 +200,7 @@ export function Footer() {
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 text-sm leading-relaxed text-[#AAB7C7]">
-            {legal
-              ? LEGAL[legal].body.map((p) => <p key={p.slice(0, 20)}>{p}</p>)
-              : null}
+            {legal ? LEGAL[legal].body.map((p) => <p key={p.slice(0, 20)}>{p}</p>) : null}
           </div>
         </DialogContent>
       </Dialog>
