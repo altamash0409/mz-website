@@ -17,7 +17,7 @@ export const Route = createFileRoute("/suitescript-ai")({
   head: () => ({
     meta: [
       {
-        title: "AI Tool | SuiteScript AI | Consider Pie",
+        title: "AI Tool | Consider Pie",
       },
       {
         name: "description",
@@ -27,16 +27,16 @@ export const Route = createFileRoute("/suitescript-ai")({
       {
         name: "keywords",
         content:
-          "AI Tool, SuiteScript AI, AI SuiteScript analysis, NetSuite AI developer, SuiteScript debugger, SuiteScript 2.1 modernization, AI NetSuite development, Consider Pie",
+          "AI Tool, NetSuite AI development, SuiteScript analysis, SuiteScript modernization, Consider Pie",
       },
       {
         property: "og:title",
-        content: "AI Tool | SuiteScript AI | Consider Pie",
+        content: "AI Tool | Consider Pie",
       },
       {
         property: "og:description",
         content:
-          "Explore AI-assisted SuiteScript analysis, code explanations, debugging assistance, and script modernization with Consider Pie's AI Tool.",
+          "AI-Powered NetSuite Script Engineering & Modernization. Explore AI-assisted SuiteScript analysis, code explanations, debugging assistance, and script modernization.",
       },
       { property: "og:type", content: "website" },
       {
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/suitescript-ai")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          name: "AI Tool - SuiteScript AI",
+          name: "AI Tool",
           applicationCategory: "DeveloperApplication",
           operatingSystem: "Cloud-based",
           provider: {
@@ -145,16 +145,11 @@ function SuiteScriptAIPage() {
 
             {/* Main Heading */}
             <h1 className="mx-auto mt-6 max-w-4xl font-display text-4xl font-bold tracking-tight text-[#0B1F4B] sm:text-5xl lg:text-6xl">
-              AI Tool
+              AI-Powered NetSuite Script Engineering &amp; Modernization
             </h1>
 
-            {/* Tagline */}
-            <p className="mx-auto mt-4 max-w-2xl text-xl font-medium text-[#0B1F4B] sm:text-2xl">
-              Smarter SuiteScript. Simplified Development.
-            </p>
-
             {/* Description */}
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-[#667085] sm:text-lg">
+            <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-[#667085] sm:text-lg">
               Explore AI-assisted SuiteScript analysis, code explanations, debugging assistance, and
               script modernization. Help NetSuite developers understand complex code, identify
               potential issues, and accelerate their development workflow.
