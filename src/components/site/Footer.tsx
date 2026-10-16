@@ -99,6 +99,16 @@ export function Footer() {
                 AI Tool
               </Link>
             </li>
+            <li>
+              <a
+                href="https://ai.considerpie.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors duration-200 hover:text-white"
+              >
+                SuiteScript Converter
+              </a>
+            </li>
           </ul>
         </div>
 

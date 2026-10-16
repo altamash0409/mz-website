@@ -1,22 +1,43 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiOutlineBars3, HiOutlineXMark, HiChevronRight } from "react-icons/hi2";
-import { useEffect, useState } from "react";
+import { HiOutlineBars3, HiOutlineXMark } from "react-icons/hi2";
+import { useEffect, useRef, useState } from "react";
 
 const NAV = [
   { to: "/", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/thoughts", label: "Thoughts from the Cloud" },
-  { to: "/suitescript-ai", label: "AI Tool" },
 ] as const;
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [aiDropdownOpen, setAiDropdownOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const navigate = useNavigate();
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setAiDropdownOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setAiDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setAiDropdownOpen(false);
+    }, 150);
+  };
 
   const goContact = () => {
     const el = document.getElementById("contact");
@@ -30,6 +51,8 @@ export function Navbar() {
       navigate({ to: "/", hash: "contact" });
     }
   };
+
+  const isAiActive = pathname === "/suitescript-ai";
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 w-full bg-[#FFFFFF] border-b border-[#E5EBF0] text-[#0B1F4B]">
@@ -66,6 +89,55 @@ export function Navbar() {
                 </Link>
               </li>
             ))}
+
+            {/* AI Tool with Hover Dropdown */}
+            <li
+              className="relative py-2"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link
+                to="/suitescript-ai"
+                className={`transition-colors hover:text-[#16357A] ${
+                  isAiActive
+                    ? "!text-[#0B1F4B] font-semibold underline decoration-[#0B1F4B] underline-offset-8 decoration-2"
+                    : "text-[#0B1F4B]"
+                }`}
+              >
+                AI Tool
+              </Link>
+
+              <AnimatePresence>
+                {aiDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                    transition={{ duration: 0.12, ease: "easeOut" }}
+                    className="absolute left-0 top-full pt-2 z-50 min-w-[210px]"
+                  >
+                    <div className="rounded-xl border border-[#E5EBF0] bg-[#FFFFFF] p-4 shadow-[0_12px_36px_rgba(11,31,75,0.08)]">
+                      <div className="border-l-2 border-[#D9E2EA] pl-3.5 py-0.5">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-[#667085]">
+                          AI Tools
+                        </div>
+                        <div className="mt-2.5">
+                          <a
+                            href="https://ai.considerpie.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setAiDropdownOpen(false)}
+                            className="block text-sm font-medium text-[#0B1F4B] transition-colors hover:text-[#16357A] whitespace-nowrap"
+                          >
+                            SuiteScript Converter
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </li>
           </ul>
 
           <button
@@ -105,6 +177,32 @@ export function Navbar() {
                   </Link>
                 </li>
               ))}
+
+              {/* Mobile AI Tool section */}
+              <li>
+                <Link
+                  to="/suitescript-ai"
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg px-4 py-2.5 text-base font-medium text-[#0B1F4B] hover:text-[#16357A] hover:bg-[#F5F9FC]"
+                >
+                  AI Tool
+                </Link>
+                <div className="ml-6 pl-4 border-l border-[#D9E2EA] my-2 py-0.5">
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-[#667085] mb-2">
+                    AI Tools
+                  </div>
+                  <a
+                    href="https://ai.considerpie.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="block text-sm font-medium text-[#0B1F4B] hover:text-[#16357A]"
+                  >
+                    SuiteScript Converter
+                  </a>
+                </div>
+              </li>
+
               <li className="pt-2 border-t border-[#E5EBF0]">
                 <button
                   onClick={goContact}
