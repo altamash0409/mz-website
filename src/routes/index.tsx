@@ -5,6 +5,7 @@ import { IndustryExpertise } from "@/components/home/IndustryExpertise";
 import { AiHighlight } from "@/components/home/AiHighlight";
 import { Approach } from "@/components/home/Approach";
 import { TrackRecord } from "@/components/home/TrackRecord";
+import { Testimonial } from "@/components/home/Testimonial";
 import { Faq } from "@/components/home/Faq";
 import { Contact } from "@/components/home/Contact";
 
@@ -83,6 +84,7 @@ function Index() {
       <AiHighlight />
       <Approach />
       <TrackRecord />
+      <Testimonial />
       <Faq />
       <Contact />
     </main>

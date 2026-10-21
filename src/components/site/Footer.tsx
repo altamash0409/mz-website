@@ -99,16 +99,6 @@ export function Footer() {
                 AI Tool
               </Link>
             </li>
-            <li>
-              <a
-                href="https://ai.considerpie.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors duration-200 hover:text-white"
-              >
-                SuiteScript Converter
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -158,7 +148,7 @@ export function Footer() {
               <div>
                 <p className="font-semibold text-white">Mumbai, Maharashtra, India</p>
                 <p className="mt-1 text-xs text-[#AAB7C7]">
-                  Based in Mumbai, India, serving businesses globally.
+                  24/7 support across U.S. time zones
                 </p>
               </div>
             </div>
