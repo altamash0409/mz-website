@@ -44,7 +44,7 @@ export function Testimonial() {
                       Gabe Schrade
                     </h3>
                     <p className="mt-0.5 text-xs sm:text-sm text-[#667085]">
-                      Founder of Quantbook
+                      Founder of Quantbook · New York (USA)
                     </p>
                   </div>
                 </div>
